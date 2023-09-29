@@ -1,9 +1,8 @@
 import timeit
 from dataclasses import dataclass
-from typing import Any, Callable, Generic, TypeVar
+from typing import Callable, Generic, TypeVar
 
-import polars as pl
-from linetimer import CodeTimer, linetimer
+from linetimer import CodeTimer
 
 T0 = TypeVar("T0")
 T1 = TypeVar("T1")
@@ -43,7 +42,7 @@ def benchmark_method(
     parsed_data = data_ingest_result.output
 
     result = run_query(
-        lambda: query(data=parsed_data), query_title=f"{method_title}: Computation"
+        lambda: query(data=parsed_data), query_title=f"{method_title}: Computation",
     )
 
     return CombinedBenchmark(ingest=data_ingest_result, query_result=result)

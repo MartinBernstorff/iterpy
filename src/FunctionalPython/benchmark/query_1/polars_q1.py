@@ -1,9 +1,8 @@
 import datetime as dt
-from typing import Any
 
 import polars as pl
 from FunctionalPython.benchmark.query_1.input_data import Q1_DATA
-from FunctionalPython.benchmark.utils import benchmark_method, run_query
+from FunctionalPython.benchmark.utils import benchmark_method
 
 
 def main(data: pl.LazyFrame) -> pl.DataFrame:

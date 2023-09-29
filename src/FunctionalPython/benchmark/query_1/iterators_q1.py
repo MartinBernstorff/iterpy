@@ -1,11 +1,12 @@
 import datetime as dt
 import statistics as stats
+from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from enum import Enum
-from typing import Any, Mapping, Sequence
+from typing import Any
 
 from FunctionalPython.benchmark.query_1.input_data import Q1_DATA
-from FunctionalPython.benchmark.utils import benchmark_method, run_query
+from FunctionalPython.benchmark.utils import benchmark_method
 from FunctionalPython.sequence import Group, Seq
 
 
@@ -78,7 +79,7 @@ def parse_input_data(input_data: Sequence[Mapping[str, Any]]) -> Sequence[Item]:
                 tax=row["tax"],
                 returned=row["returned"],
                 line_status=LineStatus[row["line_status"].upper()],
-            )
+            ),
         )
         .to_list()
     )
