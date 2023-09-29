@@ -42,7 +42,7 @@ def benchmark_method(
     parsed_data = data_ingest_result.output
 
     result = run_query(
-        lambda: query(data=parsed_data),
+        lambda: query(data=parsed_data),  # type: ignore
         query_title=f"{method_title}: Computation",
     )
 
