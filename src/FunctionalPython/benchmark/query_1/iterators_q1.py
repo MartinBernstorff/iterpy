@@ -2,7 +2,10 @@ import datetime as dt
 import statistics as stats
 from dataclasses import dataclass
 from enum import Enum
+from typing import Any, Mapping, Sequence
 
+from FunctionalPython.benchmark.query_1.input_data import Q1_DATA
+from FunctionalPython.benchmark.utils import benchmark_method, run_query
 from FunctionalPython.sequence import Group, Seq
 
 
@@ -60,28 +63,46 @@ def calculate_discounted_price(item: Item) -> float:
 
 
 def calculate_charge(item: Item) -> float:
-    return item.extended_price * item.discount * item.tax
+    return item.extended_price * (1 - item.discount) * (1 - item.tax)
 
 
-if __name__ == "__main__":
-    input_data = [
-        Item(
-            ship_date=dt.datetime(1995 + i, 9, 2),
-            quantity=i,
-            extended_price=0.1 * i,
-            discount=1 - (0.1 * i),
-            tax=(1 - (0.1 * i)),
-            line_status=LineStatus.SHIPPED if i < 5 else LineStatus.PENDING,
-            returned=not i < 9,
-        )
-        for i in range(10)
-    ]
-
-    sequence = (
+def parse_input_data(input_data: Sequence[Mapping[str, Any]]) -> Sequence[Item]:
+    parsed_data = (
         Seq(input_data)
+        .map(
+            lambda row: Item(
+                ship_date=row["ship_date"],
+                quantity=row["quantity"],
+                extended_price=row["extended_price"],
+                discount=row["discount"],
+                tax=row["tax"],
+                returned=row["returned"],
+                line_status=LineStatus[row["line_status"].upper()],
+            )
+        )
+        .to_list()
+    )
+
+    return parsed_data
+
+
+def main(data: Sequence[Item]) -> Sequence[CategorySummary]:
+    sequence = (
+        Seq(data)
+        .filter(lambda x: x.ship_date <= dt.datetime(2000, 1, 1))
         .group_by(lambda row: f"status_{row.line_status.name}_returned_{row.returned}")
         .map(summarise_category)
         .to_list()
+    )
+
+    return sequence
+
+
+if __name__ == "__main__":
+    benchmark = benchmark_method(
+        data_ingest=lambda: parse_input_data(input_data=Q1_DATA),
+        query=main,
+        method_title="iterators_q1",
     )
 
     pass
