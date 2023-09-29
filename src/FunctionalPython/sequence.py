@@ -47,6 +47,6 @@ class Seq(Generic[_T0]):
         return Seq(
             item
             for sublist in self._seq
-            for item in sublist
+            for item in sublist  # type: ignore
             if isinstance(sublist, Sequence)
         )
