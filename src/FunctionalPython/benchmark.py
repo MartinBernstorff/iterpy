@@ -1,5 +1,5 @@
 import datetime as dt
-import statistics
+import statistics as stats
 from dataclasses import dataclass
 from enum import Enum
 
@@ -48,9 +48,9 @@ def get_aggregate_data(input_data: Group[ItemResults]) -> CategoryResults:
         sum_base_price=sum(row.extended_price for row in rows),
         sum_discount_price=sum(row.extended_price * (1 - row.discount) for row in rows),
         sum_charge=sum(row.extended_price * row.discount * row.tax for row in rows),
-        avg_quantity=statistics.mean(row.quantity for row in rows),
-        avg_price=statistics.mean(row.extended_price for row in rows),
-        avg_discount=statistics.mean(row.discount for row in rows),
+        avg_quantity=stats.mean(row.quantity for row in rows),
+        avg_price=stats.mean(row.extended_price for row in rows),
+        avg_discount=stats.mean(row.discount for row in rows),
         num_orders=len(rows),
     )
 
