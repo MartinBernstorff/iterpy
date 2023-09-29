@@ -1,34 +1,47 @@
+import itertools
+from dataclasses import dataclass
 from functools import reduce
 from typing import Callable, Generic, Iterable, Iterator, Sequence, TypeVar
 
-_ContainedType = TypeVar("_ContainedType")
+_T0 = TypeVar("_T0")
 _T1 = TypeVar("_T1")
 
 
-class Seq(Generic[_ContainedType]):
-    def __init__(self, iterable: Iterable[_ContainedType]):
+@dataclass(frozen=True)
+class Group(Generic[_T0]):
+    group_id: str
+    group_contents: Sequence[_T0]
+
+
+class Seq(Generic[_T0]):
+    def __init__(self, iterable: Iterable[_T0]):
         self._seq = iterable
 
-    def to_list(self) -> list[_ContainedType]:
+    def to_list(self) -> list[_T0]:
         return list(self._seq)
 
-    def to_generator(self) -> Iterator[_ContainedType]:
+    def to_generator(self) -> Iterator[_T0]:
         return (i for i in self._seq)
 
-    def map(self, func: Callable[[_ContainedType], _T1]) -> "Seq[_T1]":  # noqa: A003
+    def map(  # noqa: A003 # Ignore that it's shadowing a python built-in
+        self, func: Callable[[_T0], _T1]
+    ) -> "Seq[_T1]":
         return Seq(map(func, self._seq))
 
-    def filter(  # noqa: A003
-        self, func: Callable[[_ContainedType], bool]
-    ) -> "Seq[_ContainedType]":
+    def filter(self, func: Callable[[_T0], bool]) -> "Seq[_T0]":  # noqa: A003
         return Seq(filter(func, self._seq))
 
-    def reduce(
-        self, func: Callable[[_ContainedType, _ContainedType], _ContainedType]
-    ) -> _ContainedType:
+    def reduce(self, func: Callable[[_T0, _T0], _T0]) -> _T0:
         return reduce(func, self._seq)
 
-    def flatten(self) -> "Seq[_ContainedType]":
+    def group_by(self, func: Callable[[_T0], str]) -> "Seq[Group[_T0]]":
+        result = (
+            Group(group_id=key, group_contents=list(value))
+            for key, value in itertools.groupby(self._seq, key=func)
+        )
+        return Seq(result)
+
+    def flatten(self) -> "Seq[_T0]":
         return Seq(
             (
                 item
