@@ -25,7 +25,8 @@ class Seq(Generic[_T0]):
         return (i for i in self._seq)
 
     def map(  # noqa: A003 # Ignore that it's shadowing a python built-in
-        self, func: Callable[[_T0], _T1],
+        self,
+        func: Callable[[_T0], _T1],
     ) -> "Seq[_T1]":
         return Seq(map(func, self._seq))
 
@@ -44,10 +45,8 @@ class Seq(Generic[_T0]):
 
     def flatten(self) -> "Seq[_T0]":
         return Seq(
-
-                item
-                for sublist in self._seq
-                for item in sublist
-                if isinstance(sublist, Sequence)
-
+            item
+            for sublist in self._seq
+            for item in sublist
+            if isinstance(sublist, Sequence)
         )
