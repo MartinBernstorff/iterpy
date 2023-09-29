@@ -59,8 +59,8 @@ def calculate_discounted_price(item: Item) -> float:
     return item.extended_price * (1 - item.discount)
 
 
-def calculate_charge(r: Item) -> float:
-    return r.extended_price * r.discount * r.tax
+def calculate_charge(item: Item) -> float:
+    return item.extended_price * item.discount * item.tax
 
 
 if __name__ == "__main__":
