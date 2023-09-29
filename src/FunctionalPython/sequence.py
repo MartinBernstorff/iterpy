@@ -1,7 +1,8 @@
 import itertools
+from collections.abc import Iterable, Iterator, Sequence
 from dataclasses import dataclass
 from functools import reduce
-from typing import Callable, Generic, Iterable, Iterator, Sequence, TypeVar
+from typing import Callable, Generic, TypeVar
 
 _T0 = TypeVar("_T0")
 _T1 = TypeVar("_T1")
@@ -24,7 +25,7 @@ class Seq(Generic[_T0]):
         return (i for i in self._seq)
 
     def map(  # noqa: A003 # Ignore that it's shadowing a python built-in
-        self, func: Callable[[_T0], _T1]
+        self, func: Callable[[_T0], _T1],
     ) -> "Seq[_T1]":
         return Seq(map(func, self._seq))
 
@@ -43,10 +44,10 @@ class Seq(Generic[_T0]):
 
     def flatten(self) -> "Seq[_T0]":
         return Seq(
-            (
+
                 item
                 for sublist in self._seq
                 for item in sublist
                 if isinstance(sublist, Sequence)
-            )
+
         )
