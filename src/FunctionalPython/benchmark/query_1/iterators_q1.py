@@ -1,4 +1,5 @@
 import datetime as dt
+import itertools
 import statistics as stats
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
@@ -25,12 +26,14 @@ class Item:
     discount: float
     tax: float
     returned: bool
+    cancelled: bool
     line_status: LineStatus
 
 
 @dataclass(frozen=True)
 class CategorySummary:
-    group_name: str
+    category_name: str
+
     sum_quantity: int
     sum_base_price: float
     sum_discount_price: float
@@ -47,7 +50,7 @@ def summarise_category(input_data: Group[Item]) -> CategorySummary:
     rows = input_data.group_contents.to_list()
 
     return CategorySummary(
-        group_name=group_id,
+        category_name=group_id,
         sum_quantity=sum(r.quantity for r in rows),
         sum_base_price=sum(r.extended_price for r in rows),
         sum_discount_price=sum(calculate_discounted_price(r) for r in rows),
@@ -87,11 +90,40 @@ def parse_input_data(input_data: Sequence[Mapping[str, Any]]) -> Sequence[Item]:
     return parsed_data
 
 
-def main(data: Sequence[Item]) -> Sequence[CategorySummary]:
+def main_native(data: Sequence[Item]) -> Sequence[CategorySummary]:
+    filtered = filter(lambda x: x.ship_date <= dt.datetime(2000, 1, 1), data)
+    grouped = (
+        Group(group_id=key, group_contents=value)
+        for key, value in itertools.groupby(
+            filtered,
+            key=lambda row: f"status_{row.cancelled}_returned_{row.returned}",
+        )
+    )
+    summarised = map(summarise_category, grouped)
+
+    return list(summarised)
+
+
+def main_inlined(data: Sequence[Item]) -> Sequence[CategorySummary]:
+    return list(
+        map(
+            summarise_category,
+            (
+                Group(group_id=key, group_contents=value)
+                for key, value in itertools.groupby(
+                    filter(lambda x: x.ship_date <= dt.datetime(2000, 1, 1), data),
+                    key=lambda row: f"status_{row.cancelled}_returned_{row.returned}",
+                )
+            ),
+        )
+    )
+
+
+def main_iterator(data: Sequence[Item]) -> Sequence[CategorySummary]:
     sequence = (
         Seq(data)
-        .filter(lambda x: x.ship_date <= dt.datetime(2000, 1, 1))
-        .group_by(lambda row: f"status_{row.line_status.name}_returned_{row.returned}")
+        .filter(lambda i: i.ship_date <= dt.datetime(2000, 1, 1))
+        .group_by(lambda i: f"status_{i.cancelled}_returned_{i.returned}")
         .map(summarise_category)
         .to_list()
     )
@@ -102,8 +134,6 @@ def main(data: Sequence[Item]) -> Sequence[CategorySummary]:
 if __name__ == "__main__":
     benchmark = benchmark_method(
         data_ingest=lambda: parse_input_data(input_data=Q1_DATA),
-        query=main,
+        query=main_iterator,
         method_title="iterators_q1",
     )
-
-    pass

@@ -11,22 +11,25 @@ _T1 = TypeVar("_T1")
 @dataclass(frozen=True)
 class Group(Generic[_T0]):
     group_id: str
-    group_contents: "Seq[_T0]"
+    group_contents: "Seq[_T0]" | Iterable[_T0]
 
 
 class Seq(Generic[_T0]):
     def __init__(self, iterable: Iterable[_T0]):
         self._seq = iterable
 
+    ### Reductions
     def count(self) -> int:
         return sum(1 for _ in self._seq)
 
+    ### Output
     def to_list(self) -> list[_T0]:
         return list(self._seq)
 
     def to_iter(self) -> Iterator[_T0]:
         return iter(self._seq)
 
+    ### Transformations
     def map(  # noqa: A003 # Ignore that it's shadowing a python built-in
         self,
         func: Callable[[_T0], _T1],
