@@ -10,8 +10,7 @@
 
 
 <!-- start short-description -->
-
-TODO: Add a short description of the project.
+Python has implemented `map`, `filter` etc. as functions, rather than methods on a sequence. This makes the result harder to read and Iterators less used than they could be. FunctionalPy exists to change that.
 
 <!-- end short-description -->
 
@@ -22,37 +21,27 @@ TODO: Add a short description of the project.
 4. Complete the setup process
 
 ## Usage
+```python
+from functionalpy import Seq
 
-TODO: Add minimal usage example
-
-To see more examples, see the [documentation].
-
-# 📖 Documentation
-
-| Documentation         |                                                          |
-| --------------------- | -------------------------------------------------------- |
-| 🔧 **[Installation]**  | Installation instructions on how to install this package |
-| 📖 **[Documentation]** | A minimal and developing documentation                   |
-| 👩‍💻 **[Tutorials]**     | Tutorials for using this package                         |
-| 🎛️ **[API Reference]** | API reference for this package                           |
-| 📚 **[FAQ]**           | Frequently asked questions                               |
-
+sequence = Seq([1, 2])
+result = (sequence
+            .filter(lambda x: x % 2 == 0)
+            .map(lambda x: x * 2)
+            .to_list()
+)
+assert result == [4]
+```
 
 # 💬 Where to ask questions
 
 | Type                           |                        |
 | ------------------------------ | ---------------------- |
-| 📚 **FAQ**                      | [FAQ]                  |
 | 🚨 **Bug Reports**              | [GitHub Issue Tracker] |
 | 🎁 **Feature Requests & Ideas** | [GitHub Issue Tracker] |
 | 👩‍💻 **Usage Questions**          | [GitHub Discussions]   |
 | 🗯 **General Discussion**       | [GitHub Discussions]   |
 
-[Documentation]: https://MartinBernstorff.github.io/FunctionalPy/index.html
-[Installation]: https://MartinBernstorff.github.io/FunctionalPy/installation.html
-[Tutorials]: https://MartinBernstorff.github.io/FunctionalPy/tutorials.html
-[API Reference]: https://MartinBernstorff.github.io/FunctionalPy/references.html
-[FAQ]: https://MartinBernstorff.github.io/FunctionalPy/faq.html
 [github issue tracker]: https://github.com/MartinBernstorff/FunctionalPy/issues
 [github discussions]: https://github.com/MartinBernstorff/FunctionalPy/discussions
 
