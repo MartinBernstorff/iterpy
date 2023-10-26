@@ -6,9 +6,9 @@ from dataclasses import dataclass
 from enum import Enum
 from typing import Any
 
+from FunctionalPython import Group, Seq
 from FunctionalPython.benchmark.query_1.input_data import Q1_DATA
 from FunctionalPython.benchmark.utils import benchmark_method
-from FunctionalPython.sequence import Group, Seq
 
 
 class LineStatus(Enum):
