@@ -13,7 +13,7 @@ Here is a list of important resources for contributors:
 
 [mit license]: https://opensource.org/licenses/MIT
 [source code]: https://github.com/MartinBernstorff/FunctionalPy
-[documentation]: https://FunctionalPy.readthedocs.io/
+[documentation]: https://functionalpy.readthedocs.io/
 [issue tracker]: https://github.com/MartinBernstorff/FunctionalPy/issues
 
 ## How to report a bug

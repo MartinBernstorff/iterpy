@@ -1,6 +1,6 @@
 # FunctionalPy
 
-[![PyPI](https://img.shields.io/pypi/v/FunctionalPy.svg)][pypi status]
+[![PyPI](https://img.shields.io/pypi/v/functionalpy.svg)][pypi status]
 [![Python Version](https://img.shields.io/pypi/pyversions/FunctionalPy)][pypi status]
 [![Tests](https://github.com/MartinBernstorff/FunctionalPy/actions/workflows/tests.yml/badge.svg)][tests]
 

@@ -16,4 +16,4 @@ _build/
 
 # MacOS
 .DS_Store
-FunctionalPy.egg-info
+functionalpy.egg-info
