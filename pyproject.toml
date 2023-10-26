@@ -5,9 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "FunctionalPython"
 version = "0.0.0"
-authors = [
-  { name = "Martin Bernstorff", email = "martinbernstorff@gmail.com" },
-]
+authors = [{ name = "Martin Bernstorff", email = "martinbernstorff@gmail.com" }]
 description = "Functionalpython"
 classifiers = ["Programming Language :: Python :: 3.11"]
 requires-python = ">=3.11"
@@ -116,6 +114,11 @@ known-third-party = ["wandb"]
 [tool.ruff.mccabe]
 # Unlike Flake8, default to a complexity level of 10.
 max-complexity = 10
+
+[tool.semantic_release]
+branch = "main"
+version_toml = ["pyproject.toml:project.version"]
+build_command = "python -m pip install build; python -m build"
 
 [tool.setuptools]
 include-package-data = true
