@@ -1,11 +1,11 @@
-# FunctionalPython
+# FunctionalSequentialPython
 
 [![PyPI](https://img.shields.io/pypi/v/FunctionalSequentialPython.svg)][pypi status]
 [![Python Version](https://img.shields.io/pypi/pyversions/FunctionalSequentialPython)][pypi status]
-[![Tests](https://github.com/MartinBernstorff/FunctionalPython/actions/workflows/tests.yml/badge.svg)][tests]
+[![Tests](https://github.com/MartinBernstorff/FunctionalSequentialPython/actions/workflows/tests.yml/badge.svg)][tests]
 
-[pypi status]: https://pypi.org/project/FunctionalPython/
-[tests]: https://github.com/MartinBernstorff/FunctionalPython/actions?workflow=Tests
+[pypi status]: https://pypi.org/project/FunctionalSequentialPython/
+[tests]: https://github.com/MartinBernstorff/FunctionalSequentialPython/actions?workflow=Tests
 [black]: https://github.com/psf/black
 
 
@@ -48,12 +48,12 @@ To see more examples, see the [documentation].
 | 👩‍💻 **Usage Questions**          | [GitHub Discussions]   |
 | 🗯 **General Discussion**       | [GitHub Discussions]   |
 
-[Documentation]: https://MartinBernstorff.github.io/FunctionalPython/index.html
-[Installation]: https://MartinBernstorff.github.io/FunctionalPython/installation.html
-[Tutorials]: https://MartinBernstorff.github.io/FunctionalPython/tutorials.html
-[API Reference]: https://MartinBernstorff.github.io/FunctionalPython/references.html
-[FAQ]: https://MartinBernstorff.github.io/FunctionalPython/faq.html
-[github issue tracker]: https://github.com/MartinBernstorff/FunctionalPython/issues
-[github discussions]: https://github.com/MartinBernstorff/FunctionalPython/discussions
+[Documentation]: https://MartinBernstorff.github.io/FunctionalSequentialPython/index.html
+[Installation]: https://MartinBernstorff.github.io/FunctionalSequentialPython/installation.html
+[Tutorials]: https://MartinBernstorff.github.io/FunctionalSequentialPython/tutorials.html
+[API Reference]: https://MartinBernstorff.github.io/FunctionalSequentialPython/references.html
+[FAQ]: https://MartinBernstorff.github.io/FunctionalSequentialPython/faq.html
+[github issue tracker]: https://github.com/MartinBernstorff/FunctionalSequentialPython/issues
+[github discussions]: https://github.com/MartinBernstorff/FunctionalSequentialPython/discussions
 
 

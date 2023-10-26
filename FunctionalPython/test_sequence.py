@@ -1,4 +1,4 @@
-from FunctionalPython.sequence import Seq
+from FunctionalSequentialPython.sequence import Seq
 
 
 def test_chaining():

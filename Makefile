@@ -1,4 +1,4 @@
-SRC_PATH = FunctionalPython
+SRC_PATH = FunctionalSequentialPython
 
 install-dev:
 	pip install -r dev-requirements.txt
