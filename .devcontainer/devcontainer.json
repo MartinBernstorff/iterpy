@@ -13,13 +13,14 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "GitHub.copilot",
-                "charliermarsh.ruff",
-                "ms-python.python",
-                "ms-python.vscode-pylance",
-                "ms-python.black-formatter",
-                "GitHub.vscode-pull-request-github"
-            ]
+				"GitHub.copilot",
+				"charliermarsh.ruff",
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"ms-python.black-formatter",
+				"GitHub.vscode-pull-request-github",
+				"ms-vscode.makefile-tools"
+			]
         }
     },
     "features": {
