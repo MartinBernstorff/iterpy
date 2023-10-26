@@ -4,13 +4,13 @@
   "checkout": null,
   "context": {
     "cookiecutter": {
-      "project_name": "FunctionalSequentialPython",
-      "package_name": "FunctionalSequentialPython",
-      "friendly_name": "FunctionalSequentialPython",
+      "project_name": "FunctionalPy",
+      "package_name": "FunctionalPy",
+      "friendly_name": "FunctionalPy",
       "author": "Martin Bernstorff",
       "email": "martinbernstorff@gmail.com",
       "github_user": "MartinBernstorff",
-      "github_repo": "FunctionalSequentialPython",
+      "github_repo": "FunctionalPy",
       "version": "0.0.0",
       "copyright_year": "2023",
       "license": "MIT",

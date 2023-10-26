@@ -12,9 +12,9 @@ Here is a list of important resources for contributors:
 - [Code of Conduct]
 
 [mit license]: https://opensource.org/licenses/MIT
-[source code]: https://github.com/MartinBernstorff/FunctionalSequentialPython
-[documentation]: https://FunctionalSequentialPython.readthedocs.io/
-[issue tracker]: https://github.com/MartinBernstorff/FunctionalSequentialPython/issues
+[source code]: https://github.com/MartinBernstorff/FunctionalPy
+[documentation]: https://FunctionalPy.readthedocs.io/
+[issue tracker]: https://github.com/MartinBernstorff/FunctionalPy/issues
 
 ## How to report a bug
 
@@ -77,7 +77,7 @@ $ nox --session=pre-commit -- install
 It is recommended to open an issue before starting work on anything.
 This will allow a chance to talk it over with the owners and validate your approach.
 
-[pull request]: https://github.com/MartinBernstorff/FunctionalSequentialPython/pulls
+[pull request]: https://github.com/MartinBernstorff/FunctionalPy/pulls
 
 <!-- github-only -->
 

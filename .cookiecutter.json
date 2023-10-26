@@ -6,11 +6,11 @@
     "author": "Martin Bernstorff",
     "copyright_year": "2023",
     "email": "martinbernstorff@gmail.com",
-    "friendly_name": "FunctionalSequentialPython",
-    "github_repo": "FunctionalSequentialPython",
+    "friendly_name": "FunctionalPy",
+    "github_repo": "FunctionalPy",
     "github_user": "MartinBernstorff",
     "license": "MIT",
-    "package_name": "FunctionalSequentialPython",
-    "project_name": "FunctionalSequentialPython",
+    "package_name": "FunctionalPy",
+    "project_name": "FunctionalPy",
     "version": "0.0.0"
 }

@@ -2,8 +2,8 @@ import datetime as dt
 
 import polars as pl
 
-from FunctionalSequentialPython.benchmark.query_1.input_data import Q1_DATA
-from FunctionalSequentialPython.benchmark.utils import benchmark_method
+from FunctionalPy.benchmark.query_1.input_data import Q1_DATA
+from FunctionalPy.benchmark.utils import benchmark_method
 
 
 def main(data: pl.LazyFrame) -> pl.DataFrame:
