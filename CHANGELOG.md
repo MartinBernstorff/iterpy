@@ -2,6 +2,41 @@
 
 
 
+## v0.3.0 (2023-10-26)
+
+### Ci
+
+* ci: update devcontainer cache ([`86af8b9`](https://github.com/MartinBernstorff/FunctionalPython/commit/86af8b9687d87ab7748132881c8a0cb49e2568db))
+
+* ci: add semantic release info ([`6b90180`](https://github.com/MartinBernstorff/FunctionalPython/commit/6b90180652c5587cc7c0e4376f5fcaf12696e14d))
+
+### Documentation
+
+* docs: update readme ([`f44cb2c`](https://github.com/MartinBernstorff/FunctionalPython/commit/f44cb2c814f0834eb992ec12f10732d09fd68316))
+
+### Feature
+
+* feat: add to_set ([`abe7851`](https://github.com/MartinBernstorff/FunctionalPython/commit/abe78515a30255495c372f60cd1241327134d5ae))
+
+* feat: add to_tuple ([`efc452d`](https://github.com/MartinBernstorff/FunctionalPython/commit/efc452dce177f957cbf7366d8ebe308247a92f45))
+
+* feat: allow import directly from FunctionalPython ([`2547f4b`](https://github.com/MartinBernstorff/FunctionalPython/commit/2547f4bb9b48204888948d37b1ebad85fa176abb))
+
+* feat: bump ([`4d01bc2`](https://github.com/MartinBernstorff/FunctionalPython/commit/4d01bc2bb60e049f13a16b53245953b58b616bdf))
+
+### Unknown
+
+* Merge pull request #13 from MartinBernstorff/mb/noisy-meadowlark
+
+ci: update devcontainer cache ([`78d5e5c`](https://github.com/MartinBernstorff/FunctionalPython/commit/78d5e5cd4d0bbbf0ee7dbe9f3507d4f73c9f163b))
+
+* Update README.md ([`d982d45`](https://github.com/MartinBernstorff/FunctionalPython/commit/d982d453d680d760740632acd1b1c4baaf9314a4))
+
+* Merge pull request #12 from MartinBernstorff/mb/elated-wolf
+
+ci: add semantic release info ([`6943c5a`](https://github.com/MartinBernstorff/FunctionalPython/commit/6943c5ad9d5ad0953b7128807d9723e4461bc231))
+
+
 ## v0.2.0 (2023-10-26)
 
 ### Feature
