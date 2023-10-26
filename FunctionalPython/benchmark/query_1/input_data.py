@@ -18,5 +18,3 @@ Q1_DATA = [
 
 if __name__ == "__main__":
     data = Q1_DATA
-
-    pass

@@ -1,8 +1,8 @@
 import itertools
-from collections.abc import Iterable, Iterator, Sequence
+from collections.abc import Callable, Iterable, Iterator, Sequence
 from dataclasses import dataclass
 from functools import reduce
-from typing import Callable, Generic, TypeVar
+from typing import Generic, TypeVar
 
 _T0 = TypeVar("_T0")
 _T1 = TypeVar("_T1")
@@ -11,7 +11,7 @@ _T1 = TypeVar("_T1")
 @dataclass(frozen=True)
 class Group(Generic[_T0]):
     group_id: str
-    group_contents: "Seq[_T0]" | Iterable[_T0]
+    group_contents: "Seq[_T0]"
 
 
 class Seq(Generic[_T0]):

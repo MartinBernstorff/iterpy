@@ -82,41 +82,13 @@ def parse_input_data(input_data: Sequence[Mapping[str, Any]]) -> Sequence[Item]:
                 tax=row["tax"],
                 returned=row["returned"],
                 line_status=LineStatus[row["line_status"].upper()],
+                cancelled=row["cancelled"],
             ),
         )
         .to_list()
     )
 
     return parsed_data
-
-
-def main_native(data: Sequence[Item]) -> Sequence[CategorySummary]:
-    filtered = filter(lambda x: x.ship_date <= dt.datetime(2000, 1, 1), data)
-    grouped = (
-        Group(group_id=key, group_contents=value)
-        for key, value in itertools.groupby(
-            filtered,
-            key=lambda row: f"status_{row.cancelled}_returned_{row.returned}",
-        )
-    )
-    summarised = map(summarise_category, grouped)
-
-    return list(summarised)
-
-
-def main_inlined(data: Sequence[Item]) -> Sequence[CategorySummary]:
-    return list(
-        map(
-            summarise_category,
-            (
-                Group(group_id=key, group_contents=value)
-                for key, value in itertools.groupby(
-                    filter(lambda x: x.ship_date <= dt.datetime(2000, 1, 1), data),
-                    key=lambda row: f"status_{row.cancelled}_returned_{row.returned}",
-                )
-            ),
-        )
-    )
 
 
 def main_iterator(data: Sequence[Item]) -> Sequence[CategorySummary]:

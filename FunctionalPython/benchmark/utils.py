@@ -1,6 +1,7 @@
 import timeit
+from collections.abc import Callable
 from dataclasses import dataclass
-from typing import Callable, Generic, TypeVar
+from typing import Generic, TypeVar
 
 from linetimer import CodeTimer
 
