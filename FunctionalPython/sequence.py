@@ -26,6 +26,9 @@ class Seq(Generic[_T0]):
     def to_list(self) -> list[_T0]:
         return list(self._seq)
 
+    def to_tuple(self) -> tuple[_T0, ...]:
+        return tuple(self._seq)
+
     def to_iter(self) -> Iterator[_T0]:
         return iter(self._seq)
 
