@@ -1,15 +1,10 @@
-<a href="https://github.com/MartinBernstorff/FunctionalPython"><img src="https://github.com/MartinBernstorff/FunctionalPython/blob/main/docs/_static/icon.png?raw=true" width="100" align="right"/></a>
-
-# Functionalpython
+# FunctionalPython
 
 [![PyPI](https://img.shields.io/pypi/v/FunctionalPython.svg)][pypi status]
 [![Python Version](https://img.shields.io/pypi/pyversions/FunctionalPython)][pypi status]
-[![documentation](https://github.com/MartinBernstorff/FunctionalPython/actions/workflows/documentation.yml/badge.svg)][documentation]
 [![Tests](https://github.com/MartinBernstorff/FunctionalPython/actions/workflows/tests.yml/badge.svg)][tests]
-[![Black](https://img.shields.io/badge/code%20style-black-000000.svg)][black]
 
 [pypi status]: https://pypi.org/project/FunctionalPython/
-[documentation]: https://MartinBernstorff.github.io/FunctionalPython/
 [tests]: https://github.com/MartinBernstorff/FunctionalPython/actions?workflow=Tests
 [black]: https://github.com/psf/black
 
