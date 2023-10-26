@@ -2,6 +2,19 @@
 
 
 
+## v0.2.0 (2023-10-26)
+
+### Feature
+
+* feat: update version ([`86ac675`](https://github.com/MartinBernstorff/FunctionalPython/commit/86ac6754d4c8fee54359bb8da20ff43b41c144e4))
+
+### Unknown
+
+* Merge pull request #11 from MartinBernstorff/mb/elated-wolf
+
+feat: update version ([`a1f5771`](https://github.com/MartinBernstorff/FunctionalPython/commit/a1f5771ee4512a148c2dd42f188884b6cff0b5b0))
+
+
 ## v0.1.0 (2023-10-26)
 
 ### Chore
