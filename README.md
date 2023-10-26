@@ -24,7 +24,7 @@ pip install functionalpy
 from functionalpy import Seq
 
 sequence = Seq([1, 2])
-result = (sequence
+result = (Seq([1, 2])
             .filter(lambda x: x % 2 == 0)
             .map(lambda x: x * 2)
             .to_list()
