@@ -1,9 +1,0 @@
-diff a/.devcontainer/devcontainer.json b/.devcontainer/devcontainer.json	(rejected hunks)
-@@ -19,6 +19,7 @@
-                 "ms-python.vscode-pylance",
-                 "GitHub.vscode-pull-request-github",
-                 "ms-vscode.makefile-tools",
-+                "github.vscode-github-actions",
-             ]
-         }
-     },
