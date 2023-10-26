@@ -2,6 +2,25 @@
 
 
 
+## v0.6.0 (2023-10-26)
+
+### Feature
+
+* feat: add python 3.10 compatability ([`9f1ba34`](https://github.com/MartinBernstorff/FunctionalPy/commit/9f1ba34b66e8cef86cf2d4312e12ede00f2c6c69))
+
+### Unknown
+
+* Update README.md ([`880ddbb`](https://github.com/MartinBernstorff/FunctionalPy/commit/880ddbb36ea58f588982991d13090fa0f75d5c12))
+
+* Update README.md ([`74b82d7`](https://github.com/MartinBernstorff/FunctionalPy/commit/74b82d78b28a739bf90afb1f72a3450b41de29fb))
+
+* Update README.md ([`f6e1506`](https://github.com/MartinBernstorff/FunctionalPy/commit/f6e15068b32cc224abe47eca5114ef377cc29df1))
+
+* Merge pull request #16 from MartinBernstorff/mb/add_python_versions
+
+feat: add python 3.10 compatibility ([`3c34c66`](https://github.com/MartinBernstorff/FunctionalPy/commit/3c34c66ce26dba78edec5481a63d9a5a73c34a95))
+
+
 ## v0.5.0 (2023-10-26)
 
 ### Feature
