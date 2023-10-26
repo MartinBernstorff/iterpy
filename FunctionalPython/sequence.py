@@ -32,6 +32,9 @@ class Seq(Generic[_T0]):
     def to_iter(self) -> Iterator[_T0]:
         return iter(self._seq)
 
+    def to_set(self) -> set[_T0]:
+        return set(self._seq)
+
     ### Transformations
     def map(  # noqa: A003 # Ignore that it's shadowing a python built-in
         self,
