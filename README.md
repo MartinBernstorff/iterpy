@@ -23,7 +23,6 @@ pip install functionalpy
 ```python
 from functionalpy import Seq
 
-sequence = Seq([1, 2])
 result = (Seq([1, 2])
             .filter(lambda x: x % 2 == 0)
             .map(lambda x: x * 2)
