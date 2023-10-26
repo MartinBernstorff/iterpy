@@ -26,10 +26,18 @@ validate: ## Run all checks
 	make type-check
 	make test
 
-create-and-merge-pr:
+sync-pr:
+	git push --set-upstream origin HEAD
+	git push
+
+create-pr:
 	gh pr create -w || true
+
+merge-pr:
 	gh pr merge --auto --merge --delete-branch
 
 pr: ## Run relevant tests before PR
-	make create-and-merge-pr
+	make sync-pr
+	make create-pr
 	make validate
+	make merge-pr
