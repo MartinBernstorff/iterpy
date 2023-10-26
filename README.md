@@ -1,11 +1,11 @@
-# FunctionalSequentialPython
+# FunctionalPy
 
-[![PyPI](https://img.shields.io/pypi/v/FunctionalSequentialPython.svg)][pypi status]
-[![Python Version](https://img.shields.io/pypi/pyversions/FunctionalSequentialPython)][pypi status]
-[![Tests](https://github.com/MartinBernstorff/FunctionalSequentialPython/actions/workflows/tests.yml/badge.svg)][tests]
+[![PyPI](https://img.shields.io/pypi/v/functionalpy.svg)][pypi status]
+[![Python Version](https://img.shields.io/pypi/pyversions/FunctionalPy)][pypi status]
+[![Tests](https://github.com/MartinBernstorff/FunctionalPy/actions/workflows/tests.yml/badge.svg)][tests]
 
-[pypi status]: https://pypi.org/project/FunctionalSequentialPython/
-[tests]: https://github.com/MartinBernstorff/FunctionalSequentialPython/actions?workflow=Tests
+[pypi status]: https://pypi.org/project/FunctionalPy/
+[tests]: https://github.com/MartinBernstorff/FunctionalPy/actions?workflow=Tests
 [black]: https://github.com/psf/black
 
 
@@ -48,12 +48,12 @@ To see more examples, see the [documentation].
 | 👩‍💻 **Usage Questions**          | [GitHub Discussions]   |
 | 🗯 **General Discussion**       | [GitHub Discussions]   |
 
-[Documentation]: https://MartinBernstorff.github.io/FunctionalSequentialPython/index.html
-[Installation]: https://MartinBernstorff.github.io/FunctionalSequentialPython/installation.html
-[Tutorials]: https://MartinBernstorff.github.io/FunctionalSequentialPython/tutorials.html
-[API Reference]: https://MartinBernstorff.github.io/FunctionalSequentialPython/references.html
-[FAQ]: https://MartinBernstorff.github.io/FunctionalSequentialPython/faq.html
-[github issue tracker]: https://github.com/MartinBernstorff/FunctionalSequentialPython/issues
-[github discussions]: https://github.com/MartinBernstorff/FunctionalSequentialPython/discussions
+[Documentation]: https://MartinBernstorff.github.io/FunctionalPy/index.html
+[Installation]: https://MartinBernstorff.github.io/FunctionalPy/installation.html
+[Tutorials]: https://MartinBernstorff.github.io/FunctionalPy/tutorials.html
+[API Reference]: https://MartinBernstorff.github.io/FunctionalPy/references.html
+[FAQ]: https://MartinBernstorff.github.io/FunctionalPy/faq.html
+[github issue tracker]: https://github.com/MartinBernstorff/FunctionalPy/issues
+[github discussions]: https://github.com/MartinBernstorff/FunctionalPy/discussions
 
 

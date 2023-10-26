@@ -3,10 +3,10 @@ requires = ["setuptools>=61.0.0", "wheel", "setuptools_scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "FunctionalSequentialPython"
+name = "functionalpy"
 version = "0.4.0"
 authors = [{ name = "Martin Bernstorff", email = "martinbernstorff@gmail.com" }]
-description = "FunctionalSequentialPython"
+description = "functionalpy"
 classifiers = ["Programming Language :: Python :: 3.11"]
 requires-python = ">=3.11"
 [project.license]
@@ -19,9 +19,9 @@ file = "README.md"
 content-type = "text/markdown"
 
 [project.urls]
-homepage = "https://github.com/MartinBernstorff/FunctionalSequentialPython"
-repository = "https://github.com/MartinBernstorff/FunctionalSequentialPython"
-documentation = "https://MartinBernstorff.github.io/FunctionalSequentialPython/"
+homepage = "https://github.com/MartinBernstorff/FunctionalPy"
+repository = "https://github.com/MartinBernstorff/FunctionalPy"
+documentation = "https://MartinBernstorff.github.io/FunctionalPy/"
 
 [tool.pyright]
 exclude = [".*venv*", ".tox"]
