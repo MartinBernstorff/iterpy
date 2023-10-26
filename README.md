@@ -14,11 +14,10 @@ Python has implemented `map`, `filter` etc. as functions, rather than methods on
 
 <!-- end short-description -->
 
-## Installation
-1. Install [Orbstack](https://orbstack.dev/) or Docker Desktop. Make sure to complete the full install process before continuing.
-2. If not installed, install VSCode
-3. Press this [link](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/Aarhus-Psychiatry-Research/psycop-common)
-4. Complete the setup process
+## Install
+```bash
+pip install pyfunctional
+```
 
 ## Usage
 ```python
@@ -32,6 +31,12 @@ result = (sequence
 )
 assert result == [4]
 ```
+
+## Dev environment setup
+1. Install [Orbstack](https://orbstack.dev/) or Docker Desktop. Make sure to complete the full install process before continuing.
+2. If not installed, install VSCode
+3. Press this [link](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/Aarhus-Psychiatry-Research/psycop-common)
+4. Complete the setup process
 
 # 💬 Where to ask questions
 
