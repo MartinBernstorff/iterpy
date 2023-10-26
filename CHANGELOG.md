@@ -2,39 +2,66 @@
 
 
 
+## v0.4.0 (2023-10-26)
+
+### Ci
+
+* ci: cache in devcontainer.json ([`1ab0332`](https://github.com/MartinBernstorff/FunctionalSequentialPython/commit/1ab0332cc58980848a64f3721eaae5a37a7382ad))
+
+* ci: lowercase cache repo URL for devcontainer ([`f83cb16`](https://github.com/MartinBernstorff/FunctionalSequentialPython/commit/f83cb16c07cfe0821c7981cac2a9b976d8086a5e))
+
+### Feature
+
+* feat: rename package ([`c67aba4`](https://github.com/MartinBernstorff/FunctionalSequentialPython/commit/c67aba47538655e20e47c230a1dce9c2a1f31b56))
+
+* feat: add makefile extension to devcontainer ([`0dccc0b`](https://github.com/MartinBernstorff/FunctionalSequentialPython/commit/0dccc0bcc676397f494e0adfc548a553baab2809))
+
+* feat: rename repo ([`e8086e8`](https://github.com/MartinBernstorff/FunctionalSequentialPython/commit/e8086e81ab4b0a12ac9a72617c298626556b1b8e))
+
+### Unknown
+
+* Merge pull request #14 from MartinBernstorff/mb/unfortunate-whale
+
+feat: lowercase cache ([`bab3d8b`](https://github.com/MartinBernstorff/FunctionalSequentialPython/commit/bab3d8bed2e1eeac5adc548ca7bf89a8c5e6e6fb))
+
+* misc. ([`73fcab8`](https://github.com/MartinBernstorff/FunctionalSequentialPython/commit/73fcab877d16ee25b3fec5e8ae804cceb996c92a))
+
+* Merge branch &#39;main&#39; of https://github.com/MartinBernstorff/FunctionalPython ([`02128f5`](https://github.com/MartinBernstorff/FunctionalSequentialPython/commit/02128f52ab5ee149591439e66825800537b1214c))
+
+
 ## v0.3.0 (2023-10-26)
 
 ### Ci
 
-* ci: update devcontainer cache ([`86af8b9`](https://github.com/MartinBernstorff/FunctionalPython/commit/86af8b9687d87ab7748132881c8a0cb49e2568db))
+* ci: update devcontainer cache ([`86af8b9`](https://github.com/MartinBernstorff/FunctionalSequentialPython/commit/86af8b9687d87ab7748132881c8a0cb49e2568db))
 
-* ci: add semantic release info ([`6b90180`](https://github.com/MartinBernstorff/FunctionalPython/commit/6b90180652c5587cc7c0e4376f5fcaf12696e14d))
+* ci: add semantic release info ([`6b90180`](https://github.com/MartinBernstorff/FunctionalSequentialPython/commit/6b90180652c5587cc7c0e4376f5fcaf12696e14d))
 
 ### Documentation
 
-* docs: update readme ([`f44cb2c`](https://github.com/MartinBernstorff/FunctionalPython/commit/f44cb2c814f0834eb992ec12f10732d09fd68316))
+* docs: update readme ([`f44cb2c`](https://github.com/MartinBernstorff/FunctionalSequentialPython/commit/f44cb2c814f0834eb992ec12f10732d09fd68316))
 
 ### Feature
 
-* feat: add to_set ([`abe7851`](https://github.com/MartinBernstorff/FunctionalPython/commit/abe78515a30255495c372f60cd1241327134d5ae))
+* feat: add to_set ([`abe7851`](https://github.com/MartinBernstorff/FunctionalSequentialPython/commit/abe78515a30255495c372f60cd1241327134d5ae))
 
-* feat: add to_tuple ([`efc452d`](https://github.com/MartinBernstorff/FunctionalPython/commit/efc452dce177f957cbf7366d8ebe308247a92f45))
+* feat: add to_tuple ([`efc452d`](https://github.com/MartinBernstorff/FunctionalSequentialPython/commit/efc452dce177f957cbf7366d8ebe308247a92f45))
 
-* feat: allow import directly from FunctionalPython ([`2547f4b`](https://github.com/MartinBernstorff/FunctionalPython/commit/2547f4bb9b48204888948d37b1ebad85fa176abb))
+* feat: allow import directly from FunctionalPython ([`2547f4b`](https://github.com/MartinBernstorff/FunctionalSequentialPython/commit/2547f4bb9b48204888948d37b1ebad85fa176abb))
 
-* feat: bump ([`4d01bc2`](https://github.com/MartinBernstorff/FunctionalPython/commit/4d01bc2bb60e049f13a16b53245953b58b616bdf))
+* feat: bump ([`4d01bc2`](https://github.com/MartinBernstorff/FunctionalSequentialPython/commit/4d01bc2bb60e049f13a16b53245953b58b616bdf))
 
 ### Unknown
 
 * Merge pull request #13 from MartinBernstorff/mb/noisy-meadowlark
 
-ci: update devcontainer cache ([`78d5e5c`](https://github.com/MartinBernstorff/FunctionalPython/commit/78d5e5cd4d0bbbf0ee7dbe9f3507d4f73c9f163b))
+ci: update devcontainer cache ([`78d5e5c`](https://github.com/MartinBernstorff/FunctionalSequentialPython/commit/78d5e5cd4d0bbbf0ee7dbe9f3507d4f73c9f163b))
 
-* Update README.md ([`d982d45`](https://github.com/MartinBernstorff/FunctionalPython/commit/d982d453d680d760740632acd1b1c4baaf9314a4))
+* Update README.md ([`d982d45`](https://github.com/MartinBernstorff/FunctionalSequentialPython/commit/d982d453d680d760740632acd1b1c4baaf9314a4))
 
 * Merge pull request #12 from MartinBernstorff/mb/elated-wolf
 
-ci: add semantic release info ([`6943c5a`](https://github.com/MartinBernstorff/FunctionalPython/commit/6943c5ad9d5ad0953b7128807d9723e4461bc231))
+ci: add semantic release info ([`6943c5a`](https://github.com/MartinBernstorff/FunctionalSequentialPython/commit/6943c5ad9d5ad0953b7128807d9723e4461bc231))
 
 
 ## v0.2.0 (2023-10-26)
