@@ -16,7 +16,7 @@ Python has implemented `map`, `filter` etc. as functions, rather than methods on
 
 ## Install
 ```bash
-pip install pyfunctional
+pip install functionalpy
 ```
 
 ## Usage
