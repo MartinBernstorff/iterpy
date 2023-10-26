@@ -1,6 +1,6 @@
 {
-  "template": "https://github.com/MartinBernstorff/swift-python-cookiecutter",
-  "commit": "7fdb02999e8596c525377c208ca902645d134f97",
+  "template": "https://github.com/MartinBernstorff/nimble-python-cookiecutter",
+  "commit": "46783be515ba758fad5e7a08b6f087cf76a17c4a",
   "checkout": null,
   "context": {
     "cookiecutter": {
@@ -10,13 +10,14 @@
       "author": "Martin Bernstorff",
       "email": "martinbernstorff@gmail.com",
       "github_user": "MartinBernstorff",
+      "github_repo": "FunctionalPython",
       "version": "0.0.0",
       "copyright_year": "2023",
       "license": "MIT",
       "_copy_without_render": [
         "*.github"
       ],
-      "_template": "https://github.com/MartinBernstorff/swift-python-cookiecutter"
+      "_template": "https://github.com/MartinBernstorff/nimble-python-cookiecutter"
     }
   },
   "directory": null

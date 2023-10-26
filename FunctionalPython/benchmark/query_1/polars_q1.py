@@ -1,6 +1,7 @@
 import datetime as dt
 
 import polars as pl
+
 from FunctionalPython.benchmark.query_1.input_data import Q1_DATA
 from FunctionalPython.benchmark.utils import benchmark_method
 
@@ -43,5 +44,3 @@ if __name__ == "__main__":
         query=main,
         method_title="polars_q1",
     )
-
-    pass
