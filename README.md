@@ -1,7 +1,7 @@
 # FunctionalPython
 
-[![PyPI](https://img.shields.io/pypi/v/FunctionalPython.svg)][pypi status]
-[![Python Version](https://img.shields.io/pypi/pyversions/FunctionalPython)][pypi status]
+[![PyPI](https://img.shields.io/pypi/v/FunctionalSequentialPython.svg)][pypi status]
+[![Python Version](https://img.shields.io/pypi/pyversions/FunctionalSequentialPython)][pypi status]
 [![Tests](https://github.com/MartinBernstorff/FunctionalPython/actions/workflows/tests.yml/badge.svg)][tests]
 
 [pypi status]: https://pypi.org/project/FunctionalPython/
