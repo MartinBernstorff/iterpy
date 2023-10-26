@@ -1,4 +1,4 @@
-FROM python:3.11-bullseye
+FROM python:3.10-bullseye
 
 # Set the working directory to /app
 WORKDIR /app
