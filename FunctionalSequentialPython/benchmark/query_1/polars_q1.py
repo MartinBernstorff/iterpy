@@ -1,6 +1,7 @@
 import datetime as dt
 
 import polars as pl
+
 from FunctionalSequentialPython.benchmark.query_1.input_data import Q1_DATA
 from FunctionalSequentialPython.benchmark.utils import benchmark_method
 
