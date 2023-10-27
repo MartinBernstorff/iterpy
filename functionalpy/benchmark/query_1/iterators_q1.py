@@ -46,8 +46,8 @@ class CategorySummary:
 
 
 def summarise_category(input_data: Group[Item]) -> CategorySummary:
-    group_id = input_data.group_id
-    rows = input_data.group_contents.to_list()
+    group_id = input_data.key
+    rows = input_data.value.to_list()
 
     return CategorySummary(
         category_name=group_id,
@@ -58,7 +58,7 @@ def summarise_category(input_data: Group[Item]) -> CategorySummary:
         avg_quantity=stats.mean(r.quantity for r in rows),
         avg_price=stats.mean(r.extended_price for r in rows),
         avg_discount=stats.mean(r.discount for r in rows),
-        num_orders=input_data.group_contents.count(),
+        num_orders=input_data.value.count(),
     )
 
 

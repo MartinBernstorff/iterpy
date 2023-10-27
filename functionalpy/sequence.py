@@ -10,8 +10,8 @@ _T1 = TypeVar("_T1")
 
 @dataclass(frozen=True)
 class Group(Generic[_T0]):
-    group_id: str
-    group_contents: "Seq[_T0]"
+    key: str
+    value: "Seq[_T0]"
 
 
 class Seq(Generic[_T0]):
@@ -50,7 +50,7 @@ class Seq(Generic[_T0]):
 
     def group_by(self, func: Callable[[_T0], str]) -> "Seq[Group[_T0]]":
         result = (
-            Group(group_id=key, group_contents=Seq(value))
+            Group(key=key, value=Seq(value))
             for key, value in itertools.groupby(self._seq, key=func)
         )
         return Seq(result)
