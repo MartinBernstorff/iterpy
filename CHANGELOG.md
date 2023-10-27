@@ -2,6 +2,43 @@
 
 
 
+## v0.7.0 (2023-10-27)
+
+### Ci
+
+* ci: remove .rej devcontainer ([`a6489e9`](https://github.com/MartinBernstorff/FunctionalPy/commit/a6489e987b3be7adbf74e8ceb07f2cef19c2768c))
+
+* ci: more cruft ([`e5d58e5`](https://github.com/MartinBernstorff/FunctionalPy/commit/e5d58e521071faa75c458f7e1ccd9dafc99be29a))
+
+* ci: update cruft ([`d25bdc8`](https://github.com/MartinBernstorff/FunctionalPy/commit/d25bdc870e654781ad3a1f8ad801094a69dafca6))
+
+### Feature
+
+* feat: bump version ([`fda239c`](https://github.com/MartinBernstorff/FunctionalPy/commit/fda239cbd70c79e5b504048370e50b8137a89952))
+
+### Refactor
+
+* refactor: rename group attrs to key/value ([`b2554d7`](https://github.com/MartinBernstorff/FunctionalPy/commit/b2554d7abfed928e3b86a6b1a06127a53056a380))
+
+### Unknown
+
+* Merge pull request #19 from MartinBernstorff/mb/fundamental-frog
+
+refactor: rename group attrs to key/value ([`9e0062c`](https://github.com/MartinBernstorff/FunctionalPy/commit/9e0062c6d9b4ed6384db6930a5e27fc4c1e7d2ee))
+
+* Update README.md ([`4c0c10d`](https://github.com/MartinBernstorff/FunctionalPy/commit/4c0c10d5adaeedcee8bf8438062d3e259e2c05e0))
+
+* Merge pull request #18 from MartinBernstorff/MartinBernstorff-patch-1
+
+Update README.md ([`d7c5737`](https://github.com/MartinBernstorff/FunctionalPy/commit/d7c573739f56f96a19a43e5d8f9c3b3a79083670))
+
+* Update README.md ([`22eaf22`](https://github.com/MartinBernstorff/FunctionalPy/commit/22eaf2237ee3e06e7b7980694028aee70d2038b5))
+
+* Merge pull request #17 from MartinBernstorff/mb/bright-echidna
+
+ci: update cruft ([`0de85c7`](https://github.com/MartinBernstorff/FunctionalPy/commit/0de85c7873a9ffc5346afcabc519a083d7b0ac0f))
+
+
 ## v0.6.0 (2023-10-26)
 
 ### Feature
