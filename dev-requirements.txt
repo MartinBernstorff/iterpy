@@ -1,3 +1,4 @@
 pytest==7.4.3
 ruff==0.1.2
 pyright==1.1.333
+cruft==2.15.0
