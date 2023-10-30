@@ -3,7 +3,11 @@ from functionalpy.sequence import Seq
 
 def test_chaining():
     sequence = Seq([1, 2])
-    result = sequence.filter(lambda x: x % 2 == 0).map(lambda x: x * 2).to_list()
+    result = (
+        sequence.filter(lambda x: x % 2 == 0)
+        .map(lambda x: x * 2)
+        .to_list()
+    )
     assert result == [4]
 
 

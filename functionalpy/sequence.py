@@ -48,7 +48,9 @@ class Seq(Generic[_T0]):
     def reduce(self, func: Callable[[_T0, _T0], _T0]) -> _T0:
         return reduce(func, self._seq)
 
-    def group_by(self, func: Callable[[_T0], str]) -> "Seq[Group[_T0]]":
+    def group_by(
+        self, func: Callable[[_T0], str]
+    ) -> "Seq[Group[_T0]]":
         result = (
             Group(key=key, value=Seq(value))
             for key, value in itertools.groupby(self._seq, key=func)

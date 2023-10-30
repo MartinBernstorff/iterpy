@@ -53,7 +53,9 @@ def summarise_category(input_data: Group[Item]) -> CategorySummary:
         category_name=group_id,
         sum_quantity=sum(r.quantity for r in rows),
         sum_base_price=sum(r.extended_price for r in rows),
-        sum_discount_price=sum(calculate_discounted_price(r) for r in rows),
+        sum_discount_price=sum(
+            calculate_discounted_price(r) for r in rows
+        ),
         sum_charge=sum(calculate_charge(r) for r in rows),
         avg_quantity=stats.mean(r.quantity for r in rows),
         avg_price=stats.mean(r.extended_price for r in rows),
@@ -70,7 +72,9 @@ def calculate_charge(item: Item) -> float:
     return item.extended_price * (1 - item.discount) * (1 - item.tax)
 
 
-def parse_input_data(input_data: Sequence[Mapping[str, Any]]) -> Sequence[Item]:
+def parse_input_data(
+    input_data: Sequence[Mapping[str, Any]]
+) -> Sequence[Item]:
     parsed_data = (
         Seq(input_data)
         .map(
@@ -95,7 +99,9 @@ def main_iterator(data: Sequence[Item]) -> Sequence[CategorySummary]:
     sequence = (
         Seq(data)
         .filter(lambda i: i.ship_date <= dt.datetime(2000, 1, 1))
-        .group_by(lambda i: f"status_{i.cancelled}_returned_{i.returned}")
+        .group_by(
+            lambda i: f"status_{i.cancelled}_returned_{i.returned}"
+        )
         .map(summarise_category)
         .to_list()
     )
