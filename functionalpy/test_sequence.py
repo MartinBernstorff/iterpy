@@ -37,21 +37,22 @@ def test_flatten():
     result = sequence.flatten()
     assert result.to_list() == [1, 2, 3, 4]
 
-class TestFlattenTypes():
+
+class TestFlattenTypes:
     def test_flatten_tuple(self):
         test_input = ((1, 2), (3, 4))
         sequence = Seq(test_input)
         result = sequence.flatten()
         assert result.to_list() == [1, 2, 3, 4]
 
-    def test_flatten_list(self): 
-        test_input = [[1,2], [3,4]]
+    def test_flatten_list(self):
+        test_input = [[1, 2], [3, 4]]
         sequence = Seq(test_input)
         result = sequence.flatten()
         assert result.to_list() == [1, 2, 3, 4]
 
     def test_flatten_str(self):
-        test_input = ['abcd']
+        test_input = ["abcd"]
         sequence = Seq(test_input)
         result = sequence.flatten()
-        assert result.to_list() == ['a', 'b', 'c', 'd']
+        assert result.to_list() == ["a", "b", "c", "d"]
