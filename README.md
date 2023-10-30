@@ -1,12 +1,12 @@
 # FunctionalPy
-
+[![Open in Dev Container](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)][dev container]
 [![PyPI](https://img.shields.io/pypi/v/functionalpy.svg)][pypi status]
 [![Python Version](https://img.shields.io/pypi/pyversions/FunctionalPy)][pypi status]
 [![Tests](https://github.com/MartinBernstorff/FunctionalPy/actions/workflows/tests.yml/badge.svg)][tests]
 
 [pypi status]: https://pypi.org/project/FunctionalPy/
 [tests]: https://github.com/MartinBernstorff/FunctionalPy/actions?workflow=Tests
-[black]: https://github.com/psf/black
+[dev container]: https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/MartinBernstorff/FunctionalPy/
 
 
 <!-- start short-description -->
@@ -31,11 +31,13 @@ result = (Seq([1, 2])
 assert result == [4]
 ```
 
-## Dev environment setup
+### Setting up a development environment
+#### Devcontainer
 1. Install [Orbstack](https://orbstack.dev/) or Docker Desktop. Make sure to complete the full install process before continuing.
 2. If not installed, install VSCode
-3. Press this [link](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/Aarhus-Psychiatry-Research/psycop-common)
+3. Press this [link](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/MartinBernstorff/FunctionalPy/)
 4. Complete the setup process
+5. Done! Easy as that.
 
 # 💬 Where to ask questions
 

@@ -23,6 +23,9 @@
             ]
         }
     },
+    "mounts": [
+        "source=${localEnv:HOME}/.config/gh/hosts.yml,target=/root/.config/gh/hosts.yml,type=bind,consistency=cache", // GitHub CLI authentication login
+    ],
     "features": {
         "ghcr.io/devcontainers/features/github-cli:1": {}
     },
