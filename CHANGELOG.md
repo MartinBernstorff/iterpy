@@ -2,6 +2,25 @@
 
 
 
+## v0.8.0 (2023-10-30)
+
+### Feature
+
+* feat: bump version ([`7c026b7`](https://github.com/MartinBernstorff/FunctionalPy/commit/7c026b7fdc7a5b743f2744d80dd7ad1736a3b311))
+
+### Unknown
+
+* Merge pull request #20 from MartinBernstorff/make_sequence_module_private
+
+dev: make sequence module private ([`a92bb2c`](https://github.com/MartinBernstorff/FunctionalPy/commit/a92bb2ca7b222a883d7836eab7a6eae0e71b21f7))
+
+* dev: add cruft as dependency ([`472b240`](https://github.com/MartinBernstorff/FunctionalPy/commit/472b240f82dd6bd0e9d8474442e5cf3ff533bfb2))
+
+* tests: update import ([`3e76bef`](https://github.com/MartinBernstorff/FunctionalPy/commit/3e76beff52bfd637952ca1d394cda182397d0f92))
+
+* dev: make sequence module private ([`387fbbc`](https://github.com/MartinBernstorff/FunctionalPy/commit/387fbbce62e77be021b8557904dcc1600fb98f75))
+
+
 ## v0.7.0 (2023-10-27)
 
 ### Ci
