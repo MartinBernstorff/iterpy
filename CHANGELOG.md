@@ -2,7 +2,38 @@
 
 
 
+## v0.9.0 (2023-10-30)
+
+### Ci
+
+* ci: formatting updates ([`6281469`](https://github.com/MartinBernstorff/FunctionalPy/commit/62814699a24ee03d3fe42e6deb47494b280ff266))
+
+### Feature
+
+* feat: bump version ([`8362ffd`](https://github.com/MartinBernstorff/FunctionalPy/commit/8362ffd6a09a7b921997144f4a75168fb6aa1908))
+
+* feat: bump version ([`1ecb3dc`](https://github.com/MartinBernstorff/FunctionalPy/commit/1ecb3dc49ee41ae238bcb9a9d13b4b60b4389376))
+
+### Unknown
+
+* Merge pull request #21 from MartinBernstorff/mb/update_cruft
+
+ci: update cruft ([`3041d77`](https://github.com/MartinBernstorff/FunctionalPy/commit/3041d773b299dd76ce60238d44334b470ba6eedf))
+
+* Merge branch &#39;main&#39; into mb/update_cruft ([`629af45`](https://github.com/MartinBernstorff/FunctionalPy/commit/629af4510c78ec18057100ffbdbe98c6117e0461))
+
+* dev: add cruft as dependency ([`5c05d02`](https://github.com/MartinBernstorff/FunctionalPy/commit/5c05d02f5e7b0549ec43083ef7e363d6881e295d))
+
+* tests: update import ([`ca75a7d`](https://github.com/MartinBernstorff/FunctionalPy/commit/ca75a7d211d990e88167e9c78fa62911e7386706))
+
+* dev: make sequence module private ([`7aa4abd`](https://github.com/MartinBernstorff/FunctionalPy/commit/7aa4abda3d8acf719f09a8f98bba5c1729593d84))
+
+
 ## v0.8.0 (2023-10-30)
+
+### Ci
+
+* ci: update cruft ([`888906b`](https://github.com/MartinBernstorff/FunctionalPy/commit/888906b1c33e2afa406d738ca0b83b33be8181d2))
 
 ### Feature
 
