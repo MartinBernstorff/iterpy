@@ -1,4 +1,6 @@
-from functionalpy import Seq
+from cgi import test
+
+from functionalpy._sequence import Seq
 
 
 def test_chaining():
@@ -30,6 +32,26 @@ def test_reduce():
 
 
 def test_flatten():
-    sequence = Seq([[1, 2], [3, 4]])
-    result = sequence.flatten().to_list()
-    assert result == [1, 2, 3, 4]
+    test_input = ((1, 2), (3, 4))
+    sequence = Seq(test_input)
+    result = sequence.flatten()
+    assert result.to_list() == [1, 2, 3, 4]
+
+class TestFlattenTypes():
+    def test_flatten_tuple(self):
+        test_input = ((1, 2), (3, 4))
+        sequence = Seq(test_input)
+        result = sequence.flatten()
+        assert result.to_list() == [1, 2, 3, 4]
+
+    def test_flatten_list(self): 
+        test_input = [[1,2], [3,4]]
+        sequence = Seq(test_input)
+        result = sequence.flatten()
+        assert result.to_list() == [1, 2, 3, 4]
+
+    def test_flatten_str(self):
+        test_input = ['abcd']
+        sequence = Seq(test_input)
+        result = sequence.flatten()
+        assert result.to_list() == ['a', 'b', 'c', 'd']
