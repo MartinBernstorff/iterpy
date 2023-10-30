@@ -12,5 +12,6 @@
     "license": "MIT",
     "package_name": "FunctionalPy",
     "project_name": "FunctionalPy",
+    "release_to_pypi": "yes",
     "version": "0.0.0"
 }

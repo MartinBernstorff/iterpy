@@ -1,6 +1,6 @@
 {
   "template": "https://github.com/MartinBernstorff/nimble-python-cookiecutter",
-  "commit": "d65d50c7215714a4e6df85be23c5cd9066db9cc0",
+  "commit": "7b0df632c9b44d28eb60bbfc6fd376c5ba667564",
   "checkout": null,
   "context": {
     "cookiecutter": {
@@ -13,6 +13,7 @@
       "github_repo": "FunctionalPy",
       "version": "0.0.0",
       "copyright_year": "2023",
+      "release_to_pypi": "no",
       "license": "MIT",
       "_copy_without_render": [
         "*.github"

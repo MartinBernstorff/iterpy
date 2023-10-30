@@ -27,6 +27,11 @@ jobs:
           username: MartinBernstorff
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Create github hosts file
+        run: | # If this file is not created, the dev container fails because of non-existant mount
+          mkdir -p ~/.config/gh
+          touch ~/.config/gh/hosts.yml
+
       - name: Pre-build dev container image
         uses: devcontainers/ci@v0.3
         with:

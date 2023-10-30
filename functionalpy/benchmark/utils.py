@@ -15,7 +15,9 @@ class BenchmarkResult(Generic[T0]):
     time_seconds: float
 
 
-def run_query(query: Callable[..., T0], query_title: str) -> BenchmarkResult[T0]:
+def run_query(
+    query: Callable[..., T0], query_title: str
+) -> BenchmarkResult[T0]:
     with CodeTimer(name=f"{query_title}", unit="s"):
         t0 = timeit.default_timer()
         result = query()
@@ -47,4 +49,6 @@ def benchmark_method(
         query_title=f"{method_title}: Computation",
     )
 
-    return CombinedBenchmark(ingest=data_ingest_result, query_result=result)
+    return CombinedBenchmark(
+        ingest=data_ingest_result, query_result=result
+    )

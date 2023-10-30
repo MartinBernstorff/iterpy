@@ -1,10 +1,10 @@
 SRC_PATH = functionalpy
 
 install-dev:
-	pip install -r dev-requirements.txt
+	pip install --upgrade -r dev-requirements.txt
 
 install-deps:
-	pip install -r requirements.txt
+	pip install --upgrade -r requirements.txt
 
 install:
 	make install-deps
