@@ -2,6 +2,41 @@
 
 
 
+## v0.10.0 (2023-10-30)
+
+### Feature
+
+* feat: add pyi for flatten method ([`3e9af4e`](https://github.com/MartinBernstorff/FunctionalPy/commit/3e9af4e7b23b7b42c5eed1ef9716802b0a1275b7))
+
+### Unknown
+
+* Merge pull request #23 from MartinBernstorff/mb/feat_add_pyi_for_flatten
+
+feat: add pyi for flatten method ([`7e70edb`](https://github.com/MartinBernstorff/FunctionalPy/commit/7e70edb0a7381e7fbeef65aced65625ea623108f))
+
+* lint: ignore pyi errors ([`78bc32c`](https://github.com/MartinBernstorff/FunctionalPy/commit/78bc32c8663785476714ff935d418f13cb4b58e4))
+
+* Merge pull request #22 from MartinBernstorff/dependabot/pip/ruff-0.1.3
+
+deps:(deps-dev): bump ruff from 0.1.2 to 0.1.3 ([`0093340`](https://github.com/MartinBernstorff/FunctionalPy/commit/0093340c426c57b9865f8694a004f58038c11fb4))
+
+* deps:(deps-dev): bump ruff from 0.1.2 to 0.1.3
+
+Bumps [ruff](https://github.com/astral-sh/ruff) from 0.1.2 to 0.1.3.
+- [Release notes](https://github.com/astral-sh/ruff/releases)
+- [Changelog](https://github.com/astral-sh/ruff/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/astral-sh/ruff/compare/v0.1.2...v0.1.3)
+
+---
+updated-dependencies:
+- dependency-name: ruff
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`4ed49a3`](https://github.com/MartinBernstorff/FunctionalPy/commit/4ed49a31f133eaf2ab344fe270406e477abb90e3))
+
+
 ## v0.9.0 (2023-10-30)
 
 ### Ci
