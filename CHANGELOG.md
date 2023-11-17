@@ -2,6 +2,21 @@
 
 
 
+## v0.12.0 (2023-11-17)
+
+### Feature
+
+* feat: include typing ([`1b78e47`](https://github.com/MartinBernstorff/FunctionalPy/commit/1b78e470121599d74174f61ba646d4dce36a8582))
+
+### Unknown
+
+* Merge pull request #29 from MartinBernstorff/mbern_ensure_type_stubs_added
+
+feat: include typing in pypi distribution ([`cdd1463`](https://github.com/MartinBernstorff/FunctionalPy/commit/cdd1463c48e99f32880aaea87c0d40555fda3d2b))
+
+* misc. ([`8635152`](https://github.com/MartinBernstorff/FunctionalPy/commit/8635152d5934907035a96dce996ebcac1a7c9dc5))
+
+
 ## v0.11.0 (2023-11-16)
 
 ### Feature
