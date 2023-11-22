@@ -1,5 +1,3 @@
-from cgi import test
-
 from functionalpy._sequence import Seq
 
 

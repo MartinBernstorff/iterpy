@@ -8,7 +8,7 @@ from functionalpy.benchmark.utils import benchmark_method
 
 def main(data: pl.LazyFrame) -> pl.DataFrame:
     result = (
-        data.filter(pl.col("ship_date") <= dt.datetime(2000, 1, 1))
+        data.filter(pl.col("ship_date") <= dt.datetime(2000, 1, 1))  # type: ignore
         .group_by(["returned", "line_status"])
         .agg(
             [

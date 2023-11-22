@@ -1,5 +1,4 @@
 import datetime as dt
-import itertools
 import statistics as stats
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass

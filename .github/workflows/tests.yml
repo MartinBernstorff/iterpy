@@ -40,4 +40,4 @@ jobs:
           push: filter
           refFilterForPush: refs/heads/main
           runCmd:
-            make validate
+            make validate_ci

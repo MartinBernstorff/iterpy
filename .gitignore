@@ -9,7 +9,8 @@ __pycache__/
 _build/
 .tox
 
-#
+# Coverage
+**/.coverage*
 
 # VSCode
 .vscode/
