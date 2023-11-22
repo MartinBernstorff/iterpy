@@ -44,7 +44,7 @@ class GroupbyInput:
     value: int
 
 
-# TODO: Properly specify groupby
+# TODO: https://github.com/MartinBernstorff/FunctionalPy/issues/35 Properly specify groupby
 # Some desirable properties:
 # - Direct indexing by group key
 # - Still a sequence we can use .map etc. on
@@ -58,6 +58,7 @@ def test_groupby():
     result = sequence.groupby(lambda x: x.key).to_tuple()
 
     assert len(result) == 2
+    assert 
     assert [x.key for x in result] == ["a", "b"]
     assert [x.value.to_list() for x in result if x.key == "a"] == [
         (1, 2)
