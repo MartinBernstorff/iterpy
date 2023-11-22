@@ -44,6 +44,10 @@ class GroupbyInput:
     value: int
 
 
+# TODO: Properly specify groupby
+# Some desirable properties:
+# - Direct indexing by group key
+# - Still a sequence we can use .map etc. on
 def test_groupby():
     groupby_inputs = [
         GroupbyInput(key="a", value=1),
@@ -51,12 +55,16 @@ def test_groupby():
         GroupbyInput(key="b", value=3),
     ]
     sequence = Seq(groupby_inputs)
-    result = sequence.groupby(lambda x: x.key)
+    result = sequence.groupby(lambda x: x.key).to_tuple()
 
     assert len(result) == 2
-    assert list(result.keys()) == ["a", "b"]
-    assert result["a"] == (groupby_inputs[0], groupby_inputs[1])
-    assert result["b"] == (groupby_inputs[2],)
+    assert [x.key for x in result] == ["a", "b"]
+    assert [x.value.to_list() for x in result if x.key == "a"] == [
+        (1, 2)
+    ]
+    assert [x.value.to_list() for x in result if x.key == "b"] == [
+        (3,)
+    ]
 
 
 class TestFlattenTypes:
