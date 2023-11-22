@@ -5,14 +5,14 @@ WORKDIR /app
 
 # Dev experience
 COPY Makefile ./
-
 COPY dev-requirements.txt ./
-RUN make install-dev
+RUN --mount=type=cache,target=/root/.cache/pip make install-dev 
 RUN pyright .
 
 COPY requirements.txt ./
-RUN make install-deps
+RUN --mount=type=cache,target=/root/.cache/pip make install-deps
 
 COPY pyproject.toml ./
 COPY . /app
 RUN pip install .
+RUN git init
