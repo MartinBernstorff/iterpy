@@ -98,7 +98,7 @@ def main_iterator(data: Sequence[Item]) -> Sequence[CategorySummary]:
     sequence = (
         Seq(data)
         .filter(lambda i: i.ship_date <= dt.datetime(2000, 1, 1))
-        .group_by(
+        .groupby(
             lambda i: f"status_{i.cancelled}_returned_{i.returned}"
         )
         .map(summarise_category)

@@ -50,7 +50,8 @@ class Seq(Generic[_T0]):
 
     def groupby(
         self, func: Callable[[_T0], str]
-    ) -> dict[str, tuple[_T0, ...]]:
+    ) -> "Seq[Group[tuple[_T0, ...]]]":
+        # Itertools.groupby requires the input to be sorted
         sorted_input = sorted(self._seq, key=func)
 
         result = {
@@ -60,7 +61,12 @@ class Seq(Generic[_T0]):
             )
         }
 
-        return result
+        groups = (
+            Group(key=key, value=value)
+            for key, value in result.items()
+        )
+
+        return Seq(groups)
 
     def flatten(self) -> "Seq[_T0]":
         return Seq(
