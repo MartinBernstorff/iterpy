@@ -11,7 +11,7 @@ _T1 = TypeVar("_T1")
 @dataclass(frozen=True)
 class Group(Generic[_T0]):
     key: str
-    value: "Seq[_T0]"
+    value: _T0
 
 
 class Seq(Generic[_T0]):
@@ -48,14 +48,19 @@ class Seq(Generic[_T0]):
     def reduce(self, func: Callable[[_T0, _T0], _T0]) -> _T0:
         return reduce(func, self._seq)
 
-    def group_by(
+    def groupby(
         self, func: Callable[[_T0], str]
-    ) -> "Seq[Group[_T0]]":
-        result = (
-            Group(key=key, value=Seq(value))
-            for key, value in itertools.groupby(self._seq, key=func)
-        )
-        return Seq(result)
+    ) -> dict[str, tuple[_T0, ...]]:
+        sorted_input = sorted(self._seq, key=func)
+
+        result = {
+            key: tuple(value)
+            for key, value in itertools.groupby(
+                sorted_input, key=func
+            )
+        }
+
+        return result
 
     def flatten(self) -> "Seq[_T0]":
         return Seq(
