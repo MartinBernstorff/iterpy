@@ -54,8 +54,9 @@ assert result == [4]
 
 ## Philosophy
 * Make it work: Concise syntax borrowed from Scala, Rust etc.
-* Make it right: Fully typed, no exceptions.
+* Make it right: Fully typed, no exceptions
 * Make it fast: Concurrency through `.pmap`, potentially caching in the future
+* Keep it simple: No dependencies
 
 ## Prior art
 FunctionalPy stands on the shoulders of Scala, Rust etc. Moreover, [PyFunctional](https://github.com/EntilZha/PyFunctional) has existed for 7+ years, bringing most of the functionality to the Python. It definitely helps make it fast, with built-in lineage and caching. Unfortunately, this makes typing [non-trivial, and has been going on for 4 years](https://github.com/EntilZha/PyFunctional/issues/118).
