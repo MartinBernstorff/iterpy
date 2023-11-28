@@ -59,7 +59,9 @@ assert result == [4]
 * Keep it simple: No dependencies
 
 ## Prior art
-FunctionalPy stands on the shoulders of Scala, Rust etc. Moreover, [PyFunctional](https://github.com/EntilZha/PyFunctional) has existed for 7+ years, bringing most of the functionality to the Python. It definitely helps make it fast, with built-in lineage and caching. Unfortunately, this makes typing [non-trivial, and has been going on for 4 years](https://github.com/EntilZha/PyFunctional/issues/118).
+FunctionalPy stands on the shoulders of Scala, Rust etc. 
+
+Moreover, [PyFunctional](https://github.com/EntilZha/PyFunctional) has existed for 7+ years with a comprehensive feature set. It is performant, with built-in lineage and caching. Unfortunately, this makes typing [non-trivial, with a 4+ year ongoing effort to add types](https://github.com/EntilZha/PyFunctional/issues/118).
 
 ## Contributing
 #### Devcontainer
