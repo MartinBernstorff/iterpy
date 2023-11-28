@@ -12,7 +12,7 @@
 <!-- start short-description -->
 Python has implemented `map`, `filter` etc. as functions, rather than methods on a sequence. This makes the result harder to read and Iterators less used than they could be. FunctionalPy exists to change that. 
 
-You get 🔥🔥🔥this🔥🔥🔥:
+You get this 🔥:
 
 ```python
 Seq([1,2,3])
