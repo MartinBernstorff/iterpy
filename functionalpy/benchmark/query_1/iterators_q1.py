@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from enum import Enum
 from typing import Any
 
-from functionalpy import Group, Seq
+from functionalpy import Seq
 from functionalpy.benchmark.query_1.input_data import Q1_DATA
 from functionalpy.benchmark.utils import benchmark_method
 
@@ -44,12 +44,12 @@ class CategorySummary:
     num_orders: int
 
 
-def summarise_category(input_data: Group[Item]) -> CategorySummary:
-    group_id = input_data.key
-    rows = input_data.value.to_list()
-
+def summarise_category(
+    groupname: str,
+    rows: Sequence[Item],
+) -> CategorySummary:
     return CategorySummary(
-        category_name=group_id,
+        category_name=groupname,
         sum_quantity=sum(r.quantity for r in rows),
         sum_base_price=sum(r.extended_price for r in rows),
         sum_discount_price=sum(
@@ -59,7 +59,7 @@ def summarise_category(input_data: Group[Item]) -> CategorySummary:
         avg_quantity=stats.mean(r.quantity for r in rows),
         avg_price=stats.mean(r.extended_price for r in rows),
         avg_discount=stats.mean(r.discount for r in rows),
-        num_orders=input_data.value.count(),
+        num_orders=len(rows),
     )
 
 
@@ -95,17 +95,20 @@ def parse_input_data(
 
 
 def main_iterator(data: Sequence[Item]) -> Sequence[CategorySummary]:
-    sequence = (
+    mapping = (
         Seq(data)
         .filter(lambda i: i.ship_date <= dt.datetime(2000, 1, 1))
-        .group_by(
+        .groupby(
             lambda i: f"status_{i.cancelled}_returned_{i.returned}"
         )
-        .map(summarise_category)
-        .to_list()
     )
 
-    return sequence
+    summaries = [
+        summarise_category(group, rows=values)
+        for group, values in mapping.items()
+    ]
+
+    return summaries
 
 
 if __name__ == "__main__":
