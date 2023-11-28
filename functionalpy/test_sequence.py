@@ -1,6 +1,7 @@
 from functionalpy._sequence import Seq
 
 
+# TODO: https://github.com/MartinBernstorff/FunctionalPy/issues/40 tests: add hypothesis tests where it makes sense
 def test_chaining():
     sequence = Seq([1, 2])
     result = (
