@@ -4,8 +4,6 @@ from typing import Literal
 from functionalpy._sequence import Seq
 
 
-# TODO: https://github.com/MartinBernstorff/FunctionalPy/issues/40 tests: add hypothesis tests where it makes sense
-# TODO: https://github.com/MartinBernstorff/FunctionalPy/issues/43 ci: ensure good coverage (codecov)
 def test_chaining():
     sequence = Seq([1, 2])
     result: list[int] = (
@@ -22,6 +20,16 @@ def test_map():
     assert result == [2, 4]
 
 
+def multiple_by_2(num: int) -> int:
+    return num * 2  # pragma: no cover
+
+
+def test_pmap():
+    sequence = Seq([1, 2])
+    result: list[int] = sequence.pmap(multiple_by_2).to_list()
+    assert result == [2, 4]
+
+
 def test_filter():
     sequence = Seq([1, 2])
     result: list[int] = sequence.filter(
@@ -34,6 +42,12 @@ def test_reduce():
     sequence = Seq([1, 2])
     result: int = sequence.reduce(lambda x, y: x + y)
     assert result == 3
+
+
+def test_count():
+    sequence = Seq([1, 2])
+    result: int = sequence.count()
+    assert result == 2
 
 
 def test_grouped_filter():

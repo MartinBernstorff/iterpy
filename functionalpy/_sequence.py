@@ -1,3 +1,4 @@
+import multiprocessing
 from collections import defaultdict
 from collections.abc import (
     Callable,
@@ -6,18 +7,11 @@ from collections.abc import (
     Mapping,
     Sequence,
 )
-from dataclasses import dataclass
 from functools import reduce
 from typing import Generic, TypeVar
 
 _T = TypeVar("_T")
 _S = TypeVar("_S")
-
-
-@dataclass(frozen=True)
-class Group(Generic[_T]):
-    key: str
-    value: "Seq[_T]"
 
 
 class Seq(Generic[_T]):
@@ -47,6 +41,17 @@ class Seq(Generic[_T]):
         func: Callable[[_T], _S],
     ) -> "Seq[_S]":
         return Seq(map(func, self._seq))
+
+    def pmap(
+        self,
+        func: Callable[[_T], _S],
+    ) -> "Seq[_S]":
+        """Parallel map using multiprocessing.Pool
+
+        Not that lambdas are not supported by multiprocessing.Pool.map.
+        """
+        with multiprocessing.Pool() as pool:
+            return Seq(pool.map(func, self._seq))
 
     def filter(self, func: Callable[[_T], bool]) -> "Seq[_T]":  # noqa: A003
         return Seq(filter(func, self._seq))
