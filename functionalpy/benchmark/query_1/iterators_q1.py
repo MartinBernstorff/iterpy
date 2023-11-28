@@ -44,7 +44,10 @@ class CategorySummary:
     num_orders: int
 
 
-def summarise_category(input_data: Group[Item]) -> CategorySummary:
+def summarise_category(
+    groupname: str,
+    values: Sequence[Item],
+) -> CategorySummary:
     group_id = input_data.key
     rows = input_data.value.to_list()
 
@@ -95,17 +98,20 @@ def parse_input_data(
 
 
 def main_iterator(data: Sequence[Item]) -> Sequence[CategorySummary]:
-    sequence = (
+    mapping = (
         Seq(data)
         .filter(lambda i: i.ship_date <= dt.datetime(2000, 1, 1))
-        .group_by(
+        .groupby(
             lambda i: f"status_{i.cancelled}_returned_{i.returned}"
         )
-        .map(summarise_category)
-        .to_list()
     )
 
-    return sequence
+    summaries = [
+        summarise_category(group, values=values)
+        for group, values in mapping.items()
+    ]
+
+    return summaries
 
 
 if __name__ == "__main__":
