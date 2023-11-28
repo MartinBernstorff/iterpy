@@ -7,7 +7,7 @@ from collections.abc import (
     Mapping,
     Sequence,
 )
-from functools import reduce
+from functools import partial, reduce
 from typing import Generic, TypeVar
 
 _T = TypeVar("_T")
@@ -46,6 +46,10 @@ class Seq(Generic[_T]):
         self,
         func: Callable[[_T], _S],
     ) -> "Seq[_S]":
+        """Parallel map using multiprocessing.Pool
+
+        Not that lambdas are not supported by multiprocessing.Pool.map.
+        """
         with multiprocessing.Pool() as pool:
             return Seq(pool.map(func, self._seq))
 

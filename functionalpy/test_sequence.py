@@ -20,9 +20,13 @@ def test_map():
     assert result == [2, 4]
 
 
+def multiple_by_2(num: int) -> int:
+    return num * 2
+
+
 def test_pmap():
     sequence = Seq([1, 2])
-    result: list[int] = sequence.pmap(lambda x: x * 2).to_list()
+    result: list[int] = sequence.pmap(multiple_by_2).to_list()
     assert result == [2, 4]
 
 
