@@ -10,8 +10,8 @@ from dataclasses import dataclass
 from functools import reduce
 from typing import Generic, TypeVar
 
-_T = TypeVar("_T0")
-_S = TypeVar("_T1")
+_T = TypeVar("_T")
+_S = TypeVar("_S")
 
 
 @dataclass(frozen=True)
