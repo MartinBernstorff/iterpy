@@ -40,4 +40,4 @@ jobs:
           push: filter
           refFilterForPush: refs/heads/main
           runCmd:
-            make validate_ci && codecovcli upload-process -t ${{ secrets.CODECOV_TOKEN }}
+            make validate_ci && codecovcli upload-process -t ${{ secrets.CODECOV_TOKEN }} --sha  ${{ github.sha }}
