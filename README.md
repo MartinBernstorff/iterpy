@@ -17,7 +17,8 @@ You get this 🔥:
 ```python
 result = (Seq([1,2,3])
             .map(lambda x: multiply_by_2(x))
-            .filter(lambda x: is_even(x)))
+            .filter(lambda x: is_even(x))
+            )
 ```
 
 Instead of this:
