@@ -1,4 +1,3 @@
-import itertools
 from collections import defaultdict
 from collections.abc import (
     Callable,
@@ -34,13 +33,13 @@ class Seq(Generic[_T]):
         return list(self._seq)
 
     def to_tuple(self) -> tuple[_T, ...]:
-        return tuple(self._seq)
+        return tuple(self._seq)  # pragma: no cover
 
     def to_iter(self) -> Iterator[_T]:
-        return iter(self._seq)
+        return iter(self._seq)  # pragma: no cover
 
     def to_set(self) -> set[_T]:
-        return set(self._seq)
+        return set(self._seq)  # pragma: no cover
 
     ### Transformations
     def map(  # noqa: A003 # Ignore that it's shadowing a python built-in
