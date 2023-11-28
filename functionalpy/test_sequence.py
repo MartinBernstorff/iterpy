@@ -29,6 +29,28 @@ def test_reduce():
     assert result == 3
 
 
+class TestGroupby:
+    def test_grouped_filter(self):
+        sequence = Seq([1, 2, 3, 4])
+
+        def is_even(num: int) -> str:
+            if num % 2 == 0:
+                return "even"
+            return "odd"
+
+        grouped = sequence.groupby(is_even)
+        assert grouped == {
+            "odd": [1, 3],
+            "even": [2, 4],
+        }
+
+    def test_grouped_map(self):
+        ...
+
+    def test_grouped_reduce(self):
+        ...
+
+
 def test_flatten():
     test_input = ((1, 2), (3, 4))
     sequence = Seq(test_input)
