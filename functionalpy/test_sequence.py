@@ -5,6 +5,7 @@ from functionalpy._sequence import Seq
 
 
 # TODO: https://github.com/MartinBernstorff/FunctionalPy/issues/40 tests: add hypothesis tests where it makes sense
+# TODO: https://github.com/MartinBernstorff/FunctionalPy/issues/43 ci: ensure good coverage (codecov)
 def test_chaining():
     sequence = Seq([1, 2])
     result: list[int] = (
