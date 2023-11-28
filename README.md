@@ -15,9 +15,9 @@ Python has implemented `map`, `filter` etc. as functions, rather than methods on
 You get this 🔥:
 
 ```python
-Seq([1,2,3])
-   .map(lambda x: multiply_by_2(x))
-   .filter(lambda x: is_even(x))
+result = (Seq([1,2,3])
+            .map(lambda x: multiply_by_2(x))
+            .filter(lambda x: is_even(x)))
 ```
 
 Instead of this:
@@ -25,13 +25,13 @@ Instead of this:
 ```python
 sequence = [1,2,3]
 multiplied = [multiply_by_2(x) for x in sequence]
-is_even = [x for x in multiplied if is_even(x)]
+result = [x for x in multiplied if is_even(x)]
 ```
 
 Or this:
 
 ```python
-filter(lambda x: is_even(x), map(lambda x: multiply_by_2(x), [1,2,3]))
+result = filter(lambda x: is_even(x), map(lambda x: multiply_by_2(x), [1,2,3]))
 ```
 <!-- end short-description -->
 
