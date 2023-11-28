@@ -3,6 +3,7 @@
 [![PyPI](https://img.shields.io/pypi/v/functionalpy.svg)][pypi status]
 [![Python Version](https://img.shields.io/pypi/pyversions/FunctionalPy)][pypi status]
 [![Tests](https://github.com/MartinBernstorff/FunctionalPy/actions/workflows/tests.yml/badge.svg)][tests]
+[![codecov](https://codecov.io/gh/MartinBernstorff/FunctionalPy/graph/badge.svg?token=MXOYOJOK7A)](https://codecov.io/gh/MartinBernstorff/FunctionalPy)
 
 [pypi status]: https://pypi.org/project/FunctionalPy/
 [tests]: https://github.com/MartinBernstorff/FunctionalPy/actions?workflow=Tests
