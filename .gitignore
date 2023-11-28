@@ -11,6 +11,7 @@ _build/
 
 # Coverage
 **/.coverage*
+**/codecov*
 
 # VSCode
 .vscode/
