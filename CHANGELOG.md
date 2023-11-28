@@ -2,6 +2,109 @@
 
 
 
+## v0.13.0 (2023-11-28)
+
+### Ci
+
+* ci: validate in ci ([`8d91050`](https://github.com/MartinBernstorff/FunctionalPy/commit/8d910502c6901e0c9e255fa603de06cbc0d17249))
+
+* ci: update cruft ([`d9c98b7`](https://github.com/MartinBernstorff/FunctionalPy/commit/d9c98b7417a0266291a5d6016be6eb898bbeef3e))
+
+### Feature
+
+* feat: turn groupby into mapping (#39) ([`c4fb33c`](https://github.com/MartinBernstorff/FunctionalPy/commit/c4fb33c3057cbb0aadc0a44cc93d3d47207a7190))
+
+### Unknown
+
+*  tests should assert types (#41) ([`176cf74`](https://github.com/MartinBernstorff/FunctionalPy/commit/176cf74cc2ce05cccaaec660736111124b26976c))
+
+* tests: hardcode types to ensure alignment
+
+Fixes #37 ([`97075ea`](https://github.com/MartinBernstorff/FunctionalPy/commit/97075ea2b9e0157d57f7a7d22b31f2c6c6f79f2a))
+
+* Update README.md ([`b3f9de1`](https://github.com/MartinBernstorff/FunctionalPy/commit/b3f9de1a562cd4e1d89d6726fb1a342bff680894))
+
+* misc. ([`6400d7d`](https://github.com/MartinBernstorff/FunctionalPy/commit/6400d7d5e3a1a0da5e35eff246b8911d158c4d7e))
+
+* misc. ([`2d03d36`](https://github.com/MartinBernstorff/FunctionalPy/commit/2d03d365e87846c450d81c7da1de98f6275098b8))
+
+* misc: update example ([`4b0c138`](https://github.com/MartinBernstorff/FunctionalPy/commit/4b0c13875a4552bee3d1193cca9ed857b2855701))
+
+* misc. ([`6ab44ca`](https://github.com/MartinBernstorff/FunctionalPy/commit/6ab44caa8bb8dafbad29b880bcee2f2c8d404984))
+
+* misc. ([`1d1a51a`](https://github.com/MartinBernstorff/FunctionalPy/commit/1d1a51a71a3fee7a9cfcf2a3533e19893ab98a08))
+
+* Merge remote-tracking branch &#39;origin/main&#39; into 35-Properly-specify-groupby ([`347f3bb`](https://github.com/MartinBernstorff/FunctionalPy/commit/347f3bb4e6c9bbc068701e40fe209bb7939958df))
+
+* Properly specify groupby
+
+Fixes #35 ([`9ef79c3`](https://github.com/MartinBernstorff/FunctionalPy/commit/9ef79c3155f2e4d06322932733e89352cd464804))
+
+* deps:(deps-dev): bump pyright from 1.1.336 to 1.1.337 (#36) ([`1824012`](https://github.com/MartinBernstorff/FunctionalPy/commit/1824012e7724abdb99f5f90f2692469d54d8352b))
+
+* deps:(deps-dev): bump pyright from 1.1.336 to 1.1.337
+
+Bumps [pyright](https://github.com/RobertCraigie/pyright-python) from 1.1.336 to 1.1.337.
+- [Release notes](https://github.com/RobertCraigie/pyright-python/releases)
+- [Commits](https://github.com/RobertCraigie/pyright-python/compare/v1.1.336...v1.1.337)
+
+---
+updated-dependencies:
+- dependency-name: pyright
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`93e898b`](https://github.com/MartinBernstorff/FunctionalPy/commit/93e898bf4110b5ec4ed315707753d2844ae76f31))
+
+* Merge pull request #33 from MartinBernstorff/mbern_update_cruft
+
+ci: update cruft ([`c6211ac`](https://github.com/MartinBernstorff/FunctionalPy/commit/c6211ac72b894d90b6b4e7d34381d387418e7eb9))
+
+* misc. ([`5e8bef2`](https://github.com/MartinBernstorff/FunctionalPy/commit/5e8bef2b1c02ba66ea844998861de38829317520))
+
+* misc. ([`0f42748`](https://github.com/MartinBernstorff/FunctionalPy/commit/0f42748c91ae1ae0d303f065bcc24841ba5d675d))
+
+* Merge pull request #32 from MartinBernstorff/dependabot/pip/ruff-0.1.6
+
+deps:(deps-dev): bump ruff from 0.1.5 to 0.1.6 ([`83704ae`](https://github.com/MartinBernstorff/FunctionalPy/commit/83704ae6e57cfb1fd6c91ca519aab8c0b39eae85))
+
+* deps:(deps-dev): bump ruff from 0.1.5 to 0.1.6
+
+Bumps [ruff](https://github.com/astral-sh/ruff) from 0.1.5 to 0.1.6.
+- [Release notes](https://github.com/astral-sh/ruff/releases)
+- [Changelog](https://github.com/astral-sh/ruff/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/astral-sh/ruff/compare/v0.1.5...v0.1.6)
+
+---
+updated-dependencies:
+- dependency-name: ruff
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`dcefbb0`](https://github.com/MartinBernstorff/FunctionalPy/commit/dcefbb0166ead2af63c5424a37f2f083bf9c1ab9))
+
+* Merge pull request #31 from MartinBernstorff/dependabot/pip/pyright-1.1.336
+
+deps:(deps-dev): bump pyright from 1.1.335 to 1.1.336 ([`d547e9d`](https://github.com/MartinBernstorff/FunctionalPy/commit/d547e9d344b69c0b7601c9017f51d2e65add4c5e))
+
+* deps:(deps-dev): bump pyright from 1.1.335 to 1.1.336
+
+Bumps [pyright](https://github.com/RobertCraigie/pyright-python) from 1.1.335 to 1.1.336.
+- [Release notes](https://github.com/RobertCraigie/pyright-python/releases)
+- [Commits](https://github.com/RobertCraigie/pyright-python/compare/v1.1.335...v1.1.336)
+
+---
+updated-dependencies:
+- dependency-name: pyright
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`3c9dfbb`](https://github.com/MartinBernstorff/FunctionalPy/commit/3c9dfbb2c2f83a22800f1d3033fc667d6981334d))
+
+
 ## v0.12.0 (2023-11-17)
 
 ### Feature
