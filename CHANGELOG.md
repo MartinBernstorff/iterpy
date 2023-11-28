@@ -2,6 +2,47 @@
 
 
 
+## v0.14.0 (2023-11-28)
+
+### Ci
+
+* ci: ensure good coverage (codecov)
+
+Fixes #43 ([`45e7734`](https://github.com/MartinBernstorff/FunctionalPy/commit/45e7734d6afa28cc217e48f6ec4ddad3fa2ea34e))
+
+* ci: ensure .pyi files are aligned with implementation
+
+Fixes ci: ensure .pyi files are aligned with implementation #38
+
+(This happens automatically when types are hard-coded in the tests) ([`aa25b4d`](https://github.com/MartinBernstorff/FunctionalPy/commit/aa25b4d44c5d6929e4ca2c1d5c365d25831da3a9))
+
+### Feature
+
+* feat: add pmap (#46) ([`72a337e`](https://github.com/MartinBernstorff/FunctionalPy/commit/72a337eadf504df7a69c576ea9e857f17e75bb37))
+
+* feat: add pmap ([`2bd63cf`](https://github.com/MartinBernstorff/FunctionalPy/commit/2bd63cfc79b2234cc9756f13653633d140ba0085))
+
+### Unknown
+
+* misc. ([`6d365cd`](https://github.com/MartinBernstorff/FunctionalPy/commit/6d365cdd1e2627cb21b7e2edc45ee240f25cd5a1))
+
+* misc. ([`b7d560c`](https://github.com/MartinBernstorff/FunctionalPy/commit/b7d560ceeb515c62ab0f880c7de0ca9df6ccb1db))
+
+* Update README.md ([`0243b33`](https://github.com/MartinBernstorff/FunctionalPy/commit/0243b3309a2043c94596850fd8821ae14483b8e5))
+
+* Update README.md ([`9123ccd`](https://github.com/MartinBernstorff/FunctionalPy/commit/9123ccd2a8c7928770779d37ecbeb8e642b7565c))
+
+* Update README.md ([`3827e46`](https://github.com/MartinBernstorff/FunctionalPy/commit/3827e466256f17018abf4f8e597112fb96f32b2a))
+
+*  ci ensure good coverage codecov (#44) ([`268720c`](https://github.com/MartinBernstorff/FunctionalPy/commit/268720c78c95a381185950525ee99b536f5ec659))
+
+* Merge remote-tracking branch &#39;origin/main&#39; into 43-ci-ensure-good-coverage-codecov ([`e6660e6`](https://github.com/MartinBernstorff/FunctionalPy/commit/e6660e6771cecc5aa15ef7e297ef72b1db2621a1))
+
+*  ci ensure pyi files are aligned with implementation (#42) ([`a4edd47`](https://github.com/MartinBernstorff/FunctionalPy/commit/a4edd47857530f1109efc8edc5797c82611817bf))
+
+* misc. ([`1ef8f98`](https://github.com/MartinBernstorff/FunctionalPy/commit/1ef8f985c98a9ede14793bc645be25030b755687))
+
+
 ## v0.13.0 (2023-11-28)
 
 ### Ci
