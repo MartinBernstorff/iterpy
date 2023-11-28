@@ -21,7 +21,7 @@ def test_map():
 
 
 def multiple_by_2(num: int) -> int:
-    return num * 2
+    return num * 2  # pragma: no cover
 
 
 def test_pmap():

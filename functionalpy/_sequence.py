@@ -7,7 +7,7 @@ from collections.abc import (
     Mapping,
     Sequence,
 )
-from functools import partial, reduce
+from functools import reduce
 from typing import Generic, TypeVar
 
 _T = TypeVar("_T")
