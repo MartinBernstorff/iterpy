@@ -16,8 +16,8 @@ You get this 🔥:
 
 ```python
 result = (Seq([1,2,3])
-            .map(lambda x: multiply_by_2(x))
-            .filter(lambda x: is_even(x))
+            .map(multiply_by_2)
+            .filter(is_even)
             )
 ```
 
@@ -32,7 +32,7 @@ result = [x for x in multiplied if is_even(x)]
 Or this:
 
 ```python
-result = filter(lambda x: is_even(x), map(lambda x: multiply_by_2(x), [1,2,3]))
+result = filter(is_even, map(multiply_by_2, [1,2,3]))
 ```
 <!-- end short-description -->
 
