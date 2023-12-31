@@ -2,6 +2,175 @@
 
 
 
+## v0.15.0 (2023-12-31)
+
+### Feature
+
+* feat: flatten should remove empty sequences ([`06c1d75`](https://github.com/MartinBernstorff/FunctionalPy/commit/06c1d75a419d2b9f13d5c26baf211d853bd2454d))
+
+### Fix
+
+* fix: flatten should preserve primitives ([`2284c93`](https://github.com/MartinBernstorff/FunctionalPy/commit/2284c935d2a00494bffe5848d5114eeeac800035))
+
+### Unknown
+
+* mbern_typeguard_flatten_none (#59) ([`95f7ab0`](https://github.com/MartinBernstorff/FunctionalPy/commit/95f7ab089552537e21d3e6a1e06d4bfb0888dc6b))
+
+* Merge remote-tracking branch &#39;origin/main&#39; into mbern_typeguard_flatten_none ([`af5b937`](https://github.com/MartinBernstorff/FunctionalPy/commit/af5b937ec7beb32a56ac62da340404196a707e83))
+
+* mbern_feat_flatten_sequence_type (#55) ([`7902c4c`](https://github.com/MartinBernstorff/FunctionalPy/commit/7902c4cf6e8b78a8c60f256d093fcdd5659f7529))
+
+* misc. ([`a021397`](https://github.com/MartinBernstorff/FunctionalPy/commit/a021397956c6187ac972794f77e188df7b6f1e20))
+
+* misc. ([`885c73e`](https://github.com/MartinBernstorff/FunctionalPy/commit/885c73ec2edd61b3d0c081e298a425bd9bfc6c1e))
+
+* deps:(deps-dev): bump ruff from 0.1.8 to 0.1.9 (#54) ([`be8718c`](https://github.com/MartinBernstorff/FunctionalPy/commit/be8718c829494c6facdba9398337ed00ac0fde96))
+
+* deps:(deps-dev): bump pyright from 1.1.341 to 1.1.342 (#53) ([`1e36011`](https://github.com/MartinBernstorff/FunctionalPy/commit/1e3601161344548099c57bcc23552f596e0d0f49))
+
+* deps:(deps-dev): bump ruff from 0.1.8 to 0.1.9
+
+Bumps [ruff](https://github.com/astral-sh/ruff) from 0.1.8 to 0.1.9.
+- [Release notes](https://github.com/astral-sh/ruff/releases)
+- [Changelog](https://github.com/astral-sh/ruff/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/astral-sh/ruff/compare/v0.1.8...v0.1.9)
+
+---
+updated-dependencies:
+- dependency-name: ruff
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`ab7605e`](https://github.com/MartinBernstorff/FunctionalPy/commit/ab7605e54426171f6f4e82f2cb953c9b030097f0))
+
+* deps:(deps-dev): bump pyright from 1.1.341 to 1.1.342
+
+Bumps [pyright](https://github.com/RobertCraigie/pyright-python) from 1.1.341 to 1.1.342.
+- [Release notes](https://github.com/RobertCraigie/pyright-python/releases)
+- [Commits](https://github.com/RobertCraigie/pyright-python/compare/v1.1.341...v1.1.342)
+
+---
+updated-dependencies:
+- dependency-name: pyright
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`80671da`](https://github.com/MartinBernstorff/FunctionalPy/commit/80671dabcc2a0137c98a9ccadb9ce80050e6ce27))
+
+* deps:(deps-dev): bump diff-cover from 8.0.1 to 8.0.2 (#51) ([`2eaef79`](https://github.com/MartinBernstorff/FunctionalPy/commit/2eaef79bfb4e5e2f9e95d49485ed87429067afe4))
+
+* deps:(deps-dev): bump diff-cover from 8.0.1 to 8.0.2
+
+Bumps [diff-cover](https://github.com/Bachmann1234/diff-cover) from 8.0.1 to 8.0.2.
+- [Release notes](https://github.com/Bachmann1234/diff-cover/releases)
+- [Changelog](https://github.com/Bachmann1234/diff_cover/blob/main/CHANGELOG)
+- [Commits](https://github.com/Bachmann1234/diff-cover/compare/v8.0.1...v8.0.2)
+
+---
+updated-dependencies:
+- dependency-name: diff-cover
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`6034836`](https://github.com/MartinBernstorff/FunctionalPy/commit/60348363f5b7a3107269ab1a8fb55e39dea115d0))
+
+* deps:(deps-dev): bump ruff from 0.1.7 to 0.1.8 (#52) ([`1f84929`](https://github.com/MartinBernstorff/FunctionalPy/commit/1f84929ab1ff27fb98a7fabb138774b306e1e51f))
+
+* deps:(deps-dev): bump pyright from 1.1.339 to 1.1.341 (#50) ([`687caf2`](https://github.com/MartinBernstorff/FunctionalPy/commit/687caf2637368cdb2ca640ac511355df75f85aac))
+
+* deps:(deps-dev): bump ruff from 0.1.7 to 0.1.8
+
+Bumps [ruff](https://github.com/astral-sh/ruff) from 0.1.7 to 0.1.8.
+- [Release notes](https://github.com/astral-sh/ruff/releases)
+- [Changelog](https://github.com/astral-sh/ruff/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/astral-sh/ruff/compare/v0.1.7...v0.1.8)
+
+---
+updated-dependencies:
+- dependency-name: ruff
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`f428c86`](https://github.com/MartinBernstorff/FunctionalPy/commit/f428c8668fd85d8ee2d8ecdf722bc4f57b027f73))
+
+* deps:(deps-dev): bump pyright from 1.1.339 to 1.1.341
+
+Bumps [pyright](https://github.com/RobertCraigie/pyright-python) from 1.1.339 to 1.1.341.
+- [Release notes](https://github.com/RobertCraigie/pyright-python/releases)
+- [Commits](https://github.com/RobertCraigie/pyright-python/compare/v1.1.339...v1.1.341)
+
+---
+updated-dependencies:
+- dependency-name: pyright
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`469ed8b`](https://github.com/MartinBernstorff/FunctionalPy/commit/469ed8b73a1fdffd3a64199157119852d72d0b98))
+
+* deps:(deps-dev): bump ruff from 0.1.6 to 0.1.7 (#49) ([`684f312`](https://github.com/MartinBernstorff/FunctionalPy/commit/684f312876a7ea0e1e6f4b00910e016c4e05c48e))
+
+* deps:(deps-dev): bump pyright from 1.1.338 to 1.1.339 (#48) ([`d8778d9`](https://github.com/MartinBernstorff/FunctionalPy/commit/d8778d994486e5610701fd1a94107c0226bc79cd))
+
+* deps:(deps-dev): bump ruff from 0.1.6 to 0.1.7
+
+Bumps [ruff](https://github.com/astral-sh/ruff) from 0.1.6 to 0.1.7.
+- [Release notes](https://github.com/astral-sh/ruff/releases)
+- [Changelog](https://github.com/astral-sh/ruff/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/astral-sh/ruff/compare/v0.1.6...v0.1.7)
+
+---
+updated-dependencies:
+- dependency-name: ruff
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`ca7bc94`](https://github.com/MartinBernstorff/FunctionalPy/commit/ca7bc9498daefb8196f2d0973ccce924918dec17))
+
+* deps:(deps-dev): bump pyright from 1.1.338 to 1.1.339
+
+Bumps [pyright](https://github.com/RobertCraigie/pyright-python) from 1.1.338 to 1.1.339.
+- [Release notes](https://github.com/RobertCraigie/pyright-python/releases)
+- [Commits](https://github.com/RobertCraigie/pyright-python/compare/v1.1.338...v1.1.339)
+
+---
+updated-dependencies:
+- dependency-name: pyright
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`c21d84f`](https://github.com/MartinBernstorff/FunctionalPy/commit/c21d84f786df17d2b7a8adb655dc47a44233fc48))
+
+* deps:(deps-dev): bump pyright from 1.1.337 to 1.1.338 (#47) ([`1fc5c79`](https://github.com/MartinBernstorff/FunctionalPy/commit/1fc5c79084508df265296cd78e380306921b6a5a))
+
+* deps:(deps-dev): bump pyright from 1.1.337 to 1.1.338
+
+Bumps [pyright](https://github.com/RobertCraigie/pyright-python) from 1.1.337 to 1.1.338.
+- [Release notes](https://github.com/RobertCraigie/pyright-python/releases)
+- [Commits](https://github.com/RobertCraigie/pyright-python/compare/v1.1.337...v1.1.338)
+
+---
+updated-dependencies:
+- dependency-name: pyright
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`b61be2b`](https://github.com/MartinBernstorff/FunctionalPy/commit/b61be2bbf6c3f5fccf5d391f0e5c676d0db88fea))
+
+* Update README.md ([`382895d`](https://github.com/MartinBernstorff/FunctionalPy/commit/382895d1950826e1f73f41e849df299e86a557c1))
+
+* Update README.md ([`68de6dd`](https://github.com/MartinBernstorff/FunctionalPy/commit/68de6ddd9b09e605757e037b9a2d31599edaec9b))
+
+* Update README.md ([`ead1d1b`](https://github.com/MartinBernstorff/FunctionalPy/commit/ead1d1b75e75ee22bfbedcb8379446b0fe33cce1))
+
+
 ## v0.14.0 (2023-11-28)
 
 ### Ci
