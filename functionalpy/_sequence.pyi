@@ -9,12 +9,12 @@ from collections.abc import (
     Mapping,
     Sequence,
 )
-from typing import Generic, TypeAlias, TypeVar, overload
+from typing import Generic, TypeVar, overload
 
 _T = TypeVar("_T")
 _S = TypeVar("_S")
 
-sequences: TypeAlias = list[_T] | tuple[_T] | Sequence[_T]
+# TODO: Attempt generic type alias for container types
 
 class Seq(Generic[_T]):
     def __init__(self, iterable: Iterable[_T]) -> None: ...
@@ -34,6 +34,8 @@ class Seq(Generic[_T]):
     ) -> Mapping[str, Sequence[_T]]: ...
     @overload
     def flatten(self: Seq[list[_S]]) -> Seq[_S]: ...
+    @overload
+    def flatten(self: Seq[list[_S] | _S]) -> Seq[_S]: ...
     @overload
     def flatten(self: Seq[tuple[_S, ...]]) -> Seq[_S]: ...
     @overload
