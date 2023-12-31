@@ -9,7 +9,7 @@ from collections.abc import (
     Mapping,
     Sequence,
 )
-from typing import Any, Generic, TypeAlias, TypeVar, overload
+from typing import Generic, TypeAlias, TypeVar, overload
 
 _T = TypeVar("_T")
 _S = TypeVar("_S")
