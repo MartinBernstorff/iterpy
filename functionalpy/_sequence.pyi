@@ -9,10 +9,12 @@ from collections.abc import (
     Mapping,
     Sequence,
 )
-from typing import Generic, TypeVar, overload
+from typing import Generic, TypeAlias, TypeVar, overload
 
 _T = TypeVar("_T")
 _S = TypeVar("_S")
+
+sequences: TypeAlias = list[_T] | tuple[_T] | Sequence[_T]
 
 class Seq(Generic[_T]):
     def __init__(self, iterable: Iterable[_T]) -> None: ...

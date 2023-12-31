@@ -88,6 +88,11 @@ class TestFlattenTypes:
         result: Seq[int] = sequence.flatten()
         assert result.to_list() == [1, 2, 3, 4]
 
+    def test_flatten_sequence(self):
+        test_input: Sequence[Sequence[int]] = [[1, 2], [3, 4]]
+        result: Seq[int] = Seq(test_input).flatten()
+        assert result.to_list() == [1, 2, 3, 4]
+
     def test_flatten_str(self):
         test_input: list[str] = ["abcd"]
         sequence = Seq(test_input)
