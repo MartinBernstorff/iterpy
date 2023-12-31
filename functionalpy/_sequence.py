@@ -70,9 +70,11 @@ class Seq(Generic[_T]):
         return dict(mapping)
 
     def flatten(self) -> "Seq[_T]":
-        return Seq(
+        items = (
             item
             for sublist in self._seq
             for item in sublist  # type: ignore
             if isinstance(sublist, Sequence)
         )
+
+        return Seq(items)

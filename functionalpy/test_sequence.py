@@ -98,3 +98,13 @@ class TestFlattenTypes:
         sequence = Seq(test_input)
         result: Seq[str] = sequence.flatten()
         assert result.to_list() == ["a", "b", "c", "d"]
+
+    def test_flatten_includes_primitives(self):
+        test_input: list[int | list[int]] = [1, [2]]
+        result: Seq[int] = Seq(test_input).flatten()
+        assert result.to_list() == [1, 2]
+
+    def test_flatten_removes_empty_sequences(self):
+        test_input: list[list[int]] = [[1], []]
+        result: Seq[int] = Seq(test_input).flatten()
+        assert result.to_list() == [1]
