@@ -100,7 +100,6 @@ class Seq(Generic[T]):
 
     def flatten(self) -> "Seq[T]":
         values: list[T] = []
-
         for i in self._iterator:
             if isinstance(i, Sequence) and not isinstance(i, str):
                 values.extend(i)

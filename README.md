@@ -54,15 +54,6 @@ result = (Seq([1, 2])
 assert result == [4]
 ```
 
-## Philosophy
-* Make it work: Concise syntax borrowed from Scala, Rust etc.
-* Make it right: Fully typed, no exceptions
-* Make it fast: 
-    * Concurrency through `.pmap`
-    * (Future): Caching
-    * (Future): Refactor operations to use generators
-* Keep it simple: No dependencies
-
 ## Prior art
 FunctionalPy stands on the shoulders of Scala, Rust etc. 
 
@@ -76,7 +67,10 @@ Other Python projects have had similar ideas:
 #### Philosophy
 * Make it work: Concise syntax borrowed from Scala, Rust etc.
 * Make it right: Fully typed, no exceptions
-* Make it fast: Concurrency through `.pmap`, potentially caching in the future
+* Make it fast: 
+    * Concurrency through `.pmap`
+    * (Future): Caching
+    * (Future): Refactor operations to use generators
 * Keep it simple: No dependencies
 
 #### API design
