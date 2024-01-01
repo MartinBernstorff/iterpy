@@ -10,6 +10,8 @@
 
 
 <!-- start short-description -->
+**ALPHA**: APIs can change dramatically without notice.
+
 Python has implemented `map`, `filter` etc. as functions, rather than methods on a sequence. This makes the result harder to read and Iterators less used than they could be. FunctionalPy exists to change that. 
 
 You get this 🔥:
@@ -62,7 +64,9 @@ assert result == [4]
 ## Prior art
 FunctionalPy stands on the shoulders of Scala, Rust etc. 
 
-Moreover, [PyFunctional](https://github.com/EntilZha/PyFunctional) has existed for 7+ years with a comprehensive feature set. It is performant, with built-in lineage and caching. Unfortunately, this makes typing [non-trivial, with a 4+ year ongoing effort to add types](https://github.com/EntilZha/PyFunctional/issues/118).
+Other Python projects have had similar ideas:
+* [PyFunctional](https://github.com/EntilZha/PyFunctional) has existed for 7+ years with a comprehensive feature set. It is performant, with built-in lineage and caching. Unfortunately, this makes typing [non-trivial, with a 4+ year ongoing effort to add types](https://github.com/EntilZha/PyFunctional/issues/118).
+* [flupy](https://github.com/olirice/flupy) is highly similar, well typed, and mature. I had some issues with `.flatten()` not being type-hinted correctly, but at the current level of maturity, `flupy` is likely a better library.
 
 ## Contributing
 #### Devcontainer
