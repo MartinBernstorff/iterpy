@@ -4,7 +4,6 @@ from collections.abc import (
     Callable,
     Iterable,
     Iterator,
-    Mapping,
     Sequence,
 )
 from copy import deepcopy
