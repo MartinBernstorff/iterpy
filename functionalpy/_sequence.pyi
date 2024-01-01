@@ -6,8 +6,6 @@ from collections.abc import (
     Callable,
     Iterable,
     Iterator,
-    Mapping,
-    Sequence,
 )
 from typing import Generic, TypeVar, overload
 
@@ -33,7 +31,7 @@ class Seq(Generic[T]):
     def reduce(self, func: Callable[[T, T], T]) -> T: ...
     def groupby(
         self, func: Callable[[T], str]
-    ) -> Mapping[str, Sequence[T]]: ...
+    ) -> Seq[tuple[str, list[T]]]: ...
     @overload
     def flatten(self: Seq[list[S]]) -> Seq[S]: ...
     @overload

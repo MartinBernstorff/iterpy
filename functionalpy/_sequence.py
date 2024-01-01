@@ -87,13 +87,17 @@ class Seq(Generic[T]):
 
     def groupby(
         self, func: Callable[[T], str]
-    ) -> "Mapping[str, Sequence[T]]":
-        mapping: defaultdict[str, list[T]] = defaultdict(list)
+    ) -> "Seq[tuple[str, list[T]]]":
+        groups_with_values: defaultdict[str, list[T]] = defaultdict(
+            list
+        )
 
-        for item in self._iterator:
-            mapping[func(item)].append(item)
+        for value in self._seq:
+            value_key = func(value)
+            groups_with_values[value_key].append(value)
 
-        return dict(mapping)
+        tuples = list(groups_with_values.items())
+        return Seq(tuples)
 
     def flatten(self) -> "Seq[T]":
         values: list[T] = []
