@@ -2,6 +2,23 @@
 
 
 
+## v0.15.1 (2024-01-01)
+
+### Fix
+
+* fix: .flatten should not flatten strings
+
+Fixes #60 ([`7723d07`](https://github.com/MartinBernstorff/FunctionalPy/commit/7723d0779713a761a8d5e47f674dfa28f693adc6))
+
+### Unknown
+
+*  fix flatten should not flatten strings (#63) ([`f10d6ca`](https://github.com/MartinBernstorff/FunctionalPy/commit/f10d6ca65e5c798135b8f718828983b46e273793))
+
+* Merge remote-tracking branch &#39;origin/main&#39; into 60-fix-flatten-should-not-flatten-strings ([`866cd47`](https://github.com/MartinBernstorff/FunctionalPy/commit/866cd47c492d8b35759b399efe79a9c81359cc3b))
+
+* Update README.md ([`ca1ae38`](https://github.com/MartinBernstorff/FunctionalPy/commit/ca1ae3852099f40bfeb8b2e4d80f9e21f4047458))
+
+
 ## v0.15.0 (2023-12-31)
 
 ### Feature
