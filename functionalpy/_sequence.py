@@ -102,7 +102,7 @@ class Seq(Generic[T]):
         values: list[T] = []
 
         for i in self._iterator:
-            if isinstance(i, Sequence):
+            if isinstance(i, Sequence) and not isinstance(i, str):
                 values.extend(i)
             else:
                 values.append(i)
