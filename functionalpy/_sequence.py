@@ -4,7 +4,6 @@ from collections.abc import (
     Callable,
     Iterable,
     Iterator,
-    Mapping,
     Sequence,
 )
 from functools import reduce
@@ -61,20 +60,24 @@ class Seq(Generic[_T]):
 
     def groupby(
         self, func: Callable[[_T], str]
-    ) -> "Mapping[str, Sequence[_T]]":
-        mapping: defaultdict[str, list[_T]] = defaultdict(list)
+    ) -> "Seq[tuple[str, list[_T]]]":
+        groups_with_values: defaultdict[str, list[_T]] = defaultdict(
+            list
+        )
 
-        for item in self._seq:
-            mapping[func(item)].append(item)
+        for value in self._seq:
+            value_key = func(value)
+            groups_with_values[value_key].append(value)
 
-        return dict(mapping)
+        tuples = list(groups_with_values.items())
+        return Seq(tuples)
 
     def flatten(self) -> "Seq[_T]":
         values: list[_T] = []
 
         for i in self._seq:
             if isinstance(i, Sequence) and not isinstance(i, str):
-                values.extend(i)
+                values.extend(i)  # type: ignore
             else:
                 values.append(i)
 
