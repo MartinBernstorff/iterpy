@@ -4,13 +4,10 @@ from collections.abc import (
     Callable,
     Iterable,
     Iterator,
-    Mapping,
     Sequence,
 )
 from functools import reduce
 from typing import Generic, TypeVar
-
-from click import group
 
 _T = TypeVar("_T")
 _S = TypeVar("_S")
@@ -80,7 +77,7 @@ class Seq(Generic[_T]):
 
         for i in self._seq:
             if isinstance(i, Sequence) and not isinstance(i, str):
-                values.extend(i)
+                values.extend(i)  # type: ignore
             else:
                 values.append(i)
 
