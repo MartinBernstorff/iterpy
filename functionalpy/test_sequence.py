@@ -67,6 +67,13 @@ def test_grouped_filter():
     ]
 
 
+def test_getitem():
+    test_input = [1, 2, 3]
+    test_sequence = Seq(test_input)
+    assert test_sequence[0] == 1
+    assert test_sequence[0:2].to_list() == [1, 2]
+
+
 def test_flatten():
     test_input: list[list[int]] = [[1, 2], [3, 4]]
     sequence = Seq(test_input)
