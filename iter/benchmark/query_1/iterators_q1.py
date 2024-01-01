@@ -5,9 +5,9 @@ from dataclasses import dataclass
 from enum import Enum
 from typing import Any
 
-from functionalpy import Seq
-from functionalpy.benchmark.query_1.input_data import Q1_DATA
-from functionalpy.benchmark.utils import benchmark_method
+from iter import Iter
+from iter.benchmark.query_1.input_data import Q1_DATA
+from iter.benchmark.utils import benchmark_method
 
 
 class LineStatus(Enum):
@@ -75,7 +75,7 @@ def parse_input_data(
     input_data: Sequence[Mapping[str, Any]],
 ) -> Sequence[Item]:
     parsed_data = (
-        Seq(input_data)
+        Iter(input_data)
         .map(
             lambda row: Item(
                 ship_date=row["ship_date"],
@@ -96,7 +96,7 @@ def parse_input_data(
 
 def main_iterator(data: Sequence[Item]) -> Sequence[CategorySummary]:
     mapping = (
-        Seq(data)
+        Iter(data)
         .filter(lambda i: i.ship_date <= dt.datetime(2000, 1, 1))
         .groupby(
             lambda i: f"status_{i.cancelled}_returned_{i.returned}"

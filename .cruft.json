@@ -4,13 +4,13 @@
   "checkout": null,
   "context": {
     "cookiecutter": {
-      "project_name": "FunctionalPy",
-      "package_name": "FunctionalPy",
-      "friendly_name": "FunctionalPy",
+      "project_name": "Iter",
+      "package_name": "Iter",
+      "friendly_name": "Iter",
       "author": "Martin Bernstorff",
       "email": "martinbernstorff@gmail.com",
       "github_user": "MartinBernstorff",
-      "github_repo": "FunctionalPy",
+      "github_repo": "Iter",
       "version": "0.0.0",
       "copyright_year": "2023",
       "release_to_pypi": "no",

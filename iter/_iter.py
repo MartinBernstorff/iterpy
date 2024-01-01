@@ -15,7 +15,7 @@ T = TypeVar("T")
 S = TypeVar("S")
 
 
-class Seq(Generic[T]):
+class Iter(Generic[T]):
     def __init__(self, iterable: Iterable[T]) -> None:
         self._iterator: Iterator[T] = iter(iterable)
 
@@ -23,14 +23,14 @@ class Seq(Generic[T]):
     def _non_consumable(self) -> Iterator[T]:
         return deepcopy(self._iterator)
 
-    def __getitem__(self, index: int | slice) -> T | "Seq[T]":
+    def __getitem__(self, index: int | slice) -> T | "Iter[T]":
         if isinstance(index, int) and index >= 0:
             try:
                 return list(self._non_consumable)[index]
             except StopIteration:
                 raise IndexError("Index out of range") from None
         elif isinstance(index, slice):
-            return Seq(
+            return Iter(
                 islice(
                     self._non_consumable,
                     index.start,
@@ -64,29 +64,29 @@ class Seq(Generic[T]):
     def map(  # noqa: A003 # Ignore that it's shadowing a python built-in
         self,
         func: Callable[[T], S],
-    ) -> "Seq[S]":
-        return Seq(map(func, self._iterator))
+    ) -> "Iter[S]":
+        return Iter(map(func, self._iterator))
 
     def pmap(
         self,
         func: Callable[[T], S],
-    ) -> "Seq[S]":
+    ) -> "Iter[S]":
         """Parallel map using multiprocessing.Pool
 
         Not that lambdas are not supported by multiprocessing.Pool.map.
         """
         with multiprocessing.Pool() as pool:
-            return Seq(pool.map(func, self._iterator))
+            return Iter(pool.map(func, self._iterator))
 
-    def filter(self, func: Callable[[T], bool]) -> "Seq[T]":  # noqa: A003
-        return Seq(filter(func, self._iterator))
+    def filter(self, func: Callable[[T], bool]) -> "Iter[T]":  # noqa: A003
+        return Iter(filter(func, self._iterator))
 
     def reduce(self, func: Callable[[T, T], T]) -> T:
         return reduce(func, self._iterator)
 
     def groupby(
         self, func: Callable[[T], str]
-    ) -> "Seq[tuple[str, list[T]]]":
+    ) -> "Iter[tuple[str, list[T]]]":
         groups_with_values: defaultdict[str, list[T]] = defaultdict(
             list
         )
@@ -96,9 +96,9 @@ class Seq(Generic[T]):
             groups_with_values[value_key].append(value)
 
         tuples = list(groups_with_values.items())
-        return Seq(tuples)
+        return Iter(tuples)
 
-    def flatten(self) -> "Seq[T]":
+    def flatten(self) -> "Iter[T]":
         values: list[T] = []
         for i in self._iterator:
             if isinstance(i, Sequence) and not isinstance(i, str):
@@ -106,4 +106,4 @@ class Seq(Generic[T]):
             else:
                 values.append(i)
 
-        return Seq(values)
+        return Iter(values)

@@ -1,18 +1,18 @@
-# FunctionalPy
+# Iter
 [![Open in Dev Container](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)][dev container]
-[![PyPI](https://img.shields.io/pypi/v/functionalpy.svg)][pypi status]
-[![Python Version](https://img.shields.io/pypi/pyversions/FunctionalPy)][pypi status]
-[![Tests](https://github.com/MartinBernstorff/FunctionalPy/actions/workflows/tests.yml/badge.svg)][tests]
+[![PyPI](https://img.shields.io/pypi/v/iter.svg)][pypi status]
+[![Python Version](https://img.shields.io/pypi/pyversions/Iter)][pypi status]
+[![Tests](https://github.com/MartinBernstorff/Iter/actions/workflows/tests.yml/badge.svg)][tests]
 
-[pypi status]: https://pypi.org/project/FunctionalPy/
-[tests]: https://github.com/MartinBernstorff/FunctionalPy/actions?workflow=Tests
-[dev container]: https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/MartinBernstorff/FunctionalPy/
+[pypi status]: https://pypi.org/project/Iter/
+[tests]: https://github.com/MartinBernstorff/Iter/actions?workflow=Tests
+[dev container]: https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/MartinBernstorff/Iter/
 
 
 <!-- start short-description -->
 **ALPHA**: APIs can change dramatically without notice.
 
-Python has implemented `map`, `filter` etc. as functions, rather than methods on a sequence. This makes the result harder to read and Iterators less used than they could be. FunctionalPy exists to change that. 
+Python has implemented `map`, `filter` etc. as functions, rather than methods on a sequence. This makes the result harder to read and Iterators less used than they could be. Iter exists to change that. 
 
 You get this 🔥:
 
@@ -39,12 +39,12 @@ result = filter(is_even, map(multiply_by_2, [1,2,3]))
 
 ## Install
 ```bash
-pip install functionalpy
+pip install iterpy
 ```
 
 ## Usage
 ```python
-from functionalpy import Seq
+from iter import Seq
 
 result = (Seq([1, 2])
             .filter(lambda x: x % 2 == 0)
@@ -55,7 +55,7 @@ assert result == [4]
 ```
 
 ## Prior art
-FunctionalPy stands on the shoulders of Scala, Rust etc. 
+Iter stands on the shoulders of Scala, Rust etc. 
 
 Other Python projects have had similar ideas:
 * [PyFunctional](https://github.com/EntilZha/PyFunctional) has existed for 7+ years with a comprehensive feature set. It is performant, with built-in lineage and caching. Unfortunately, this makes typing [non-trivial, with a 4+ year ongoing effort to add types](https://github.com/EntilZha/PyFunctional/issues/118).
@@ -83,7 +83,7 @@ In cases where this conflicts with typical python implementations, the API shoul
 #### Devcontainer
 1. Install [Orbstack](https://orbstack.dev/) or Docker Desktop. Make sure to complete the full install process before continuing.
 2. If not installed, install VSCode
-3. Press this [link](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/MartinBernstorff/FunctionalPy/)
+3. Press this [link](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/MartinBernstorff/Iter/)
 4. Complete the setup process
 5. Done! Easy as that.
 
@@ -96,7 +96,7 @@ In cases where this conflicts with typical python implementations, the API shoul
 | 👩‍💻 **Usage Questions**          | [GitHub Discussions]   |
 | 🗯 **General Discussion**       | [GitHub Discussions]   |
 
-[github issue tracker]: https://github.com/MartinBernstorff/FunctionalPy/issues
-[github discussions]: https://github.com/MartinBernstorff/FunctionalPy/discussions
+[github issue tracker]: https://github.com/MartinBernstorff/Iter/issues
+[github discussions]: https://github.com/MartinBernstorff/Iter/discussions
 
 

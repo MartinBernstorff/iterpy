@@ -18,4 +18,4 @@ build/
 
 # MacOS
 .DS_Store
-functionalpy.egg-info
+iter.egg-info
