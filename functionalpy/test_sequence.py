@@ -99,7 +99,7 @@ class TestFlattenTypes:
         test_input: list[str] = ["abcd"]
         sequence = Seq(test_input)
         result: Seq[str] = sequence.flatten()
-        assert result.to_list() == ["a", "b", "c", "d"]
+        assert result.to_list() == ["abcd"]
 
     def test_flatten_includes_primitives(self):
         test_input: list[int | list[int]] = [1, [2]]

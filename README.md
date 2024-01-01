@@ -10,6 +10,8 @@
 
 
 <!-- start short-description -->
+**ALPHA**: APIs can change dramatically without notice.
+
 Python has implemented `map`, `filter` etc. as functions, rather than methods on a sequence. This makes the result harder to read and Iterators less used than they could be. FunctionalPy exists to change that. 
 
 You get this 🔥:
@@ -17,8 +19,7 @@ You get this 🔥:
 ```python
 result = (Seq([1,2,3])
             .map(multiply_by_2)
-            .filter(is_even)
-            )
+            .filter(is_even))
 ```
 
 Instead of this:
@@ -53,7 +54,17 @@ result = (Seq([1, 2])
 assert result == [4]
 ```
 
-## Philosophy
+## Prior art
+FunctionalPy stands on the shoulders of Scala, Rust etc. 
+
+Other Python projects have had similar ideas:
+* [PyFunctional](https://github.com/EntilZha/PyFunctional) has existed for 7+ years with a comprehensive feature set. It is performant, with built-in lineage and caching. Unfortunately, this makes typing [non-trivial, with a 4+ year ongoing effort to add types](https://github.com/EntilZha/PyFunctional/issues/118).
+* [flupy](https://github.com/olirice/flupy) is highly similar, well typed, and mature. I had some issues with `.flatten()` not being type-hinted correctly, but at the current level of maturity, `flupy` is likely a better library.
+* Your library here? Feel free to make an issue if you have a good alternative!
+
+## Contributing
+### Conventions
+#### Philosophy
 * Make it work: Concise syntax borrowed from Scala, Rust etc.
 * Make it right: Fully typed, no exceptions
 * Make it fast: 
@@ -62,12 +73,13 @@ assert result == [4]
     * (Future): Refactor operations to use generators
 * Keep it simple: No dependencies
 
-## Prior art
-FunctionalPy stands on the shoulders of Scala, Rust etc. 
+#### API design
+As a heuristic, we follow the APIs of:
+* Rust's [std::iter](https://doc.rust-lang.org/stable/std/iter/)
+* Rust's [itertools](https://docs.rs/itertools/latest/itertools/index.html)
 
-Moreover, [PyFunctional](https://github.com/EntilZha/PyFunctional) has existed for 7+ years with a comprehensive feature set. It is performant, with built-in lineage and caching. Unfortunately, this makes typing [non-trivial, with a 4+ year ongoing effort to add types](https://github.com/EntilZha/PyFunctional/issues/118).
+In cases where this conflicts with typical python implementations, the API should be as predictable as possible for Python users.
 
-## Contributing
 #### Devcontainer
 1. Install [Orbstack](https://orbstack.dev/) or Docker Desktop. Make sure to complete the full install process before continuing.
 2. If not installed, install VSCode
