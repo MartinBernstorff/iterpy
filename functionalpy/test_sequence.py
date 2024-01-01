@@ -1,5 +1,4 @@
 from collections.abc import Sequence
-from typing import Literal
 
 from functionalpy._sequence import Seq
 
