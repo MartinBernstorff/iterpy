@@ -1,5 +1,4 @@
 from collections.abc import Sequence
-from typing import Literal
 
 from functionalpy._sequence import Seq
 
@@ -83,13 +82,11 @@ def test_flatten():
 
 class TestFlattenTypes:
     def test_flatten_tuple(self):
-        test_input: Sequence[tuple[int, ...]] = (
-            (1, 2),
-            (3, 4),
+        sequence: Seq[tuple[int, int]] = Seq(
+            (i, i + 1) for i in range(1, 3)
         )
-        sequence = Seq(test_input)
-        result: Seq[Literal[1, 2, 3, 4]] = sequence.flatten()
-        assert result.to_list() == [1, 2, 3, 4]
+        result: Seq[int] = sequence.flatten()
+        assert result.to_list() == [1, 2, 2, 3]
 
     def test_flatten_list(self):
         test_input: list[list[int]] = [[1, 2], [3, 4]]
@@ -109,9 +106,13 @@ class TestFlattenTypes:
         assert result.to_list() == ["abcd"]
 
     def test_flatten_includes_primitives(self):
-        test_input: list[int | list[int]] = [1, [2]]
-        result: Seq[int] = Seq(test_input).flatten()
-        assert result.to_list() == [1, 2]
+        test_input: list[str | list[int] | None] = [
+            "first",
+            [2],
+            None,
+        ]
+        result: Seq[int | str | None] = Seq(test_input).flatten()
+        assert result.to_list() == ["first", 2, None]
 
     def test_flatten_removes_empty_sequences(self):
         test_input: list[list[int]] = [[1], []]

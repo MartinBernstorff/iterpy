@@ -6,11 +6,17 @@ from collections.abc import (
     Callable,
     Iterable,
     Iterator,
+    Sequence,
 )
 from typing import Generic, TypeVar, overload
 
-T = TypeVar("T")
 S = TypeVar("S")
+T = TypeVar("T")
+U = TypeVar("U")
+
+Iterables: TypeVar = (
+    Iterable | Iterator | tuple | list | set | frozenset  # type: ignore
+)
 
 class Seq(Generic[T]):
     def __init__(self, iterable: Iterable[T]) -> None: ...
@@ -32,11 +38,56 @@ class Seq(Generic[T]):
     def groupby(
         self, func: Callable[[T], str]
     ) -> Seq[tuple[str, list[T]]]: ...
+
+    # Code for generating the following is in _generate_pyi.py
+    # Iterable[S]   # noqa: ERA001
+    @overload
+    def flatten(self: Seq[Iterable[S]]) -> Seq[S]: ...
+    @overload
+    def flatten(self: Seq[Iterable[S] | S]) -> Seq[S]: ...
+
+    # Iterator[S]   # noqa: ERA001
+    @overload
+    def flatten(self: Seq[Iterator[S]]) -> Seq[S]: ...
+    @overload
+    def flatten(self: Seq[Iterator[S] | S]) -> Seq[S]: ...
+
+    # tuple[S, ...]   # noqa: ERA001
+    @overload
+    def flatten(self: Seq[tuple[S, ...]]) -> Seq[S]: ...
+    @overload
+    def flatten(self: Seq[tuple[S, ...] | S]) -> Seq[S]: ...
+
+    # Sequence[S]   # noqa: ERA001
+    @overload
+    def flatten(self: Seq[Sequence[S]]) -> Seq[S]: ...
+    @overload
+    def flatten(self: Seq[Sequence[S] | S]) -> Seq[S]: ...
+
+    # list[S]   # noqa: ERA001
     @overload
     def flatten(self: Seq[list[S]]) -> Seq[S]: ...
     @overload
     def flatten(self: Seq[list[S] | S]) -> Seq[S]: ...
+
+    # set[S]   # noqa: ERA001
     @overload
-    def flatten(self: Seq[tuple[S, ...]]) -> Seq[S]: ...
+    def flatten(self: Seq[set[S]]) -> Seq[S]: ...
+    @overload
+    def flatten(self: Seq[set[S] | S]) -> Seq[S]: ...
+
+    # frozenset[S]   # noqa: ERA001
+    @overload
+    def flatten(self: Seq[frozenset[S]]) -> Seq[S]: ...
+    @overload
+    def flatten(self: Seq[frozenset[S] | S]) -> Seq[S]: ...
+
+    # str
+    @overload
+    def flatten(self: Seq[str]) -> Seq[str]: ...
+    @overload
+    def flatten(self: Seq[str | S]) -> Seq[S]: ...
+
+    # Generic
     @overload
     def flatten(self: Seq[S]) -> Seq[S]: ...
