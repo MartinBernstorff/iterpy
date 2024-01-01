@@ -2,6 +2,27 @@
 
 
 
+## v0.19.0 (2024-01-01)
+
+### Feature
+
+* feat: update version ([`d505159`](https://github.com/MartinBernstorff/Iter/commit/d505159c0b0be412ef9767f95cd7cfcfb0f45e81))
+
+### Refactor
+
+* refactor: rename to iter
+
+Fixes #56. ([`3172904`](https://github.com/MartinBernstorff/Iter/commit/3172904a838329a82e9ffbd99bbd926c5b9c4ded))
+
+### Unknown
+
+* mbern_refactor_rename_to_iter (#75) ([`3570a1e`](https://github.com/MartinBernstorff/Iter/commit/3570a1ed3c622f71362d599592c371d242342b51))
+
+* misc. ([`57d1cc3`](https://github.com/MartinBernstorff/Iter/commit/57d1cc350e879797b4d76ba61d31e4b48edcfcdc))
+
+* Merge remote-tracking branch &#39;origin/main&#39; into mbern_refactor_rename_to_iter ([`2b25ef2`](https://github.com/MartinBernstorff/Iter/commit/2b25ef23de8da6b9f3e2a1fee33102c7664e3435))
+
+
 ## v0.18.0 (2024-01-01)
 
 ### Feature
