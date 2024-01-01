@@ -72,7 +72,7 @@ def calculate_charge(item: Item) -> float:
 
 
 def parse_input_data(
-    input_data: Sequence[Mapping[str, Any]]
+    input_data: Sequence[Mapping[str, Any]],
 ) -> Sequence[Item]:
     parsed_data = (
         Seq(input_data)

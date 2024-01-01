@@ -86,7 +86,7 @@ class TestFlattenTypes:
             (i, i + 1) for i in range(1, 3)
         )
         result: Seq[int] = sequence.flatten()
-        assert result.to_list() == [1, 2, 3, 4]
+        assert result.to_list() == [1, 2, 2, 3]
 
     def test_flatten_list(self):
         test_input: list[list[int]] = [[1, 2], [3, 4]]
