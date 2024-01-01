@@ -2,6 +2,37 @@
 
 
 
+## v0.15.2 (2024-01-01)
+
+### Documentation
+
+* docs: expand prior art with fluid
+
+Fixes #62 ([`c823d78`](https://github.com/MartinBernstorff/FunctionalPy/commit/c823d781be85d09396c2125f50efce64844cb0d8))
+
+### Fix
+
+* fix: groupby should yield tuples of (key, Seq[_T])
+
+Fixes #64 ([`b9a60ea`](https://github.com/MartinBernstorff/FunctionalPy/commit/b9a60ea55f7a2645fb4d4ba7156b4b66a0c8c8da))
+
+### Unknown
+
+*  fix groupby should yield tuples of key Seq_T (#67) ([`ad8293b`](https://github.com/MartinBernstorff/FunctionalPy/commit/ad8293b5ef6680c8271cb1cbcb8f0af6c8124806))
+
+* misc. ([`2b4dcd1`](https://github.com/MartinBernstorff/FunctionalPy/commit/2b4dcd18c834fb5b38627dff7358ef49092ba161))
+
+* Merge remote-tracking branch &#39;origin/main&#39; into 64-fix-groupby-should-yield-tuples-of-key-Seq_T ([`05d7d54`](https://github.com/MartinBernstorff/FunctionalPy/commit/05d7d5458908575d3cfecde1b15634b591e2b735))
+
+*  docs expand prior art with fluid (#66) ([`465814b`](https://github.com/MartinBernstorff/FunctionalPy/commit/465814b862edcb6fa7cd1bc86cd3ed63fdb9b97e))
+
+* misc. ([`e842586`](https://github.com/MartinBernstorff/FunctionalPy/commit/e8425867347ee9564076808bbbf02ad564b6a6ae))
+
+* Merge remote-tracking branch &#39;origin/main&#39; into 62-docs-expand-prior-art-with-fluid ([`b7abd1a`](https://github.com/MartinBernstorff/FunctionalPy/commit/b7abd1ae778094ba69496382a1a4777188d33208))
+
+* misc. ([`4d509e1`](https://github.com/MartinBernstorff/FunctionalPy/commit/4d509e18770f65d048e40585ba01194c80989d37))
+
+
 ## v0.15.1 (2024-01-01)
 
 ### Fix
