@@ -17,7 +17,7 @@ Python has implemented `map`, `filter` etc. as functions, rather than methods on
 You get this 🔥:
 
 ```python
-result = (Seq([1,2,3])
+result = (Iter([1,2,3])
             .map(multiply_by_2)
             .filter(is_even))
 ```
@@ -46,7 +46,7 @@ pip install iterpy
 ```python
 from iter import Seq
 
-result = (Seq([1, 2])
+result = (Iter([1, 2])
             .filter(lambda x: x % 2 == 0)
             .map(lambda x: x * 2)
             .to_list()
