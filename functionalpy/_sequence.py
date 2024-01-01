@@ -91,7 +91,7 @@ class Seq(Generic[T]):
             list
         )
 
-        for value in self._seq:
+        for value in self._iterator:
             value_key = func(value)
             groups_with_values[value_key].append(value)
 
