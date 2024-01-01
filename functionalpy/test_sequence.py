@@ -1,4 +1,4 @@
-from collections.abc import Mapping, Sequence
+from collections.abc import Sequence
 from typing import Literal
 
 from functionalpy._sequence import Seq
@@ -58,11 +58,13 @@ def test_grouped_filter():
             return "even"
         return "odd"
 
-    grouped: Mapping[str, Sequence[int]] = sequence.groupby(is_even)
-    assert grouped == {
-        "odd": [1, 3],
-        "even": [2, 4],
-    }
+    grouped: list[tuple[str, list[int]]] = sequence.groupby(
+        is_even
+    ).to_list()
+    assert grouped == [
+        ("odd", [1, 3]),
+        ("even", [2, 4]),
+    ]
 
 
 def test_flatten():

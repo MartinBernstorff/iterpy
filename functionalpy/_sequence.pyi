@@ -6,15 +6,11 @@ from collections.abc import (
     Callable,
     Iterable,
     Iterator,
-    Mapping,
-    Sequence,
 )
 from typing import Generic, TypeVar, overload
 
 _T = TypeVar("_T")
 _S = TypeVar("_S")
-
-# TODO: Attempt generic type alias for container types
 
 class Seq(Generic[_T]):
     def __init__(self, iterable: Iterable[_T]) -> None: ...
@@ -31,7 +27,7 @@ class Seq(Generic[_T]):
     def reduce(self, func: Callable[[_T, _T], _T]) -> _T: ...
     def groupby(
         self, func: Callable[[_T], str]
-    ) -> Mapping[str, Sequence[_T]]: ...
+    ) -> Seq[tuple[str, list[_T]]]: ...
     @overload
     def flatten(self: Seq[list[_S]]) -> Seq[_S]: ...
     @overload
