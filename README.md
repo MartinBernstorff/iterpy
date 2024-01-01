@@ -72,6 +72,20 @@ Other Python projects have had similar ideas:
 * [flupy](https://github.com/olirice/flupy) is highly similar, well typed, and mature. I had some issues with `.flatten()` not being type-hinted correctly, but at the current level of maturity, `flupy` is likely a better library.
 
 ## Contributing
+### Conventions
+#### Philosophy
+* Make it work: Concise syntax borrowed from Scala, Rust etc.
+* Make it right: Fully typed, no exceptions
+* Make it fast: Concurrency through `.pmap`, potentially caching in the future
+* Keep it simple: No dependencies
+
+#### API design
+As a heuristic, we follow the APIs of:
+* Rust's [std::iter](https://doc.rust-lang.org/stable/std/iter/)
+* Rust's [itertools](https://docs.rs/itertools/latest/itertools/index.html)
+
+In cases where this conflicts with typical python implementations, the API should be as predictable as possible for Python users.
+
 #### Devcontainer
 1. Install [Orbstack](https://orbstack.dev/) or Docker Desktop. Make sure to complete the full install process before continuing.
 2. If not installed, install VSCode
