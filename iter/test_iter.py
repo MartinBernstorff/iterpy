@@ -1,12 +1,12 @@
 from collections.abc import Sequence
 
-from functionalpy._sequence import Seq
+from iter._iter import Iter
 
 
 def test_chaining():
-    sequence = Seq([1, 2])
+    iterator = Iter([1, 2])
     result: list[int] = (
-        sequence.filter(lambda x: x % 2 == 0)
+        iterator.filter(lambda x: x % 2 == 0)
         .map(lambda x: x * 2)
         .to_list()
     )
@@ -14,8 +14,8 @@ def test_chaining():
 
 
 def test_map():
-    sequence = Seq([1, 2])
-    result: list[int] = sequence.map(lambda x: x * 2).to_list()
+    iterator = Iter([1, 2])
+    result: list[int] = iterator.map(lambda x: x * 2).to_list()
     assert result == [2, 4]
 
 
@@ -24,40 +24,40 @@ def multiple_by_2(num: int) -> int:
 
 
 def test_pmap():
-    sequence = Seq([1, 2])
-    result: list[int] = sequence.pmap(multiple_by_2).to_list()
+    iterator = Iter([1, 2])
+    result: list[int] = iterator.pmap(multiple_by_2).to_list()
     assert result == [2, 4]
 
 
 def test_filter():
-    sequence = Seq([1, 2])
-    result: list[int] = sequence.filter(
+    iterator = Iter([1, 2])
+    result: list[int] = iterator.filter(
         lambda x: x % 2 == 0
     ).to_list()
     assert result == [2]
 
 
 def test_reduce():
-    sequence = Seq([1, 2])
-    result: int = sequence.reduce(lambda x, y: x + y)
+    iterator = Iter([1, 2])
+    result: int = iterator.reduce(lambda x, y: x + y)
     assert result == 3
 
 
 def test_count():
-    sequence = Seq([1, 2])
-    result: int = sequence.count()
+    iterator = Iter([1, 2])
+    result: int = iterator.count()
     assert result == 2
 
 
 def test_grouped_filter():
-    sequence = Seq([1, 2, 3, 4])
+    iterator = Iter([1, 2, 3, 4])
 
     def is_even(num: int) -> str:
         if num % 2 == 0:
             return "even"
         return "odd"
 
-    grouped: list[tuple[str, list[int]]] = sequence.groupby(
+    grouped: list[tuple[str, list[int]]] = iterator.groupby(
         is_even
     ).to_list()
     assert grouped == [
@@ -68,41 +68,41 @@ def test_grouped_filter():
 
 def test_getitem():
     test_input = [1, 2, 3]
-    test_sequence = Seq(test_input)
-    assert test_sequence[0] == 1
-    assert test_sequence[0:2].to_list() == [1, 2]
+    test_iterator = Iter(test_input)
+    assert test_iterator[0] == 1
+    assert test_iterator[0:2].to_list() == [1, 2]
 
 
 def test_flatten():
     test_input: list[list[int]] = [[1, 2], [3, 4]]
-    sequence = Seq(test_input)
-    result: Seq[int] = sequence.flatten()
+    iterator = Iter(test_input)
+    result: Iter[int] = iterator.flatten()
     assert result.to_list() == [1, 2, 3, 4]
 
 
 class TestFlattenTypes:
     def test_flatten_tuple(self):
-        sequence: Seq[tuple[int, int]] = Seq(
+        iterator: Iter[tuple[int, int]] = Iter(
             (i, i + 1) for i in range(1, 3)
         )
-        result: Seq[int] = sequence.flatten()
+        result: Iter[int] = iterator.flatten()
         assert result.to_list() == [1, 2, 2, 3]
 
     def test_flatten_list(self):
         test_input: list[list[int]] = [[1, 2], [3, 4]]
-        sequence = Seq(test_input)
-        result: Seq[int] = sequence.flatten()
+        iterator = Iter(test_input)
+        result: Iter[int] = iterator.flatten()
         assert result.to_list() == [1, 2, 3, 4]
 
-    def test_flatten_sequence(self):
+    def test_flatten_iterator(self):
         test_input: Sequence[Sequence[int]] = [[1, 2], [3, 4]]
-        result: Seq[int] = Seq(test_input).flatten()
+        result: Iter[int] = Iter(test_input).flatten()
         assert result.to_list() == [1, 2, 3, 4]
 
     def test_flatten_str(self):
         test_input: list[str] = ["abcd"]
-        sequence = Seq(test_input)
-        result: Seq[str] = sequence.flatten()
+        iterator = Iter(test_input)
+        result: Iter[str] = iterator.flatten()
         assert result.to_list() == ["abcd"]
 
     def test_flatten_includes_primitives(self):
@@ -111,10 +111,10 @@ class TestFlattenTypes:
             [2],
             None,
         ]
-        result: Seq[int | str | None] = Seq(test_input).flatten()
+        result: Iter[int | str | None] = Iter(test_input).flatten()
         assert result.to_list() == ["first", 2, None]
 
-    def test_flatten_removes_empty_sequences(self):
+    def test_flatten_removes_empty_iterators(self):
         test_input: list[list[int]] = [[1], []]
-        result: Seq[int] = Seq(test_input).flatten()
+        result: Iter[int] = Iter(test_input).flatten()
         assert result.to_list() == [1]

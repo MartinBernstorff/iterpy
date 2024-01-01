@@ -6,12 +6,12 @@
     "author": "Martin Bernstorff",
     "copyright_year": "2023",
     "email": "martinbernstorff@gmail.com",
-    "friendly_name": "FunctionalPy",
-    "github_repo": "FunctionalPy",
+    "friendly_name": "Iter",
+    "github_repo": "Iter",
     "github_user": "MartinBernstorff",
     "license": "MIT",
-    "package_name": "FunctionalPy",
-    "project_name": "FunctionalPy",
+    "package_name": "Iter",
+    "project_name": "Iter",
     "release_to_pypi": "yes",
     "version": "0.0.0"
 }

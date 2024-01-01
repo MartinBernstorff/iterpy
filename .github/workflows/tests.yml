@@ -35,8 +35,8 @@ jobs:
       - name: Pre-build dev container image
         uses: devcontainers/ci@v0.3
         with:
-          imageName: ghcr.io/martinbernstorff/functionalpy-devcontainer
-          cacheFrom: ghcr.io/martinbernstorff/functionalpy-devcontainer:latest
+          imageName: ghcr.io/martinbernstorff/iter-devcontainer
+          cacheFrom: ghcr.io/martinbernstorff/iter-devcontainer:latest
           push: filter
           refFilterForPush: refs/heads/main
           runCmd:

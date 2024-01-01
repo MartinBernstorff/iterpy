@@ -1,4 +1,4 @@
-SRC_PATH = functionalpy
+SRC_PATH = iter
 MAKEFLAGS = --no-print-directory
 
 install-dev:
