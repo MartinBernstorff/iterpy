@@ -2,6 +2,115 @@
 
 
 
+## v0.16.0 (2024-01-01)
+
+### Documentation
+
+* docs: expand prior art with fluid
+
+Fixes #62 ([`cf0d791`](https://github.com/MartinBernstorff/FunctionalPy/commit/cf0d791b996159f161fa423aca657d2cc92ba7d6))
+
+### Feature
+
+* feat: implement __getitem__ (#72) ([`1dd6588`](https://github.com/MartinBernstorff/FunctionalPy/commit/1dd6588bccb05e1b7bc85a29135a899b44626f0c))
+
+* feat: implement __getitem__
+
+Fixes #65 ([`f27ee52`](https://github.com/MartinBernstorff/FunctionalPy/commit/f27ee52ff21091f766403caeb6f2966e8770b35c))
+
+### Fix
+
+* fix: .flatten should not flatten strings
+
+Fixes #60 ([`f0982fe`](https://github.com/MartinBernstorff/FunctionalPy/commit/f0982feb79de4fa0022d62aa9eb2c7ff5229e9e1))
+
+* fix: groupby should yield tuples of (key, Seq[_T])
+
+Fixes #64 ([`e2f225d`](https://github.com/MartinBernstorff/FunctionalPy/commit/e2f225d73d101afc767edb4f0f9f24e8b502236d))
+
+### Unknown
+
+* Merge branch &#39;main&#39; into 65-feat-implement-__getitem__ ([`f120b34`](https://github.com/MartinBernstorff/FunctionalPy/commit/f120b34fd20b7d8e2502c67b7cd69344c8ac8cfa))
+
+* misc. ([`3578648`](https://github.com/MartinBernstorff/FunctionalPy/commit/35786487d77b0895e33e75f2468143cd67cc09be))
+
+* misc. ([`07e843b`](https://github.com/MartinBernstorff/FunctionalPy/commit/07e843b4e638bd66acf548aa864f52249e705ede))
+
+* deps:(deps-dev): bump pytest from 7.4.3 to 7.4.4
+
+Bumps [pytest](https://github.com/pytest-dev/pytest) from 7.4.3 to 7.4.4.
+- [Release notes](https://github.com/pytest-dev/pytest/releases)
+- [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
+- [Commits](https://github.com/pytest-dev/pytest/compare/7.4.3...7.4.4)
+
+---
+updated-dependencies:
+- dependency-name: pytest
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`a845e7f`](https://github.com/MartinBernstorff/FunctionalPy/commit/a845e7f7bd9ebc1429bdc6333fa798d2d551a5fe))
+
+* deps:(deps-dev): bump pyright from 1.1.342 to 1.1.344
+
+Bumps [pyright](https://github.com/RobertCraigie/pyright-python) from 1.1.342 to 1.1.344.
+- [Release notes](https://github.com/RobertCraigie/pyright-python/releases)
+- [Commits](https://github.com/RobertCraigie/pyright-python/compare/v1.1.342...v1.1.344)
+
+---
+updated-dependencies:
+- dependency-name: pyright
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`06794b5`](https://github.com/MartinBernstorff/FunctionalPy/commit/06794b53bbbb02ed0a3a9d78ed91e05b522330b2))
+
+* misc. ([`01b54cc`](https://github.com/MartinBernstorff/FunctionalPy/commit/01b54cc171de4878495bde0b3a6adef6a51cef55))
+
+* misc. ([`fcf3ba4`](https://github.com/MartinBernstorff/FunctionalPy/commit/fcf3ba4166c350a8b0c8ced2da0978b59290f131))
+
+* Update README.md ([`a78874c`](https://github.com/MartinBernstorff/FunctionalPy/commit/a78874c4266ba8c7e25a5000a140b018050dc4e5))
+
+* misc. ([`c05f609`](https://github.com/MartinBernstorff/FunctionalPy/commit/c05f6094baaf564773a48ebe19a8bcd38f987880))
+
+* deps:(deps-dev): bump pytest from 7.4.3 to 7.4.4 (#70) ([`bfa28de`](https://github.com/MartinBernstorff/FunctionalPy/commit/bfa28de18e4b9f24b6503b2c183ab091765f80ad))
+
+* deps:(deps-dev): bump pytest from 7.4.3 to 7.4.4
+
+Bumps [pytest](https://github.com/pytest-dev/pytest) from 7.4.3 to 7.4.4.
+- [Release notes](https://github.com/pytest-dev/pytest/releases)
+- [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
+- [Commits](https://github.com/pytest-dev/pytest/compare/7.4.3...7.4.4)
+
+---
+updated-dependencies:
+- dependency-name: pytest
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`4fec726`](https://github.com/MartinBernstorff/FunctionalPy/commit/4fec726a3a9239d2058a266475374c10dc70e9f2))
+
+* deps:(deps-dev): bump pyright from 1.1.342 to 1.1.344 (#69) ([`f98a484`](https://github.com/MartinBernstorff/FunctionalPy/commit/f98a484430384c0220628edbfd9825a015be3dd5))
+
+* deps:(deps-dev): bump pyright from 1.1.342 to 1.1.344
+
+Bumps [pyright](https://github.com/RobertCraigie/pyright-python) from 1.1.342 to 1.1.344.
+- [Release notes](https://github.com/RobertCraigie/pyright-python/releases)
+- [Commits](https://github.com/RobertCraigie/pyright-python/compare/v1.1.342...v1.1.344)
+
+---
+updated-dependencies:
+- dependency-name: pyright
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`b5471dc`](https://github.com/MartinBernstorff/FunctionalPy/commit/b5471dc487495311a0b33e0dbab5ddbaf5944293))
+
+
 ## v0.15.2 (2024-01-01)
 
 ### Documentation
