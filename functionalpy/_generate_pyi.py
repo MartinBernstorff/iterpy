@@ -26,7 +26,6 @@ if __name__ == "__main__":
         TypeMarker("tuple[S, ...]"),
         TypeMarker("Sequence[S]"),
         TypeMarker("list[S]"),
-        TypeMarker("Mapping[S, U]"),
         TypeMarker("set[S]"),
         TypeMarker("frozenset[S]"),
     ]:
