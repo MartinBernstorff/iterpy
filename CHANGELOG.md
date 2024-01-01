@@ -2,6 +2,15 @@
 
 
 
+## v0.17.0 (2024-01-01)
+
+### Feature
+
+* feat: add graphite (#73) ([`79fa18e`](https://github.com/MartinBernstorff/FunctionalPy/commit/79fa18e44b3b3383e6dd3feca8e248402f128dd4))
+
+* feat: add graphite ([`ae1f0fa`](https://github.com/MartinBernstorff/FunctionalPy/commit/ae1f0fa0b375f095d1059bbbd303ccbf8e279451))
+
+
 ## v0.16.0 (2024-01-01)
 
 ### Documentation
