@@ -1,4 +1,4 @@
-SRC_PATH = iter
+SRC_PATH = iterpy
 MAKEFLAGS = --no-print-directory
 
 install-dev:
