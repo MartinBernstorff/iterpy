@@ -2,6 +2,7 @@ import multiprocessing
 from collections import defaultdict
 from collections.abc import (
     Callable,
+    Generator,
     Iterable,
     Iterator,
     Sequence,
@@ -17,22 +18,26 @@ S = TypeVar("S")
 
 class Iter(Generic[T]):
     def __init__(self, iterable: Iterable[T]) -> None:
-        self._iterator: Iterator[T] = iter(iterable)
+        self.__consumable_iterator: Iterator[T] = iter(iterable)
 
     @property
-    def _non_consumable(self) -> Iterator[T]:
-        return deepcopy(self._iterator)
+    def _iterator(self) -> Iterator[T]:
+        if isinstance(self.__consumable_iterator, Generator):
+            collected = list(self.__consumable_iterator)
+            return iter(collected)
+
+        return deepcopy(self.__consumable_iterator)
 
     def __getitem__(self, index: int | slice) -> T | "Iter[T]":
         if isinstance(index, int) and index >= 0:
             try:
-                return list(self._non_consumable)[index]
+                return list(self._iterator)[index]
             except StopIteration:
                 raise IndexError("Index out of range") from None
         elif isinstance(index, slice):
             return Iter(
                 islice(
-                    self._non_consumable,
+                    self._iterator,
                     index.start,
                     index.stop,
                     index.step,
@@ -44,6 +49,9 @@ class Iter(Generic[T]):
             )
 
     ### Reductions
+    def reduce(self, func: Callable[[T, T], T]) -> T:
+        return reduce(func, self._iterator)
+
     def count(self) -> int:
         return sum(1 for _ in self._iterator)
 
@@ -54,7 +62,7 @@ class Iter(Generic[T]):
     def to_tuple(self) -> tuple[T, ...]:
         return tuple(self._iterator)  # pragma: no cover
 
-    def to_iterator(self) -> Iterator[T]:
+    def to_consumable(self) -> Iterator[T]:
         return iter(self._iterator)  # pragma: no cover
 
     def to_set(self) -> set[T]:
@@ -80,9 +88,6 @@ class Iter(Generic[T]):
 
     def filter(self, func: Callable[[T], bool]) -> "Iter[T]":  # noqa: A003
         return Iter(filter(func, self._iterator))
-
-    def reduce(self, func: Callable[[T, T], T]) -> T:
-        return reduce(func, self._iterator)
 
     def groupby(
         self, func: Callable[[T], str]

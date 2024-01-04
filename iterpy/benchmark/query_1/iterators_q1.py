@@ -105,7 +105,7 @@ def main_iterator(data: Sequence[Item]) -> Sequence[CategorySummary]:
 
     summaries = [
         summarise_category(group, rows=values)
-        for group, values in mapping.to_iterator()
+        for group, values in mapping.to_consumable()
     ]
 
     return summaries
