@@ -1,6 +1,6 @@
 from collections.abc import Sequence
 
-from iter._iter import Iter
+from iterpy._iter import Iter
 
 
 def test_chaining():

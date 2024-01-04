@@ -4,13 +4,13 @@
   "checkout": null,
   "context": {
     "cookiecutter": {
-      "project_name": "Iter",
-      "package_name": "Iter",
-      "friendly_name": "Iter",
+      "project_name": "iterpy",
+      "package_name": "iterpy",
+      "friendly_name": "iterpy",
       "author": "Martin Bernstorff",
       "email": "martinbernstorff@gmail.com",
       "github_user": "MartinBernstorff",
-      "github_repo": "Iter",
+      "github_repo": "iterpy",
       "version": "0.0.0",
       "copyright_year": "2023",
       "release_to_pypi": "no",

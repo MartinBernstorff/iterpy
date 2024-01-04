@@ -27,7 +27,7 @@ class Iter(Generic[T]):
         if isinstance(index, int) and index >= 0:
             try:
                 return list(self._non_consumable)[index]
-            except StopIteration:
+            except Stopiterpyation:
                 raise IndexError("Index out of range") from None
         elif isinstance(index, slice):
             return Iter(
@@ -54,7 +54,7 @@ class Iter(Generic[T]):
     def to_tuple(self) -> tuple[T, ...]:
         return tuple(self._iterator)  # pragma: no cover
 
-    def to_iter(self) -> Iterator[T]:
+    def to_iterator(self) -> Iterator[T]:
         return iter(self._iterator)  # pragma: no cover
 
     def to_set(self) -> set[T]:
