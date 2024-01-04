@@ -5,8 +5,6 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools.package-data]
 "*" = ["py.typed", "*.pyi"]
 
-
-
 [project]
 name = "iter"
 version = "0.19.0"
@@ -17,12 +15,12 @@ classifiers = [
   "Programming Language :: Python :: 3.11"
 ]
 requires-python = ">=3.10"
-dependencies = [
+
+[project.optional-dependencies]
+benchmark = [
   "linetimer",
   "polars",
 ]
-
-[project.optional-dependencies]
 dev = [
   "cruft==2.15.0",
   "pyright==1.1.344",
