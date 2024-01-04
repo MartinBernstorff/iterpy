@@ -1,16 +1,11 @@
-# This workflow will
-# - Find the latest version tag based on the commit history
-#   - Create a git tag for the new version
-#   - Update the version number in pyproject.toml based on the commit history
-# - Upload the package to PyPI
-# - Create a release on GitHub
-
 name: Release
 on:
   workflow_run:
     workflows: ["Tests"]
     types:
       - completed
+  workflow_dispatch:
+
 jobs:
   release:
     runs-on: ubuntu-latest
