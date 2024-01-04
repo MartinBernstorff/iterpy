@@ -3,10 +3,12 @@
 [![PyPI](https://img.shields.io/pypi/v/iter.svg)][pypi status]
 [![Python Version](https://img.shields.io/pypi/pyversions/iterpy)][pypi status]
 [![Tests](https://github.com/MartinBernstorff/iterpy/actions/workflows/tests.yml/badge.svg)][tests]
+[![Roadmap](https://img.shields.io/badge/Projects-Roadmap-green)][roadmap]
 
 [pypi status]: https://pypi.org/project/iterpy/
 [tests]: https://github.com/MartinBernstorff/iterpy/actions?workflow=Tests
 [dev container]: https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/MartinBernstorff/iterpy/
+[roadmap]: https://github.com/users/MartinBernstorff/projects/3/views/1?groupedBy%5BcolumnId%5D=70727793&sliceBy%5BcolumnId%5D=Status&filterQuery=-status%3ADone
 
 
 <!-- start short-description -->
