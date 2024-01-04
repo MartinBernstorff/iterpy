@@ -2,6 +2,31 @@
 
 
 
+## v0.22.0 (2024-01-04)
+
+### Documentation
+
+* docs: misc. readme ([`87298aa`](https://github.com/MartinBernstorff/iterpy/commit/87298aae7c38f46559e72727beecd6218cbe2411))
+
+### Feature
+
+* feat: remove statefulness (#81) ([`130c02f`](https://github.com/MartinBernstorff/iterpy/commit/130c02f3cea9cccc9b7662b16910f222ad055529))
+
+* feat: ensure `Iter`&#39;s lack of statefulness
+
+Fixes #71. ([`3dfc289`](https://github.com/MartinBernstorff/iterpy/commit/3dfc28989a8c902f4d8bc6fcf1235dd5958f464e))
+
+* feat: ensure `Iter` is an iterator.
+
+Fixes #71 ([`124d807`](https://github.com/MartinBernstorff/iterpy/commit/124d8070583d339194fa0a726568f91a900651dc))
+
+### Unknown
+
+* Merge remote-tracking branch &#39;origin/main&#39; into 71-feat-ensure-`Iter`-is-an-iterator ([`b7cec4a`](https://github.com/MartinBernstorff/iterpy/commit/b7cec4abecc5a59f7fc969fc5f88e1e4d7347511))
+
+* Update README.md ([`d65202c`](https://github.com/MartinBernstorff/iterpy/commit/d65202cc8172c77f508d6b3ff6e68df3ea5d234b))
+
+
 ## v0.21.0 (2024-01-04)
 
 ### Feature
