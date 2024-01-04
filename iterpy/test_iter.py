@@ -80,6 +80,7 @@ def test_iteration():
 
 
 def test_statefulness():
+    """Iterators are stateful, so we need to make sure that we don't exhaust them"""
     test_iterator = Iter([1, 2, 3])
     assert test_iterator.to_list() == [1, 2, 3]
     assert test_iterator.to_list() == [1, 2, 3]
@@ -93,6 +94,15 @@ def test_flatten():
 
 
 class TestFlattenTypes:
+    """Intentionally not parametrised so we can manually specify the return type hints and they can be checked by pyright"""
+
+    def test_flatten_generator(self):
+        iterator: Iter[tuple[int, int]] = Iter(
+            (i, i + 1) for i in range(1, 3)
+        )
+        result: Iter[int] = iterator.flatten()
+        assert result.to_list() == [1, 2, 2, 3]
+
     def test_flatten_tuple(self):
         iterator: Iter[tuple[int, int]] = Iter(
             (i, i + 1) for i in range(1, 3)

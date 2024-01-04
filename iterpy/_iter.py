@@ -2,6 +2,7 @@ import multiprocessing
 from collections import defaultdict
 from collections.abc import (
     Callable,
+    Generator,
     Iterable,
     Iterator,
     Sequence,
@@ -21,6 +22,10 @@ class Iter(Generic[T]):
 
     @property
     def _iterator(self) -> Iterator[T]:
+        if isinstance(self.__consumable_iterator, Generator):
+            collected = list(self.__consumable_iterator)
+            return iter(collected)
+
         return deepcopy(self.__consumable_iterator)
 
     def __getitem__(self, index: int | slice) -> T | "Iter[T]":
