@@ -27,7 +27,7 @@ class Iter(Generic[T]):
         if isinstance(index, int) and index >= 0:
             try:
                 return list(self._non_consumable)[index]
-            except Stopiterpyation:
+            except StopIteration:
                 raise IndexError("Index out of range") from None
         elif isinstance(index, slice):
             return Iter(
