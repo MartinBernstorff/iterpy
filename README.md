@@ -17,7 +17,9 @@ Python has implemented `map`, `filter` etc. as functions, rather than methods on
 You get this 🔥:
 
 ```python
-result = (iterpy([1,2,3])
+from iterpy import Iter
+
+result = (Iter([1,2,3])
             .map(multiply_by_2)
             .filter(is_even))
 ```
