@@ -2,8 +2,8 @@ import datetime as dt
 
 import polars as pl
 
-from iter.benchmark.query_1.input_data import Q1_DATA
-from iter.benchmark.utils import benchmark_method
+from iterpy.benchmark.query_1.input_data import Q1_DATA
+from iterpy.benchmark.utils import benchmark_method
 
 
 def main(data: pl.LazyFrame) -> pl.DataFrame:
