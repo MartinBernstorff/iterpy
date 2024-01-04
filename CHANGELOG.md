@@ -2,6 +2,25 @@
 
 
 
+## v0.20.0 (2024-01-04)
+
+### Ci
+
+* ci: add workflow_dispatch ([`9f5f45f`](https://github.com/MartinBernstorff/Iter/commit/9f5f45f3b471c46e478310526cf68b0221861ba8))
+
+### Feature
+
+* feat: update minor version ([`263b4ca`](https://github.com/MartinBernstorff/Iter/commit/263b4ca0f420560a8cab03e1fb86698387125b4f))
+
+### Unknown
+
+*  deps remove polars from default dependencies (#79) ([`17f74f6`](https://github.com/MartinBernstorff/Iter/commit/17f74f6f17cc9aea409e29a1bc5e178a57099230))
+
+* deps: separate benchmark deps
+
+Fixes deps: remove polars from default dependencies #77. ([`6450bf1`](https://github.com/MartinBernstorff/Iter/commit/6450bf10ea6a665b547a5d271742938ff5a2b6fd))
+
+
 ## v0.19.0 (2024-01-01)
 
 ### Feature
