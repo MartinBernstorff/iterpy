@@ -5,9 +5,9 @@ from dataclasses import dataclass
 from enum import Enum
 from typing import Any
 
-from iter import Iter
-from iter.benchmark.query_1.input_data import Q1_DATA
-from iter.benchmark.utils import benchmark_method
+from iterpy import Iter
+from iterpy.benchmark.query_1.input_data import Q1_DATA
+from iterpy.benchmark.utils import benchmark_method
 
 
 class LineStatus(Enum):
@@ -105,7 +105,7 @@ def main_iterator(data: Sequence[Item]) -> Sequence[CategorySummary]:
 
     summaries = [
         summarise_category(group, rows=values)
-        for group, values in mapping.to_iter()
+        for group, values in mapping.to_iterator()
     ]
 
     return summaries

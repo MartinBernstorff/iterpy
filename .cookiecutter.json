@@ -6,12 +6,12 @@
     "author": "Martin Bernstorff",
     "copyright_year": "2023",
     "email": "martinbernstorff@gmail.com",
-    "friendly_name": "Iter",
-    "github_repo": "Iter",
+    "friendly_name": "iterpy",
+    "github_repo": "iterpy",
     "github_user": "MartinBernstorff",
     "license": "MIT",
-    "package_name": "Iter",
-    "project_name": "Iter",
+    "package_name": "iterpy",
+    "project_name": "iterpy",
     "release_to_pypi": "yes",
     "version": "0.0.0"
 }

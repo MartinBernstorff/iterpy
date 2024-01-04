@@ -54,7 +54,7 @@ class Iter(Generic[T]):
     def to_tuple(self) -> tuple[T, ...]:
         return tuple(self._iterator)  # pragma: no cover
 
-    def to_iter(self) -> Iterator[T]:
+    def to_iterator(self) -> Iterator[T]:
         return iter(self._iterator)  # pragma: no cover
 
     def to_set(self) -> set[T]:

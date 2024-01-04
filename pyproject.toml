@@ -6,10 +6,10 @@ build-backend = "setuptools.build_meta"
 "*" = ["py.typed", "*.pyi"]
 
 [project]
-name = "iter"
-version = "0.20.0"
+name = "iterpy"
+version = "0.1.0"
 authors = [{ name = "Martin Bernstorff", email = "martinbernstorff@gmail.com" }]
-description = "iter"
+description = "iterpy"
 classifiers = [
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11"
@@ -40,9 +40,9 @@ file = "README.md"
 content-type = "text/markdown"
 
 [project.urls]
-homepage = "https://github.com/MartinBernstorff/Iter"
-repository = "https://github.com/MartinBernstorff/Iter"
-documentation = "https://MartinBernstorff.github.io/Iter/"
+homepage = "https://github.com/MartinBernstorff/iterpy"
+repository = "https://github.com/MartinBernstorff/iterpy"
+documentation = "https://MartinBernstorff.github.io/iterpy/"
 
 [tool.pyright]
 exclude = [".*venv*"]
