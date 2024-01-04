@@ -73,6 +73,18 @@ def test_getitem():
     assert test_iterator[0:2].to_list() == [1, 2]
 
 
+def test_iteration():
+    test_iterator = Iter([1, 2, 3])
+    for i in test_iterator.to_consumable():
+        assert i in [1, 2, 3]
+
+
+def test_statefulness():
+    test_iterator = Iter([1, 2, 3])
+    assert test_iterator.to_list() == [1, 2, 3]
+    assert test_iterator.to_list() == [1, 2, 3]
+
+
 def test_flatten():
     test_input: list[list[int]] = [[1, 2], [3, 4]]
     iterator = Iter(test_input)
