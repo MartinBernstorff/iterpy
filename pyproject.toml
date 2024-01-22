@@ -17,12 +17,9 @@ classifiers = [
 requires-python = ">=3.10"
 
 [project.optional-dependencies]
-benchmark = [
-  "linetimer",
-  "polars",
-]
 dev = [
   "cruft==2.15.0",
+  "lumberman",
   "pyright==1.1.348",
   "pytest==7.4.4",
   "pytest-cov==4.1.0",

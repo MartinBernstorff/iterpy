@@ -19,3 +19,4 @@ build/
 # MacOS
 .DS_Store
 iter.egg-info
+iterpy.egg-info
