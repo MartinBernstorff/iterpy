@@ -28,7 +28,7 @@ dev = [
   "pytest-cov==4.1.0",
   "pytest-xdist==3.5.0",
   "pytest-sugar==0.9.7",
-  "diff-cover==8.0.2",
+  "diff-cover==8.0.3",
   "ruff==0.1.13",
 ]
 
