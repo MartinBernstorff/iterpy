@@ -2,6 +2,167 @@
 
 
 
+## v0.22.1 (2024-01-23)
+
+### Build
+
+* build(deps): update test_iter.py and pyproject.toml ([`bebc22c`](https://github.com/MartinBernstorff/iterpy/commit/bebc22c26b1c339e9874941958317bc7ad031e05))
+
+### Chore
+
+* chore: update devcontainer.json ([`968cf03`](https://github.com/MartinBernstorff/iterpy/commit/968cf030c7c800c098fac0fde54294835fc3c8f1))
+
+### Ci
+
+* ci: run ci ([`5ec12e0`](https://github.com/MartinBernstorff/iterpy/commit/5ec12e09400f0ff9bc4f101adf845b572594c765))
+
+### Fix
+
+* fix: Iter[iter].flatten() should return Iter (#94)
+
+fix: Iter[iter].flatten() should return Iter
+
+update _iter.py and test_iter.py ([`c8790a7`](https://github.com/MartinBernstorff/iterpy/commit/c8790a762b0d2d1e9f03d1da0e6e1a74db306e94))
+
+* fix: Iter[iter].flatten() should return Iter ([`f371f6a`](https://github.com/MartinBernstorff/iterpy/commit/f371f6a0672280ab1e11687514097d24b56b49d5))
+
+### Refactor
+
+* refactor: tidy up ([`afc69d9`](https://github.com/MartinBernstorff/iterpy/commit/afc69d93c2fed8709ce5978bd17a840e0752cdc6))
+
+### Unknown
+
+* update _iter.py and test_iter.py ([`e7f776c`](https://github.com/MartinBernstorff/iterpy/commit/e7f776c36e05d86fa4d28072dcd1ca949ca470d6))
+
+* Fix(#83): type for Iter[Iter].flatten() (#93) ([`c2ea2d3`](https://github.com/MartinBernstorff/iterpy/commit/c2ea2d3cbc85d9452b669c389f7749804aad7798))
+
+* dev(#89): simplify dev container (#92) ([`ce7591d`](https://github.com/MartinBernstorff/iterpy/commit/ce7591d970806af01017720e2eab319ab5d8f2e0))
+
+* update _generate_pyi.py, _iter.py, _iter.pyi and test_iter.py ([`d0b5a0a`](https://github.com/MartinBernstorff/iterpy/commit/d0b5a0aa147453fd565dc5ba2a163f0687628b70))
+
+* Fix(#83): type for Iter[Iter].flatten()
+
+Fixes #83 ([`fb81fd8`](https://github.com/MartinBernstorff/iterpy/commit/fb81fd801f39d737c0dafc08915e2507c011428c))
+
+* update _iter.py and _iter.pyi ([`9e45635`](https://github.com/MartinBernstorff/iterpy/commit/9e45635b2e681410580cd565f408656816e3bb7f))
+
+* dev(#89): simplify dev container
+
+Fixes #89 ([`b6c0f19`](https://github.com/MartinBernstorff/iterpy/commit/b6c0f19f7fdb84a2b65d8a58f2e4e89dd8f3ce32))
+
+* dev(#89): simplify dev container
+
+Fixes #89 ([`024599c`](https://github.com/MartinBernstorff/iterpy/commit/024599cdefd77c76f556fc420717d7ff61bdac31))
+
+* Delete functionalpy.egg-info directory ([`adbc4a4`](https://github.com/MartinBernstorff/iterpy/commit/adbc4a4591229832854c9ece35c41e17036d7b74))
+
+* deps:(deps-dev): bump ruff from 0.1.13 to 0.1.14 (#88) ([`3d694cc`](https://github.com/MartinBernstorff/iterpy/commit/3d694cc8680f655fe4ff6ba0d4ce0e2620f10e35))
+
+* deps:(deps-dev): bump ruff from 0.1.13 to 0.1.14
+
+Bumps [ruff](https://github.com/astral-sh/ruff) from 0.1.13 to 0.1.14.
+- [Release notes](https://github.com/astral-sh/ruff/releases)
+- [Changelog](https://github.com/astral-sh/ruff/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/astral-sh/ruff/compare/v0.1.13...v0.1.14)
+
+---
+updated-dependencies:
+- dependency-name: ruff
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`9fcdb4f`](https://github.com/MartinBernstorff/iterpy/commit/9fcdb4f779799a70baefc3e2bf73ebcb77bb9618))
+
+* deps:(deps-dev): bump diff-cover from 8.0.2 to 8.0.3 (#87) ([`c7ea3db`](https://github.com/MartinBernstorff/iterpy/commit/c7ea3dbeb83c43f7124ef087e96595b88abdbfc0))
+
+* deps:(deps-dev): bump pyright from 1.1.346 to 1.1.348 (#86) ([`06084f9`](https://github.com/MartinBernstorff/iterpy/commit/06084f9a2a8caf94c06267e4b337e4db73cc4552))
+
+* deps:(deps-dev): bump diff-cover from 8.0.2 to 8.0.3
+
+Bumps [diff-cover](https://github.com/Bachmann1234/diff-cover) from 8.0.2 to 8.0.3.
+- [Release notes](https://github.com/Bachmann1234/diff-cover/releases)
+- [Changelog](https://github.com/Bachmann1234/diff_cover/blob/main/CHANGELOG)
+- [Commits](https://github.com/Bachmann1234/diff-cover/compare/v8.0.2...v8.0.3)
+
+---
+updated-dependencies:
+- dependency-name: diff-cover
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`bbf82a4`](https://github.com/MartinBernstorff/iterpy/commit/bbf82a422575279bb8f9de1d7d31ee48dc16d688))
+
+* deps:(deps-dev): bump pyright from 1.1.346 to 1.1.348
+
+Bumps [pyright](https://github.com/RobertCraigie/pyright-python) from 1.1.346 to 1.1.348.
+- [Release notes](https://github.com/RobertCraigie/pyright-python/releases)
+- [Commits](https://github.com/RobertCraigie/pyright-python/compare/v1.1.346...v1.1.348)
+
+---
+updated-dependencies:
+- dependency-name: pyright
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`28c1c3a`](https://github.com/MartinBernstorff/iterpy/commit/28c1c3ab49e13765c2a091453cf0aa82e40563b2))
+
+* deps:(deps-dev): bump ruff from 0.1.11 to 0.1.13 (#85) ([`36fe2c3`](https://github.com/MartinBernstorff/iterpy/commit/36fe2c3b97d9aec2832a4e984bc5ab49338289cc))
+
+* deps:(deps-dev): bump pyright from 1.1.344 to 1.1.346 (#84) ([`886d7a2`](https://github.com/MartinBernstorff/iterpy/commit/886d7a224430bb41f19bc23c676ddaac10e00782))
+
+* deps:(deps-dev): bump ruff from 0.1.11 to 0.1.13
+
+Bumps [ruff](https://github.com/astral-sh/ruff) from 0.1.11 to 0.1.13.
+- [Release notes](https://github.com/astral-sh/ruff/releases)
+- [Changelog](https://github.com/astral-sh/ruff/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/astral-sh/ruff/compare/v0.1.11...v0.1.13)
+
+---
+updated-dependencies:
+- dependency-name: ruff
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`186f128`](https://github.com/MartinBernstorff/iterpy/commit/186f128856126ad4fe5d3d90ebcf33e3553e39bf))
+
+* deps:(deps-dev): bump pyright from 1.1.344 to 1.1.346
+
+Bumps [pyright](https://github.com/RobertCraigie/pyright-python) from 1.1.344 to 1.1.346.
+- [Release notes](https://github.com/RobertCraigie/pyright-python/releases)
+- [Commits](https://github.com/RobertCraigie/pyright-python/compare/v1.1.344...v1.1.346)
+
+---
+updated-dependencies:
+- dependency-name: pyright
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`91610a8`](https://github.com/MartinBernstorff/iterpy/commit/91610a87d248404b1f0a514f580ff44890d3c85a))
+
+* deps:(deps-dev): bump ruff from 0.1.9 to 0.1.11 (#82) ([`10a05a2`](https://github.com/MartinBernstorff/iterpy/commit/10a05a2d3fd0b50d8af609c1807920d6dfe5e4c5))
+
+* deps:(deps-dev): bump ruff from 0.1.9 to 0.1.11
+
+Bumps [ruff](https://github.com/astral-sh/ruff) from 0.1.9 to 0.1.11.
+- [Release notes](https://github.com/astral-sh/ruff/releases)
+- [Changelog](https://github.com/astral-sh/ruff/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/astral-sh/ruff/compare/v0.1.9...v0.1.11)
+
+---
+updated-dependencies:
+- dependency-name: ruff
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`4c22487`](https://github.com/MartinBernstorff/iterpy/commit/4c2248782f296a69a9b0f14bae321b02c648a4d5))
+
+
 ## v0.22.0 (2024-01-04)
 
 ### Documentation
