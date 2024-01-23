@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.12-bookworm
+FROM python:3.10-bookworm
 
 ####################
 # Install Graphite #
@@ -20,20 +20,10 @@ ENV PATH=$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
 RUN npm install -g @withgraphite/graphite-cli@stable
 
-###########
-# Pyright #
-########### 
-WORKDIR /app
-RUN pip install pyright
-RUN pyright .
-
 ################
 # Install deps #
 ################
 COPY pyproject.toml ./
-RUN  --mount=type=cache,target=/root/.cache/pip pip install pip install --upgrade .[dev]
 
-# Ensure pyright builds correctly. 
-# If run in make validate, it is run in parallel, which breaks its installation.
 # Install the entire app
 COPY . /app
