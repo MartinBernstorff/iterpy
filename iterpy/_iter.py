@@ -69,7 +69,7 @@ class Iter(Generic[T]):
         return set(self._iterator)  # pragma: no cover
 
     ### Transformations
-    def map(  # noqa: A003 # Ignore that it's shadowing a python built-in
+    def map(  # Ignore that it's shadowing a python built-in
         self,
         func: Callable[[T], S],
     ) -> "Iter[S]":
@@ -86,7 +86,7 @@ class Iter(Generic[T]):
         with multiprocessing.Pool() as pool:
             return Iter(pool.map(func, self._iterator))
 
-    def filter(self, func: Callable[[T], bool]) -> "Iter[T]":  # noqa: A003
+    def filter(self, func: Callable[[T], bool]) -> "Iter[T]":
         return Iter(filter(func, self._iterator))
 
     def groupby(
