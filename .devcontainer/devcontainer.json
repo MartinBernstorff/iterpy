@@ -20,6 +20,7 @@
                 "GitHub.vscode-pull-request-github",
                 "ms-vscode.makefile-tools",
                 "github.vscode-github-actions",
+                "MichaelCurrin.auto-commit-msg"
             ]
         }
     },
@@ -29,7 +30,7 @@
     "features": {
         "ghcr.io/devcontainers/features/github-cli:1": {}
     },
-    "postStartCommand": "pip install -e .[dev,benchmark]"
+    "postStartCommand": "gt user pager --disable && pip install -e .[dev,benchmark]"
     // Features to add to the dev container. More info: https://containers.dev/features.
     // "features": {},
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
