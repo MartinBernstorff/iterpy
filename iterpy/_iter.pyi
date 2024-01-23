@@ -8,14 +8,15 @@ from collections.abc import (
     Iterator,
     Sequence,
 )
+from types import UnionType
 from typing import Generic, TypeVar, overload
 
 S = TypeVar("S")
 T = TypeVar("T")
 U = TypeVar("U")
 
-iterpyables: TypeVar = (
-    Iterable | Iterator | tuple | list | set | frozenset  # type: ignore
+iterpyables: UnionType = (
+    Iterable | Iterator | "Iter" | tuple | list | set | frozenset
 )
 
 class Iter(Generic[T]):
@@ -24,6 +25,8 @@ class Iter(Generic[T]):
     def __getitem__(self, index: int) -> T: ...
     @overload
     def __getitem__(self, index: slice) -> Iter[T]: ...
+    def __iter__(self) -> Iter[T]: ...
+    def __next__(self) -> T: ...
     def count(self) -> int: ...
     def to_list(self) -> list[T]: ...
     def to_tuple(self) -> tuple[T, ...]: ...
@@ -79,6 +82,12 @@ class Iter(Generic[T]):
     def flatten(self: Iter[frozenset[S]]) -> Iter[S]: ...
     @overload
     def flatten(self: Iter[frozenset[S] | S]) -> Iter[S]: ...
+
+    # Iter[S]   # noqa: ERA001
+    @overload
+    def flatten(self: Iter[Iter[S]]) -> Iter[S]: ...
+    @overload
+    def flatten(self: Iter[Iter[S] | S]) -> Iter[S]: ...
 
     # str
     @overload

@@ -11,13 +11,13 @@ if __name__ == "__main__":
     base_message_template = """
     # TYPE[S]   # noqa: ERA001
     @overload
-    def flatten(self: Seq[TYPE[S]]) -> Seq[S]: ...
+    def flatten(self: Iter[TYPE[S]]) -> Iter[S]: ...
     @overload
-    def flatten(self: Seq[TYPE[S] | S]) -> Seq[S]: ...
+    def flatten(self: Iter[TYPE[S] | S]) -> Iter[S]: ...
     """
 
     heterogenous_overload = """@overload
-    def flatten(self: Seq[TYPE[S] | T]) -> Seq[S]: ..."""
+    def flatten(self: Iter[TYPE[S] | T]) -> Iter[S]: ..."""
 
     combined_interface = f"    # Code for generating the following is in {Path(__file__).name}"
     for mark in [
@@ -28,6 +28,7 @@ if __name__ == "__main__":
         TypeMarker("list[S]"),
         TypeMarker("set[S]"),
         TypeMarker("frozenset[S]"),
+        TypeMarker("Iter[S]"),
     ]:
         message = (
             base_message_template.replace(
@@ -40,15 +41,15 @@ if __name__ == "__main__":
     combined_interface += """
     # str
     @overload
-    def flatten(self: Seq[str]) -> Seq[str]: ...
+    def flatten(self: Iter[str]) -> Iter[str]: ...
     @overload
-    def flatten(self: Seq[str | S]) -> Seq[S]: ...
+    def flatten(self: Iter[str | S]) -> Iter[S]: ...
     """
 
     combined_interface += """
     # Generic
     @overload
-    def flatten(self: Seq[S]) -> Seq[S]: ...
+    def flatten(self: Iter[S]) -> Iter[S]: ...
     """
 
     print(combined_interface)

@@ -121,6 +121,11 @@ class TestFlattenTypes:
         result: Iter[int] = Iter(test_input).flatten()
         assert result.to_list() == [1, 2, 3, 4]
 
+    def test_flatten_iter_iter(self):
+        iterator: Iter[int] = Iter([1, 2])
+        nested_iter: Iter[Iter[int]] = Iter([iterator])
+        unnested_iter: Iter[int] = nested_iter.flatten()  # noqa: F841, RUF100
+
     def test_flatten_str(self):
         test_input: list[str] = ["abcd"]
         iterator = Iter(test_input)

@@ -28,6 +28,12 @@ class Iter(Generic[T]):
 
         return deepcopy(self.__consumable_iterator)
 
+    def __iter__(self) -> "Iter[T]":
+        return self
+
+    def __next__(self) -> T:
+        return next(self._iterator)
+
     def __getitem__(self, index: int | slice) -> T | "Iter[T]":
         if isinstance(index, int) and index >= 0:
             try:

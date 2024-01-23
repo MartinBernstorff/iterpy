@@ -86,6 +86,7 @@ ignore = [
   "RET504",
   "COM812",
   "COM819",
+  "RUF100",
   "W191",
 ]
 ignore-init-module-imports = true
