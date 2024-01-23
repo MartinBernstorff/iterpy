@@ -114,6 +114,8 @@ class Iter(Generic[T]):
         for i in self._iterator:
             if isinstance(i, Sequence) and not isinstance(i, str):
                 values.extend(i)
+            elif isinstance(i, Iter):
+                values.extend(i.to_list())
             else:
                 values.append(i)
 
