@@ -2,7 +2,7 @@ from collections.abc import Sequence
 
 import pytest
 
-from iterpy._iter import Iter
+from iterpy import Iter
 
 
 def test_chaining():
