@@ -6,6 +6,7 @@ from collections.abc import (
     Iterator,
     Sequence,
 )
+from copy import deepcopy
 from functools import reduce
 from itertools import islice
 from typing import Generic, TypeVar
@@ -122,7 +123,7 @@ class Iter(Generic[T]):
             if isinstance(i, Sequence) and not isinstance(i, str):
                 values.extend(i)
             elif isinstance(i, Iter):
-                values.extend(i.to_list())
+                values.extend(deepcopy(i).to_list())
             else:
                 values.append(i)
 
