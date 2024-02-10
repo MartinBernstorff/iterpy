@@ -2,6 +2,92 @@
 
 
 
+## v0.22.2 (2024-02-10)
+
+### Fix
+
+* fix(#102): recursive consume bug introduced in 0.22.1 (#103)
+
+Fixes #102 ([`849cd5e`](https://github.com/MartinBernstorff/iterpy/commit/849cd5e8e827593758fc5fed9bcf7478e2f88bdd))
+
+* fix(#102): recursive consume bug introduced in 0.22.1
+
+Fixes #102 ([`5e8087b`](https://github.com/MartinBernstorff/iterpy/commit/5e8087ba3445567402e557b46f3624d5ff82f582))
+
+### Unknown
+
+* deps:(deps-dev): bump pytest-sugar from 0.9.7 to 1.0.0 (#99) ([`cded803`](https://github.com/MartinBernstorff/iterpy/commit/cded80336b9bb2458cfe3a8dbc4decf191ddac49))
+
+* deps:(deps-dev): bump ruff from 0.1.14 to 0.2.0 (#100) ([`f72c71f`](https://github.com/MartinBernstorff/iterpy/commit/f72c71fea1777ea6e0b6f22144f7c1f5e946e7ca))
+
+* deps:(deps-dev): bump ruff from 0.1.14 to 0.2.0
+
+Bumps [ruff](https://github.com/astral-sh/ruff) from 0.1.14 to 0.2.0.
+- [Release notes](https://github.com/astral-sh/ruff/releases)
+- [Changelog](https://github.com/astral-sh/ruff/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/astral-sh/ruff/compare/v0.1.14...v0.2.0)
+
+---
+updated-dependencies:
+- dependency-name: ruff
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`4bac6e3`](https://github.com/MartinBernstorff/iterpy/commit/4bac6e3312f5305b443adf5b3c5cead425b47629))
+
+* deps:(deps-dev): bump pytest-sugar from 0.9.7 to 1.0.0
+
+Bumps [pytest-sugar](https://github.com/Teemu/pytest-sugar) from 0.9.7 to 1.0.0.
+- [Release notes](https://github.com/Teemu/pytest-sugar/releases)
+- [Changelog](https://github.com/Teemu/pytest-sugar/blob/main/CHANGES.rst)
+- [Commits](https://github.com/Teemu/pytest-sugar/compare/v0.9.7...v1.0.0)
+
+---
+updated-dependencies:
+- dependency-name: pytest-sugar
+  dependency-type: direct:production
+  update-type: version-update:semver-major
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`1cf5e05`](https://github.com/MartinBernstorff/iterpy/commit/1cf5e05ba1f781f2e442fcfb8843d1ffcff8804e))
+
+* deps:(deps-dev): bump pyright from 1.1.348 to 1.1.349 (#95) ([`8f5d853`](https://github.com/MartinBernstorff/iterpy/commit/8f5d853d18755e8af86f5c357498baaeb32c61dd))
+
+* deps:(deps-dev): bump pyright from 1.1.348 to 1.1.349
+
+Bumps [pyright](https://github.com/RobertCraigie/pyright-python) from 1.1.348 to 1.1.349.
+- [Release notes](https://github.com/RobertCraigie/pyright-python/releases)
+- [Commits](https://github.com/RobertCraigie/pyright-python/compare/v1.1.348...v1.1.349)
+
+---
+updated-dependencies:
+- dependency-name: pyright
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`94fbc8d`](https://github.com/MartinBernstorff/iterpy/commit/94fbc8d98b18f7e63b9b63db0f4cd9877c85b696))
+
+* deps:(deps-dev): bump pytest from 7.4.4 to 8.0.0 (#96) ([`4e4ca5e`](https://github.com/MartinBernstorff/iterpy/commit/4e4ca5e8b3f7df41d06e566bf192380932b9fdd5))
+
+* deps:(deps-dev): bump pytest from 7.4.4 to 8.0.0
+
+Bumps [pytest](https://github.com/pytest-dev/pytest) from 7.4.4 to 8.0.0.
+- [Release notes](https://github.com/pytest-dev/pytest/releases)
+- [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
+- [Commits](https://github.com/pytest-dev/pytest/compare/7.4.4...8.0.0)
+
+---
+updated-dependencies:
+- dependency-name: pytest
+  dependency-type: direct:production
+  update-type: version-update:semver-major
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`526c3d1`](https://github.com/MartinBernstorff/iterpy/commit/526c3d18f2fb5733bdde5428cf41364f2dff31ff))
+
+
 ## v0.22.1 (2024-01-23)
 
 ### Build
