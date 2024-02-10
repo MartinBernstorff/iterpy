@@ -61,7 +61,7 @@ iterpy stands on the shoulders of Scala, Rust etc.
 
 Other Python projects have had similar ideas:
 * [PyFunctional](https://github.com/EntilZha/PyFunctional) has existed for 7+ years with a comprehensive feature set. It is performant, with built-in lineage and caching. Unfortunately, this makes typing [non-trivial, with a 4+ year ongoing effort to add types](https://github.com/EntilZha/PyFunctional/issues/118).
-* [flupy](https://github.com/olirice/flupy) is highly similar, well typed, and mature. I had some issues with `.flatten()` not being type-hinted correctly, but at the current level of maturity, `flupy` is likely a better library.
+* [flupy](https://github.com/olirice/flupy) is highly similar, well typed, and mature. I had some issues with `.flatten()` not being type-hinted correctly, but but your mileage may vary.
 * Your library here? Feel free to make an issue if you have a good alternative!
 
 ## Contributing
