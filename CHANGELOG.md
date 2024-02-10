@@ -2,6 +2,19 @@
 
 
 
+## v1.2.0 (2024-02-10)
+
+### Feature
+
+* feat: more commands (#109) ([`e375bbd`](https://github.com/MartinBernstorff/iterpy/commit/e375bbd91f596f851d4f036eb905c4ee54edcb8f))
+
+* feat: more commands ([`97c23fa`](https://github.com/MartinBernstorff/iterpy/commit/97c23fab0f1bd0e453d1a94f7260494583fec68c))
+
+### Unknown
+
+* Update README.md ([`b198785`](https://github.com/MartinBernstorff/iterpy/commit/b198785f4daacfad69853349be8f179373a45274))
+
+
 ## v1.1.0 (2024-02-10)
 
 ### Feature
