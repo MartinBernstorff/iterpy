@@ -123,6 +123,26 @@ def test_unique_by():
     ]
 
 
+def test_enumerate():
+    test_iterator = Iter([1, 2, 3])
+    assert test_iterator.enumerate().to_list() == [
+        (0, 1),
+        (1, 2),
+        (2, 3),
+    ]
+
+
+def test_find():
+    test_iterator = Iter([1, 2, 3])
+    assert test_iterator.find(lambda x: x == 2) == 2
+    assert test_iterator.find(lambda x: x == 4) is None
+
+
+def test_last():
+    test_iterator = Iter([1, 2, 3])
+    assert test_iterator.last() == 3
+
+
 def test_flatten():
     test_input: list[list[int]] = [[1, 2], [3, 4]]
     iterator = Iter(test_input)

@@ -51,7 +51,7 @@ class Iter(Generic[T]):
             )
 
     def __repr__(self) -> str:
-        return f"Iter({self._nonconsumable_iterable})"
+        return f"Iter{self._nonconsumable_iterable}"
 
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, Iter):
@@ -154,3 +154,15 @@ class Iter(Generic[T]):
                 values.append(value)
 
         return Iter(values)
+
+    def enumerate(self) -> "Iter[tuple[int, T]]":
+        return Iter(enumerate(self._iterator))
+
+    def find(self, func: Callable[[T], bool]) -> T | None:
+        for value in self._iterator:
+            if func(value):
+                return value
+        return None
+
+    def last(self) -> T:
+        return self._nonconsumable_iterable[-1]
