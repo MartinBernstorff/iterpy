@@ -2,6 +2,27 @@
 
 
 
+## v1.0.0 (2024-02-10)
+
+### Breaking
+
+* fix!: clarify public api (#107) ([`95e7912`](https://github.com/MartinBernstorff/iterpy/commit/95e791270ca2c9de61f1843a3daaa0f096023389))
+
+* fix!: clarify public api ([`cfba4ce`](https://github.com/MartinBernstorff/iterpy/commit/cfba4ce098e0d0aed426c9dedd842441f6661b88))
+
+### Ci
+
+* ci: add codspeed benchmarking (#105) ([`91d78bc`](https://github.com/MartinBernstorff/iterpy/commit/91d78bc98e063be852011a8b2667fe4b3f76248f))
+
+* ci: add codspeed benchmarking ([`d5e9219`](https://github.com/MartinBernstorff/iterpy/commit/d5e92197e3a4dbf3f6a01b78c18481d648e7a6ef))
+
+### Unknown
+
+* Update README.md ([`b5ac759`](https://github.com/MartinBernstorff/iterpy/commit/b5ac759801136f15c5bddc5ae5b334e429c9a029))
+
+* Update README.md ([`06856da`](https://github.com/MartinBernstorff/iterpy/commit/06856da9cccb88a322a4c12efd1c6e033ffd6dd8))
+
+
 ## v0.23.0 (2024-02-10)
 
 ### Feature
