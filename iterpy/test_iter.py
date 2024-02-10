@@ -86,6 +86,16 @@ def test_statefulness():
     assert test_iterator.to_list() == [1, 2, 3]
 
 
+def test_head():
+    test_iterator = Iter([1, 2, 3])
+    assert test_iterator.head(2) == Iter([1, 2])
+
+
+def test_tail():
+    test_iterator = Iter([1, 2, 3])
+    assert test_iterator.tail(2) == Iter([2, 3])
+
+
 def test_flatten():
     test_input: list[list[int]] = [[1, 2], [3, 4]]
     iterator = Iter(test_input)
