@@ -2,6 +2,19 @@
 
 
 
+## v0.23.0 (2024-02-10)
+
+### Feature
+
+* feat(#97): tail and head (#104)
+
+Fixes #97 ([`32a407d`](https://github.com/MartinBernstorff/iterpy/commit/32a407d20df542df68d09555fc5e199d9ba2b353))
+
+* feat(#97): tail and head
+
+Fixes #97 ([`4a1b977`](https://github.com/MartinBernstorff/iterpy/commit/4a1b9777e14331f861a360e19b44c5a7150cd2d7))
+
+
 ## v0.22.2 (2024-02-10)
 
 ### Fix
