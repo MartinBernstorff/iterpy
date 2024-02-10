@@ -2,12 +2,10 @@ import multiprocessing
 from collections import defaultdict
 from collections.abc import (
     Callable,
-    Generator,
     Iterable,
     Iterator,
     Sequence,
 )
-from copy import deepcopy
 from functools import reduce
 from itertools import islice
 from typing import Generic, TypeVar
@@ -18,21 +16,19 @@ S = TypeVar("S")
 
 class Iter(Generic[T]):
     def __init__(self, iterable: Iterable[T]) -> None:
-        self.__consumable_iterator: Iterator[T] = iter(iterable)
+        self._nonconsumable_iterable: list[T] = list(iterable)
+        self._current_index: int = 0
 
     @property
     def _iterator(self) -> Iterator[T]:
-        if isinstance(self.__consumable_iterator, Generator):
-            collected = list(self.__consumable_iterator)
-            return iter(collected)
-
-        return deepcopy(self.__consumable_iterator)
+        return iter(self._nonconsumable_iterable)
 
     def __iter__(self) -> "Iter[T]":
         return self
 
     def __next__(self) -> T:
-        return next(self._iterator)
+        self._current_index += 1
+        return self._nonconsumable_iterable[self._current_index]
 
     def __getitem__(self, index: int | slice) -> T | "Iter[T]":
         if isinstance(index, int) and index >= 0:
@@ -63,7 +59,7 @@ class Iter(Generic[T]):
 
     ### Output
     def to_list(self) -> list[T]:
-        return list(self._iterator)
+        return self._nonconsumable_iterable
 
     def to_tuple(self) -> tuple[T, ...]:
         return tuple(self._iterator)  # pragma: no cover
@@ -79,7 +75,7 @@ class Iter(Generic[T]):
         self,
         func: Callable[[T], S],
     ) -> "Iter[S]":
-        return Iter(map(func, self._iterator))
+        return Iter([func(i) for i in self._iterator])
 
     def pmap(
         self,
@@ -93,7 +89,7 @@ class Iter(Generic[T]):
             return Iter(pool.map(func, self._iterator))
 
     def filter(self, func: Callable[[T], bool]) -> "Iter[T]":
-        return Iter(filter(func, self._iterator))
+        return Iter([i for i in self._iterator if func(i)])
 
     def groupby(
         self, func: Callable[[T], str]
