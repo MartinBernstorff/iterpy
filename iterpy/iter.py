@@ -128,8 +128,29 @@ class Iter(Generic[T]):
 
         return Iter(values)
 
-    def head(self, n: int = 1) -> "Iter[T]":
+    def take(self, n: int = 1) -> "Iter[T]":
         return Iter(self._nonconsumable_iterable[0:n])
 
-    def tail(self, n: int = 1) -> "Iter[T]":
-        return Iter(self._nonconsumable_iterable[n - 1 :])
+    def rev(self) -> "Iter[T]":
+        return Iter(reversed(self._nonconsumable_iterable))
+
+    def any(self, func: Callable[[T], bool]) -> bool:
+        return any(func(i) for i in self._iterator)
+
+    def all(self, func: Callable[[T], bool]) -> bool:
+        return all(func(i) for i in self._iterator)
+
+    def unique(self) -> "Iter[T]":
+        return Iter(set(self._iterator))
+
+    def unique_by(self, func: Callable[[T], S]) -> "Iter[T]":
+        seen: set[S] = set()
+        values: list[T] = []
+
+        for value in self._iterator:
+            key = func(value)
+            if key not in seen:
+                seen.add(key)
+                values.append(value)
+
+        return Iter(values)
