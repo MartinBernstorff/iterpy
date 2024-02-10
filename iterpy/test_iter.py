@@ -88,14 +88,39 @@ def test_statefulness():
     assert test_iterator.to_list() == [1, 2, 3]
 
 
-def test_head():
+def test_take():
     test_iterator = Iter([1, 2, 3])
-    assert test_iterator.head(2) == Iter([1, 2])
+    assert test_iterator.take(2) == Iter([1, 2])
 
 
-def test_tail():
+def test_rev():
     test_iterator = Iter([1, 2, 3])
-    assert test_iterator.tail(2) == Iter([2, 3])
+    assert test_iterator.rev().to_list() == [3, 2, 1]
+
+
+def test_any():
+    test_iterator = Iter([1, 2, 3])
+    assert test_iterator.any(lambda x: x == 2) is True
+    assert test_iterator.any(lambda x: x == 4) is False
+
+
+def test_all():
+    test_iterator = Iter([1, 2, 3])
+    assert test_iterator.all(lambda x: x < 4) is True
+    assert test_iterator.all(lambda x: x < 3) is False
+
+
+def test_unique():
+    test_iterator = Iter([1, 2, 2, 3])
+    assert test_iterator.unique().to_list() == [1, 2, 3]
+
+
+def test_unique_by():
+    test_iterator = Iter([1, 2, 2, 3])
+    assert test_iterator.unique_by(lambda x: x % 2).to_list() == [
+        1,
+        2,
+    ]
 
 
 def test_flatten():
