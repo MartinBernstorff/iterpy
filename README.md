@@ -21,9 +21,7 @@ You get this 🔥:
 ```python
 from iterpy import Iter
 
-result = (Iter([1,2,3])
-            .map(multiply_by_2)
-            .filter(is_even))
+result = Iter([1,2,3].map(multiply_by_2).filter(is_even)
 ```
 
 Instead of this:
