@@ -1,5 +1,7 @@
 from collections.abc import Sequence
 
+import pytest
+
 from iterpy._iter import Iter
 
 
@@ -101,6 +103,12 @@ def test_flatten():
     iterator = Iter(test_input)
     result: Iter[int] = iterator.flatten()
     assert result.to_list() == [1, 2, 3, 4]
+
+
+@pytest.mark.benchmark()
+def test_benchmark_large_flattening():
+    test_input = Iter(range(100_000)).map(lambda x: Iter([x]))
+    assert test_input.flatten().to_list() == list(range(100_000))
 
 
 class TestFlattenTypes:
