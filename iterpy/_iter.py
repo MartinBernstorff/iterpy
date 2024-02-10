@@ -50,6 +50,17 @@ class Iter(Generic[T]):
                 f"Key must be non-negative integer or slice, not {index}"
             )
 
+    def __repr__(self) -> str:
+        return f"Iter({self._nonconsumable_iterable})"
+
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, Iter):
+            return False
+        return (
+            self._nonconsumable_iterable
+            == other._nonconsumable_iterable
+        )
+
     ### Reductions
     def reduce(self, func: Callable[[T, T], T]) -> T:
         return reduce(func, self._iterator)
@@ -116,3 +127,9 @@ class Iter(Generic[T]):
                 values.append(i)
 
         return Iter(values)
+
+    def head(self, n: int = 1) -> "Iter[T]":
+        return Iter(self._nonconsumable_iterable[0:n])
+
+    def tail(self, n: int = 1) -> "Iter[T]":
+        return Iter(self._nonconsumable_iterable[n - 1 :])
