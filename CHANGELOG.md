@@ -2,6 +2,19 @@
 
 
 
+## v1.1.0 (2024-02-10)
+
+### Feature
+
+* feat(#98): add unique (#108)
+
+Fixes #98 ([`71de249`](https://github.com/MartinBernstorff/iterpy/commit/71de24909611f98cf7e088d447bb1333bd40fa85))
+
+* feat(#98): add unique
+
+Fixes #98 ([`7cae674`](https://github.com/MartinBernstorff/iterpy/commit/7cae6741f51b7c2f8fabf4a8f7162a2109bbe8a4))
+
+
 ## v1.0.0 (2024-02-10)
 
 ### Breaking
