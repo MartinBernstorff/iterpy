@@ -1,6 +1,6 @@
 # iterpy
 [![Open in Dev Container](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)][dev container]
-[![PyPI](https://img.shields.io/pypi/v/iter.svg)][pypi status]
+[![PyPI](https://img.shields.io/pypi/v/iterpy.svg)][pypi status]
 [![Python Version](https://img.shields.io/pypi/pyversions/iterpy)][pypi status]
 [![Tests](https://github.com/MartinBernstorff/iterpy/actions/workflows/tests.yml/badge.svg)][tests]
 [![Roadmap](https://img.shields.io/badge/Projects-Roadmap-green)][roadmap]
