@@ -12,8 +12,6 @@
 
 
 <!-- start short-description -->
-**ALPHA**: APIs can change dramatically without notice.
-
 Python has implemented `map`, `filter` etc. as functions, rather than methods on a sequence. This makes the result harder to read and iterators less used than they could be. iterpy exists to change that. 
 
 You get this 🔥:
