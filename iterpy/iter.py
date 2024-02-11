@@ -93,7 +93,7 @@ class Iter(Generic[T]):
     def map(  # Ignore that it's shadowing a python built-in
         self, func: Callable[[T], S]
     ) -> "Iter[S]":
-        return Iter([func(i) for i in self._iterator])
+        return Iter(map(func, self._iterator))
 
     def pmap(
         self,
@@ -107,7 +107,7 @@ class Iter(Generic[T]):
             return Iter(pool.map(func, self._iterator))
 
     def filter(self, func: Predicate) -> "Iter[T]":
-        return Iter([i for i in self._iterator if func(i)])
+        return Iter(filter(func, self._iterator))
 
     def groupby(self, func: Hasher) -> "Iter[tuple[str, list[T]]]":
         groups_with_values: defaultdict[str, list[T]] = defaultdict(
