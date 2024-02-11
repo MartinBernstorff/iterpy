@@ -2,6 +2,15 @@
 
 
 
+## v1.3.0 (2024-02-11)
+
+### Feature
+
+* feat: add automatic benchmarking of all public methods (#110) ([`c9d66c7`](https://github.com/MartinBernstorff/iterpy/commit/c9d66c7460b011882761aa1c96bd18ab310791c5))
+
+* feat: add automatic benchmarking of all public methods ([`09dccd0`](https://github.com/MartinBernstorff/iterpy/commit/09dccd05dbf897afaa38cd13f12bd33c939452ea))
+
+
 ## v1.2.0 (2024-02-10)
 
 ### Feature
