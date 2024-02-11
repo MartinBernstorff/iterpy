@@ -171,3 +171,6 @@ class Iter(Generic[T]):
 
     def last(self) -> T:
         return self._nonconsumable_iterable[-1]
+
+    def zip(self, other: "Iter[S]") -> "Iter[tuple[T, S]]":
+        return Iter(zip(self, other, strict=False))

@@ -143,6 +143,18 @@ def test_last():
     assert test_iterator.last() == 3
 
 
+def test_zip():
+    iter1 = Iter([1, 2, 3])
+    iter2 = Iter(["a", "b", "c"])
+    result: Iter[tuple[int, str]] = iter1.zip(iter2)
+    assert result.to_list() == [(1, "a"), (2, "b"), (3, "c")]
+    assert result.to_list() == [
+        (1, "a"),
+        (2, "b"),
+        (3, "c"),
+    ]  # Ensure it's not exhausted
+
+
 def test_flatten():
     test_input: list[list[int]] = [[1, 2], [3, 4]]
     iterator = Iter(test_input)

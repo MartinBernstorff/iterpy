@@ -1,3 +1,4 @@
+import functools
 import inspect
 import types
 from collections.abc import Callable, Mapping, Sequence
@@ -36,19 +37,16 @@ def _populate_values_for_arg(
     if arg.annotation is str:
         return ""
 
-    PREDICATE = "Callable[[~T], bool]"
-    MAPPER = "Callable[[~T], ~S]"
-    REDUCER = "Callable[[~T, ~T], ~T]"
-    HASHER = "Callable[[~T], str]"
-
-    if PREDICATE in str(arg.annotation):
+    if "Callable[[~T], bool]" in str(arg.annotation):
         return lambda x: True  # noqa: ARG005
-    if MAPPER in str(arg.annotation):
+    if "Callable[[~T], ~S]" in str(arg.annotation):
         return lambda x: x
-    if REDUCER in str(arg.annotation):
+    if "Callable[[~T, ~T], ~T]" in str(arg.annotation):
         return lambda x, y: x  # noqa: ARG005
-    if HASHER in str(arg.annotation):
+    if "Callable[[~T], str]" in str(arg.annotation):
         return lambda x: str(x)
+    if "Iter[S]" in str(arg.annotation):
+        return Iter([1, 2, 3])
 
     raise ValueError(f"Unsupported type: {arg.annotation}")
 
@@ -122,14 +120,21 @@ def _extract_public_methods_with_default_args(
     return combined.to_list()
 
 
+iter_example_generator = functools.partial(
+    _extract_public_methods_with_default_args,
+    iter_benchmark_items=list(range(1_000)),
+    excluded_methods=[
+        "pmap"  # pmap requires pickling a lambda, which is not supported
+    ],
+)
+
+if __name__ == "__main__":
+    examples = iter_example_generator()
+
+
 @pytest.mark.parametrize(
     ("example"),
-    _extract_public_methods_with_default_args(
-        iter_benchmark_items=list(range(1_000)),
-        excluded_methods=[
-            "pmap"  # pmap requires pickling a lambda, which is not supported
-        ],
-    ),
+    iter_example_generator(),
     ids=lambda example: example.method.__name__,
 )
 @pytest.mark.benchmark()
