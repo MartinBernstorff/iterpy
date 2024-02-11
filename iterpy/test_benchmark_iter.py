@@ -130,6 +130,7 @@ def _extract_public_methods_with_default_args(
             "pmap"  # pmap requires pickling a lambda, which is not supported
         ],
     ),
+    ids=lambda example: example.method.__name__,
 )
 @pytest.mark.benchmark()
 def test_benchmark_iter(
