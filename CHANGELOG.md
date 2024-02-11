@@ -2,6 +2,15 @@
 
 
 
+## v1.4.0 (2024-02-11)
+
+### Feature
+
+* feat: meaningful name to pytest examples (#111) ([`b1f0be2`](https://github.com/MartinBernstorff/iterpy/commit/b1f0be2810c72b14afb6962a71fd5b2a3c93aa21))
+
+* feat: meaningful name to pytest examples ([`6576aa0`](https://github.com/MartinBernstorff/iterpy/commit/6576aa07249d55284fdd602623f7d52477ec0cf9))
+
+
 ## v1.3.0 (2024-02-11)
 
 ### Feature
