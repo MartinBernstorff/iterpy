@@ -12,7 +12,8 @@ authors = [{ name = "Martin Bernstorff", email = "martinbernstorff@gmail.com" }]
 description = "iterpy"
 classifiers = [
   "Programming Language :: Python :: 3.10",
-  "Programming Language :: Python :: 3.11"
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12"
 ]
 requires-python = ">=3.10"
 
