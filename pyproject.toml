@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "iterpy"
-version = "1.4.0"
+version = "1.5.0"
 authors = [{ name = "Martin Bernstorff", email = "martinbernstorff@gmail.com" }]
 description = "iterpy"
 classifiers = [

@@ -2,6 +2,21 @@
 
 
 
+## v1.5.0 (2024-02-11)
+
+### Feature
+
+* feat: add zip (#112) ([`4f50635`](https://github.com/MartinBernstorff/iterpy/commit/4f50635bb721ab04e069d3d2f1d241776ad6062e))
+
+* feat: add zip ([`7f01f68`](https://github.com/MartinBernstorff/iterpy/commit/7f01f68e9c88a2309c0ed675ee7ea8f1d9ee2482))
+
+### Unknown
+
+* Update README.md ([`0625f48`](https://github.com/MartinBernstorff/iterpy/commit/0625f485ca387bcabedefdf13702a5f51a0d9abe))
+
+* Update README.md ([`8e2230f`](https://github.com/MartinBernstorff/iterpy/commit/8e2230fdca5ed5ea52410def42eb441183545bd6))
+
+
 ## v1.4.0 (2024-02-11)
 
 ### Feature
