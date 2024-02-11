@@ -12,6 +12,10 @@ from typing import Generic, TypeVar
 
 T = TypeVar("T")
 S = TypeVar("S")
+Predicate = Callable[[T], bool]
+Reducer = Callable[[T, T], T]
+Mapper = Callable[[T], S]
+Hasher = Callable[[T], str]
 
 
 class Iter(Generic[T]):
@@ -27,8 +31,12 @@ class Iter(Generic[T]):
         return self
 
     def __next__(self) -> T:
+        try:
+            item = self._nonconsumable_iterable[self._current_index]
+        except IndexError:
+            raise StopIteration  # noqa: B904
         self._current_index += 1
-        return self._nonconsumable_iterable[self._current_index]
+        return item
 
     def __getitem__(self, index: int | slice) -> T | "Iter[T]":
         if isinstance(index, int) and index >= 0:
@@ -62,7 +70,7 @@ class Iter(Generic[T]):
         )
 
     ### Reductions
-    def reduce(self, func: Callable[[T, T], T]) -> T:
+    def reduce(self, func: Reducer) -> T:
         return reduce(func, self._iterator)
 
     def count(self) -> int:
@@ -83,8 +91,7 @@ class Iter(Generic[T]):
 
     ### Transformations
     def map(  # Ignore that it's shadowing a python built-in
-        self,
-        func: Callable[[T], S],
+        self, func: Callable[[T], S]
     ) -> "Iter[S]":
         return Iter([func(i) for i in self._iterator])
 
@@ -99,12 +106,10 @@ class Iter(Generic[T]):
         with multiprocessing.Pool() as pool:
             return Iter(pool.map(func, self._iterator))
 
-    def filter(self, func: Callable[[T], bool]) -> "Iter[T]":
+    def filter(self, func: Predicate) -> "Iter[T]":
         return Iter([i for i in self._iterator if func(i)])
 
-    def groupby(
-        self, func: Callable[[T], str]
-    ) -> "Iter[tuple[str, list[T]]]":
+    def groupby(self, func: Hasher) -> "Iter[tuple[str, list[T]]]":
         groups_with_values: defaultdict[str, list[T]] = defaultdict(
             list
         )
@@ -134,10 +139,10 @@ class Iter(Generic[T]):
     def rev(self) -> "Iter[T]":
         return Iter(reversed(self._nonconsumable_iterable))
 
-    def any(self, func: Callable[[T], bool]) -> bool:
+    def any(self, func: Predicate) -> bool:
         return any(func(i) for i in self._iterator)
 
-    def all(self, func: Callable[[T], bool]) -> bool:
+    def all(self, func: Predicate) -> bool:
         return all(func(i) for i in self._iterator)
 
     def unique(self) -> "Iter[T]":
@@ -158,7 +163,7 @@ class Iter(Generic[T]):
     def enumerate(self) -> "Iter[tuple[int, T]]":
         return Iter(enumerate(self._iterator))
 
-    def find(self, func: Callable[[T], bool]) -> T | None:
+    def find(self, func: Predicate) -> T | None:
         for value in self._iterator:
             if func(value):
                 return value
