@@ -21,7 +21,7 @@ requires-python = ">=3.10"
 dev = [
   "cruft==2.15.0",
   "lumberman",
-  "pyright==1.1.349",
+  "pyright==1.1.350",
   "pytest==8.0.0",
   "pytest-cov==4.1.0",
   "pytest-xdist==3.5.0",
