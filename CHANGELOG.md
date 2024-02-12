@@ -2,6 +2,15 @@
 
 
 
+## v1.5.1 (2024-02-12)
+
+### Performance
+
+* perf: try generators for map and filter (#113) ([`196a258`](https://github.com/MartinBernstorff/iterpy/commit/196a258b922bf2a0563eabbd5d5728c6a792ad73))
+
+* perf: try generators for map and filter ([`cf2adc6`](https://github.com/MartinBernstorff/iterpy/commit/cf2adc6b588c8f39fa3d67c67332cd8bb4ad421c))
+
+
 ## v1.5.0 (2024-02-11)
 
 ### Feature
