@@ -1,18 +1,24 @@
-from collections.abc import Sequence
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
 
 import pytest
 
 from iterpy import Iter
 
+if TYPE_CHECKING:
+    from collections.abc import Sequence
+
 
 def test_chaining():
     iterator = Iter([1, 2])
-    result: list[int] = (
-        iterator.filter(lambda x: x % 2 == 0)
-        .map(lambda x: x * 2)
-        .to_list()
-    )
+    result: list[int] = iterator.filter(lambda x: x % 2 == 0).map(lambda x: x * 2).to_list()
     assert result == [4]
+
+
+def test_bool():
+    assert bool(Iter([1])) is True
+    assert bool(Iter([])) is False  # type: ignore
 
 
 def test_map():
@@ -33,9 +39,7 @@ def test_pmap():
 
 def test_filter():
     iterator = Iter([1, 2])
-    result: list[int] = iterator.filter(
-        lambda x: x % 2 == 0
-    ).to_list()
+    result: list[int] = iterator.filter(lambda x: x % 2 == 0).to_list()
     assert result == [2]
 
 
@@ -59,13 +63,8 @@ def test_grouped_filter():
             return "even"
         return "odd"
 
-    grouped: list[tuple[str, list[int]]] = iterator.groupby(
-        is_even
-    ).to_list()
-    assert grouped == [
-        ("odd", [1, 3]),
-        ("even", [2, 4]),
-    ]
+    grouped: list[tuple[str, list[int]]] = iterator.groupby(is_even).to_list()
+    assert grouped == [("odd", [1, 3]), ("even", [2, 4])]
 
 
 def test_getitem():
@@ -117,19 +116,12 @@ def test_unique():
 
 def test_unique_by():
     test_iterator = Iter([1, 2, 2, 3])
-    assert test_iterator.unique_by(lambda x: x % 2).to_list() == [
-        1,
-        2,
-    ]
+    assert test_iterator.unique_by(lambda x: x % 2).to_list() == [1, 2]
 
 
 def test_enumerate():
     test_iterator = Iter([1, 2, 3])
-    assert test_iterator.enumerate().to_list() == [
-        (0, 1),
-        (1, 2),
-        (2, 3),
-    ]
+    assert test_iterator.enumerate().to_list() == [(0, 1), (1, 2), (2, 3)]
 
 
 def test_find():
@@ -148,11 +140,7 @@ def test_zip():
     iter2 = Iter(["a", "b", "c"])
     result: Iter[tuple[int, str]] = iter1.zip(iter2)
     assert result.to_list() == [(1, "a"), (2, "b"), (3, "c")]
-    assert result.to_list() == [
-        (1, "a"),
-        (2, "b"),
-        (3, "c"),
-    ]  # Ensure it's not exhausted
+    assert result.to_list() == [(1, "a"), (2, "b"), (3, "c")]  # Ensure it's not exhausted
 
 
 def test_flatten():
@@ -172,16 +160,12 @@ class TestFlattenTypes:
     """Intentionally not parametrised so we can manually specify the return type hints and they can be checked by pyright"""
 
     def test_flatten_generator(self):
-        iterator: Iter[tuple[int, int]] = Iter(
-            (i, i + 1) for i in range(1, 3)
-        )
+        iterator: Iter[tuple[int, int]] = Iter((i, i + 1) for i in range(1, 3))
         result: Iter[int] = iterator.flatten()
         assert result.to_list() == [1, 2, 2, 3]
 
     def test_flatten_tuple(self):
-        iterator: Iter[tuple[int, int]] = Iter(
-            (i, i + 1) for i in range(1, 3)
-        )
+        iterator: Iter[tuple[int, int]] = Iter((i, i + 1) for i in range(1, 3))
         result: Iter[int] = iterator.flatten()
         assert result.to_list() == [1, 2, 2, 3]
 
@@ -209,11 +193,7 @@ class TestFlattenTypes:
         assert result.to_list() == ["abcd"]
 
     def test_flatten_includes_primitives(self):
-        test_input: list[str | list[int] | None] = [
-            "first",
-            [2],
-            None,
-        ]
+        test_input: list[str | list[int] | None] = ["first", [2], None]
         result: Iter[int | str | None] = Iter(test_input).flatten()
         assert result.to_list() == ["first", 2, None]
 
