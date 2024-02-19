@@ -1,5 +1,6 @@
+from __future__ import annotations
+
 import functools
-import inspect
 import types
 from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass
@@ -19,10 +20,10 @@ class AnnotatedArgument:
 def _get_callable_annotated_args(
     method: Callable[[Any], Any],
 ) -> Sequence[AnnotatedArgument]:
-    annotated_args = inspect.get_annotations(method)
+    annotated_args = getattr(method, "__annotations__", None)
     annotated_arguments = [
         AnnotatedArgument(name=arg_name, annotation=annotation)
-        for (arg_name, annotation) in annotated_args.items()
+        for (arg_name, annotation) in annotated_args.items()  # type: ignore
         if arg_name not in ("self", "return", "cls")
     ]
 
@@ -32,18 +33,18 @@ def _get_callable_annotated_args(
 def _populate_values_for_arg(
     arg: AnnotatedArgument,
 ) -> Any:
-    if arg.annotation is int:
+    if str(arg.annotation) == "int":
         return 0
-    if arg.annotation is str:
+    if str(arg.annotation) == "str":
         return ""
 
-    if "Callable[[~T], bool]" in str(arg.annotation):
+    if "Callable[[T], bool]" in str(arg.annotation):
         return lambda x: True  # noqa: ARG005
-    if "Callable[[~T], ~S]" in str(arg.annotation):
+    if "Callable[[T], S]" in str(arg.annotation):
         return lambda x: x
-    if "Callable[[~T, ~T], ~T]" in str(arg.annotation):
+    if "Callable[[T, T], T]" in str(arg.annotation):
         return lambda x, y: x  # noqa: ARG005
-    if "Callable[[~T], str]" in str(arg.annotation):
+    if "Callable[[T], str]" in str(arg.annotation):
         return lambda x: str(x)
     if "Iter[S]" in str(arg.annotation):
         return Iter([1, 2, 3])
@@ -109,7 +110,7 @@ def _extract_public_methods_with_default_args(
         _annotated_args_to_mapping
     )
 
-    combined = Iter(zip(public_methods, arguments, strict=True)).map(
+    combined = Iter(zip(public_methods, arguments)).map(  # type: ignore
         lambda x: IterBenchmarkExample(
             iter_items=iter_benchmark_items,
             method=x[0],
