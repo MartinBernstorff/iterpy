@@ -28,7 +28,7 @@ dev = [
   "pytest-sugar==1.0.0",
   "pytest-codspeed",
   "diff-cover==8.0.3",
-  "ruff==0.2.1",
+  "ruff==0.2.2",
 ]
 
 [project.license]
