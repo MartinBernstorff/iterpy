@@ -111,7 +111,7 @@ def _extract_public_methods_with_default_args(
         _annotated_args_to_mapping
     )
 
-    combined = Iter(zip(public_methods, arguments, strict=True)).map(  # type: ignore
+    combined = Iter(zip(public_methods, arguments)).map(  # type: ignore
         lambda x: IterBenchmarkExample(
             iter_items=iter_benchmark_items,
             method=x[0],
