@@ -10,7 +10,7 @@ from collections.abc import (
 )
 from functools import reduce
 from itertools import islice
-from typing import Generic, TypeVar, Union
+from typing import Generic, TypeVar
 
 T = TypeVar("T")
 S = TypeVar("S")

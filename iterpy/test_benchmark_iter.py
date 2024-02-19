@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import functools
-import inspect
 import types
 from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass
@@ -24,7 +23,7 @@ def _get_callable_annotated_args(
     annotated_args = getattr(method, "__annotations__", None)
     annotated_arguments = [
         AnnotatedArgument(name=arg_name, annotation=annotation)
-        for (arg_name, annotation) in annotated_args.items()
+        for (arg_name, annotation) in annotated_args.items()  # type: ignore
         if arg_name not in ("self", "return", "cls")
     ]
 
