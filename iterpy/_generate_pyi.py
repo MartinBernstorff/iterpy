@@ -13,15 +13,14 @@ if __name__ == "__main__":
     @overload
     def flatten(self: Iter[TYPE[S]]) -> Iter[S]: ...
     @overload
-    def flatten(self: Iter[TYPE[S] | S]) -> Iter[S]: ...
+    def flatten(self: Iter[TYPE[S] , S]) -> Iter[S]: ...
     """
 
     heterogenous_overload = """@overload
-    def flatten(self: Iter[TYPE[S] | T]) -> Iter[S]: ..."""
+    def flatten(self: Iter[TYPE[S] , T]) -> Iter[S]: ..."""
 
     combined_interface = f"    # Code for generating the following is in {Path(__file__).name}"
     for mark in [
-        TypeMarker("iterpyable[S]"),
         TypeMarker("iterpyator[S]"),
         TypeMarker("tuple[S, ...]"),
         TypeMarker("Sequence[S]"),
@@ -43,7 +42,7 @@ if __name__ == "__main__":
     @overload
     def flatten(self: Iter[str]) -> Iter[str]: ...
     @overload
-    def flatten(self: Iter[str | S]) -> Iter[S]: ...
+    def flatten(self: Iter[str , S]) -> Iter[S]: ...
     """
 
     combined_interface += """

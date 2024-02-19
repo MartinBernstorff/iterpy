@@ -2,6 +2,20 @@
 requires = ["setuptools>=61.0.0", "wheel", "setuptools_scm"]
 build-backend = "setuptools.build_meta"
 
+[tool]
+rye = { dev-dependencies = [
+  "cruft==2.15.0",
+  "lumberman>=0.45.0",
+  "pyright==1.1.350",
+  "pytest==8.0.1",
+  "pytest-cov==4.1.0",
+  "pytest-xdist==3.5.0",
+  "pytest-sugar==1.0.0",
+  "pytest-codspeed>=2.2.0",
+  "diff-cover==8.0.3",
+  "ruff==0.2.2",
+] }
+
 [tool.setuptools.package-data]
 "*" = ["py.typed", "*.pyi"]
 
@@ -11,25 +25,12 @@ version = "1.5.1"
 authors = [{ name = "Martin Bernstorff", email = "martinbernstorff@gmail.com" }]
 description = "iterpy"
 classifiers = [
+  "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
-  "Programming Language :: Python :: 3.12"
+  "Programming Language :: Python :: 3.12",
 ]
-requires-python = ">=3.10"
-
-[project.optional-dependencies]
-dev = [
-  "cruft==2.15.0",
-  "lumberman",
-  "pyright==1.1.350",
-  "pytest==8.0.1",
-  "pytest-cov==4.1.0",
-  "pytest-xdist==3.5.0",
-  "pytest-sugar==1.0.0",
-  "pytest-codspeed",
-  "diff-cover==8.0.3",
-  "ruff==0.2.2",
-]
+requires-python = ">=3.9"
 
 [project.license]
 file = "LICENSE"
@@ -120,7 +121,7 @@ exclude = [
 ]
 # Allow unused variables when underscore-prefixed.
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
-target-version = "py311"
+target-version = "py39"
 
 [tool.ruff.format]
 skip-magic-trailing-comma = false
@@ -131,6 +132,8 @@ suppress-none-returning = true
 
 [tool.ruff.isort]
 known-third-party = ["wandb"]
+required-imports = ["from __future__ import annotations"]
+
 
 [tool.ruff.mccabe]
 # Unlike Flake8, default to a complexity level of 10.
@@ -143,4 +146,3 @@ build_command = "python -m pip install build; python -m build"
 
 [tool.setuptools]
 include-package-data = true
-
