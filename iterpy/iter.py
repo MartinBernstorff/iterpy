@@ -104,7 +104,7 @@ class Iter(Generic[T]):
         with multiprocessing.Pool() as pool:
             return Iter(pool.map(func, self._iterator))
 
-    def filter(self, func: Callable[[T], bool]) -> Iter[T]:
+    def filter(self, func: Callable[[T], bool]) -> Iter[T]:  # noqa: A003
         return Iter(filter(func, self._iterator))  # type: ignore
 
     def groupby(
