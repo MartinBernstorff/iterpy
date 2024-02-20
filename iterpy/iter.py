@@ -20,6 +20,9 @@ class Iter(Generic[T]):
     def _iterator(self) -> Iterator[T]:
         return iter(self._nonconsumable_iterable)
 
+    def __bool__(self) -> bool:
+        return bool(self._nonconsumable_iterable)
+
     def __iter__(self) -> Iter[T]:
         return self
 
