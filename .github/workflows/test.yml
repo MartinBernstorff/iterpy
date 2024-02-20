@@ -1,0 +1,21 @@
+name: tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (GitHub)
+        uses: actions/checkout@v3
+
+      - name: Build CI container
+        run: |
+          docker build -t iterpy:latest -f Dockerfile .
+      
+      - name: Run CI
+        run: |
+          docker run iterpy make validate_ci

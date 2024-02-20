@@ -1,0 +1,9 @@
+{
+    "python.testing.pytestArgs": [
+        "iterpy"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.analysis.typeCheckingMode": "strict",
+    "python.analysis.diagnosticMode": "workspace"
+}

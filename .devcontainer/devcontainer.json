@@ -6,31 +6,8 @@
         // Sets the run context to one level up instead of the .devcontainer folder.
         "context": "..",
         // Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
-        "dockerfile": "../Dockerfile",
-        "cacheFrom": "ghcr.io/martinbernstorff/iter-devcontainer:latest"
+        "dockerfile": "../Dockerfile"
     },
-    // "features": {},
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "GitHub.copilot",
-                "charliermarsh.ruff",
-                "ms-python.python",
-                "ms-python.vscode-pylance",
-                "GitHub.vscode-pull-request-github",
-                "ms-vscode.makefile-tools",
-                "github.vscode-github-actions",
-                "MichaelCurrin.auto-commit-msg"
-            ]
-        }
-    },
-    "mounts": [
-        "source=${localEnv:HOME}/.config/gh/hosts.yml,target=/root/.config/gh/hosts.yml,type=bind,consistency=cache", // GitHub CLI authentication login
-    ],
-    "features": {
-        "ghcr.io/devcontainers/features/github-cli:1": {}
-    },
-    "postStartCommand": "gt user pager --disable && pip install -e .[dev,benchmark]"
     // Features to add to the dev container. More info: https://containers.dev/features.
     // "features": {},
     // Use 'forwardPorts' to make a list of ports inside the container available locally.

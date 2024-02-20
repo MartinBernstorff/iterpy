@@ -1,0 +1,8 @@
+{
+    "exclude": [
+        ".*venv*"
+    ],
+    "pythonPlatform": "Darwin",
+    "reportMissingTypeStubs": false,
+    "typeCheckingMode": "strict"
+}

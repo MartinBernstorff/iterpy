@@ -1,22 +1,23 @@
-[build-system]
-requires = ["setuptools>=61.0.0", "wheel", "setuptools_scm"]
-build-backend = "setuptools.build_meta"
-
-[tool.setuptools.package-data]
-"*" = ["py.typed", "*.pyi"]
-
 [project]
-name = "iterpy"
 version = "1.6.0"
-authors = [{ name = "Martin Bernstorff", email = "martinbernstorff@gmail.com" }]
+requires-python = ">=3.9"
+name = "iterpy"
 description = "iterpy"
+dependencies = []
+authors = [{ name = "Martin Bernstorff", email = "martinbernstorff@gmail.com" }]
 classifiers = [
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
 ]
-requires-python = ">=3.9"
+
+[project.license]
+file = "LICENSE"
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
 
 [project.optional-dependencies]
 dev = [
@@ -46,118 +47,22 @@ rye = { dev-dependencies = [
   "ruff==0.2.2",
 ] }
 
-
-[project.license]
-file = "LICENSE"
-
-[project.readme]
-file = "README.md"
-content-type = "text/markdown"
-
 [project.urls]
 homepage = "https://github.com/MartinBernstorff/iterpy"
 repository = "https://github.com/MartinBernstorff/iterpy"
 documentation = "https://MartinBernstorff.github.io/iterpy/"
 
-[tool.pyright]
-exclude = [".*venv*"]
-pythonPlatform = "Darwin"
-reportMissingTypeStubs = false
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
 
-[tool.ruff]
-line-length = 70
-# Enable pycodestyle (`E`) and Pyflakes (`F`) codes by default.
-select = [
-  "A",
-  "ANN",
-  "ARG",
-  "B",
-  "C4",
-  "COM",
-  "D417",
-  "E",
-  "ERA",
-  "F",
-  "I",
-  "ICN",
-  "NPY001",
-  "PD002",
-  "PIE",
-  "PLE",
-  "PLW",
-  "PT",
-  "UP",
-  "PTH",
-  "RSE",
-  "RET",
-  "RUF",
-  "SIM",
-  "W",
-]
-ignore = [
-  "ANN101",
-  "ANN401",
-  "E402",
-  "E501",
-  "F401",
-  "F841",
-  "RET504",
-  "COM812",
-  "COM819",
-  "RUF100",
-  "W191",
-]
-ignore-init-module-imports = true
-# Allow autofix for all enabled rules (when `--fix`) is provided.
-unfixable = ["ERA"]
-# Exclude a variety of commonly ignored directories.
-exclude = [
-  ".bzr",
-  ".direnv",
-  ".eggs",
-  ".git",
-  ".hg",
-  ".nox",
-  ".pants.d",
-  ".pytype",
-  ".ruff_cache",
-  ".svn",
-  ".tox",
-  ".venv",
-  "__pypackages__",
-  "_build",
-  "buck-out",
-  "build",
-  "dist",
-  "node_modules",
-  "venv",
-  "__init__.py",
-  "docs/conf.py",
-]
-# Allow unused variables when underscore-prefixed.
-dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
-target-version = "py39"
+[tool.setuptools]
+include-package-data = true
 
-[tool.ruff.format]
-skip-magic-trailing-comma = false
-
-[tool.ruff.flake8-annotations]
-mypy-init-return = true
-suppress-none-returning = true
-
-[tool.ruff.isort]
-known-third-party = ["wandb"]
-required-imports = ["from __future__ import annotations"]
-
-
-[tool.ruff.mccabe]
-# Unlike Flake8, default to a complexity level of 10.
-max-complexity = 10
+[tool.setuptools.package-data]
+"*" = ["py.typed", "*.pyi"]
 
 [tool.semantic_release]
 branch = "main"
 version_toml = ["pyproject.toml:project.version"]
 build_command = "python -m pip install build; python -m build"
-
-[tool.setuptools]
-include-package-data = true

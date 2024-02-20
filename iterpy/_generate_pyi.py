@@ -31,12 +31,7 @@ if __name__ == "__main__":
         TypeMarker("frozenset[S]"),
         TypeMarker("Iter[S]"),
     ]:
-        message = (
-            base_message_template.replace(
-                "TYPE[S]", mark.replacement_str
-            )
-            + "\n"
-        )
+        message = base_message_template.replace("TYPE[S]", mark.replacement_str) + "\n"
         combined_interface += message
 
     combined_interface += """
