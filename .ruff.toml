@@ -1,0 +1,93 @@
+line-length = 100
+# Enable pycodestyle (`E`) and Pyflakes (`F`) codes by default.
+
+[lint]
+select = [
+    "A",
+    "ANN",
+    "ARG",
+    "B",
+    "C4",
+    "COM",
+    "D417",
+    "E",
+    "ERA",
+    "F",
+    "I",
+    "ICN",
+    "NPY001",
+    "PD002",
+    "PIE",
+    "PLE",
+    "PLW",
+    "PT",
+    "UP",
+    "PTH",
+    "RSE",
+    "RET",
+    "RUF",
+    "SIM",
+    "TCH",
+    "W",
+]
+
+ignore = [
+    "ANN101",
+    "ANN401",
+    "E402",
+    "E501",
+    "F401",
+    "F841",
+    "RET504",
+    "COM812",
+    "COM819",
+    "W191",
+]
+
+
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    "__init__.py",
+    "docs/conf.py",
+]
+
+ignore-init-module-imports = true
+unfixable = ["ERA"]
+
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[format]
+skip-magic-trailing-comma = true
+
+[lint.flake8-annotations]
+mypy-init-return = true
+suppress-none-returning = true
+
+[lint.flake8-type-checking]
+quote-annotations = true
+
+[lint.isort]
+known-third-party = ["wandb"]
+split-on-trailing-comma = false
+
+[lint.mccabe]
+# Unlike Flake8, default to a complexity level of 10.
+max-complexity = 10

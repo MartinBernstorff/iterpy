@@ -1,0 +1,11 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: 1c42097
+_src_path: https://github.com/MartinBernstorff/nimble-python-template
+email: martinbernstorff@gmail.com
+full_name: Martin Bernstorff
+github_username: MartinBernstorff
+package_name: iterpy
+project_name: iterpy
+project_slug: iterpy
+python_version: '3.9'
+release_to_pypi: true

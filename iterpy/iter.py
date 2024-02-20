@@ -2,12 +2,7 @@ from __future__ import annotations
 
 import multiprocessing
 from collections import defaultdict
-from collections.abc import (
-    Callable,
-    Iterable,
-    Iterator,
-    Sequence,
-)
+from collections.abc import Callable, Iterable, Iterator, Sequence
 from functools import reduce
 from itertools import islice
 from typing import Generic, TypeVar
@@ -43,18 +38,9 @@ class Iter(Generic[T]):
             except StopIteration:
                 raise IndexError("Index out of range") from None
         elif isinstance(index, slice):
-            return Iter(
-                islice(
-                    self._iterator,
-                    index.start,
-                    index.stop,
-                    index.step,
-                )
-            )
+            return Iter(islice(self._iterator, index.start, index.stop, index.step))
         else:
-            raise KeyError(
-                f"Key must be non-negative integer or slice, not {index}"
-            )
+            raise KeyError(f"Key must be non-negative integer or slice, not {index}")
 
     def __repr__(self) -> str:
         return f"Iter{self._nonconsumable_iterable}"
@@ -62,10 +48,7 @@ class Iter(Generic[T]):
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, Iter):
             return False
-        return (
-            self._nonconsumable_iterable
-            == other._nonconsumable_iterable
-        )
+        return self._nonconsumable_iterable == other._nonconsumable_iterable  # type: ignore
 
     ### Reductions
     def reduce(self, func: Callable[[T, T], T]) -> T:
@@ -93,10 +76,7 @@ class Iter(Generic[T]):
     ) -> Iter[S]:
         return Iter(map(func, self._iterator))
 
-    def pmap(
-        self,
-        func: Callable[[T], S],
-    ) -> Iter[S]:
+    def pmap(self, func: Callable[[T], S]) -> Iter[S]:
         """Parallel map using multiprocessing.Pool
 
         Not that lambdas are not supported by multiprocessing.Pool.map.
@@ -104,15 +84,11 @@ class Iter(Generic[T]):
         with multiprocessing.Pool() as pool:
             return Iter(pool.map(func, self._iterator))
 
-    def filter(self, func: Callable[[T], bool]) -> Iter[T]:  # noqa: A003
+    def filter(self, func: Callable[[T], bool]) -> Iter[T]:
         return Iter(filter(func, self._iterator))  # type: ignore
 
-    def groupby(
-        self, func: Callable[[T], str]
-    ) -> Iter[tuple[str, list[T]]]:
-        groups_with_values: defaultdict[str, list[T]] = defaultdict(
-            list
-        )
+    def groupby(self, func: Callable[[T], str]) -> Iter[tuple[str, list[T]]]:
+        groups_with_values: defaultdict[str, list[T]] = defaultdict(list)
 
         for value in self._iterator:
             value_key = func(value)
@@ -125,9 +101,9 @@ class Iter(Generic[T]):
         values: list[T] = []
         for i in self._iterator:
             if isinstance(i, Sequence) and not isinstance(i, str):
-                values.extend(i)
+                values.extend(i)  # type: ignore
             elif isinstance(i, Iter):
-                values.extend(i.to_list())
+                values.extend(i.to_list())  # type: ignore
             else:
                 values.append(i)
 

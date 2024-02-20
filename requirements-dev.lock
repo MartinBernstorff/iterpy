@@ -3,7 +3,7 @@
 #
 # last locked with the following flags:
 #   pre: false
-#   features: []
+#   features: ["dev"]
 #   all-features: false
 #   with-sources: false
 
@@ -30,7 +30,9 @@ cookiecutter==2.5.0
 coverage==7.4.1
     # via pytest-cov
 cruft==2.15.0
+    # via iterpy
 diff-cover==8.0.3
+    # via iterpy
 exceptiongroup==1.2.0
     # via pytest
 execnet==2.0.2
@@ -51,6 +53,7 @@ jinja2==3.1.3
     # via cookiecutter
     # via diff-cover
 lumberman==0.45.0
+    # via iterpy
 markdown-it-py==3.0.0
     # via rich
 markupsafe==2.1.5
@@ -71,15 +74,21 @@ pygments==2.17.2
     # via diff-cover
     # via rich
 pyright==1.1.350
+    # via iterpy
 pytest==8.0.1
+    # via iterpy
     # via pytest-codspeed
     # via pytest-cov
     # via pytest-sugar
     # via pytest-xdist
 pytest-codspeed==2.2.0
+    # via iterpy
 pytest-cov==4.1.0
+    # via iterpy
 pytest-sugar==1.0.0
+    # via iterpy
 pytest-xdist==3.5.0
+    # via iterpy
 python-dateutil==2.8.2
     # via arrow
 python-slugify==8.0.4
@@ -92,6 +101,7 @@ rich==13.7.0
     # via cookiecutter
     # via lumberman
 ruff==0.2.2
+    # via iterpy
 setuptools==69.1.0
     # via nodeenv
 six==1.16.0
