@@ -6,7 +6,7 @@
         {
             "label": "PR",
             "type": "shell",
-            "command": "lm sync --squash",
+            "command": "make pr",
             "group": {
                 "kind": "build",
                 "isDefault": true

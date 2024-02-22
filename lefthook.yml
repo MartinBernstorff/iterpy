@@ -11,3 +11,8 @@ pre-commit:
       glob: "*.{py}"
       run: ruff --fix --extend-select F401 --extend-select F841 --extend-select B007 {staged_files}
       stage_fixed: true
+
+post-checkout:
+  commands:
+    install:
+      run: make quicksync
