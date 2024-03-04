@@ -30,7 +30,7 @@ dev = [
   "pytest-sugar==1.0.0",
   "pytest-codspeed",
   "diff-cover==8.0.3",
-  "ruff==0.2.2",
+  "ruff==0.3.0",
 ]
 
 [tool]
@@ -44,7 +44,7 @@ rye = { dev-dependencies = [
   "pytest-sugar==1.0.0",
   "pytest-codspeed>=2.2.0",
   "diff-cover==8.0.3",
-  "ruff==0.2.2",
+  "ruff==0.3.0",
 ] }
 
 [project.urls]
