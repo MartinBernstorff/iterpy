@@ -23,7 +23,7 @@ content-type = "text/markdown"
 dev = [
   "cruft==2.15.0",
   "lumberman",
-  "pyright==1.1.351",
+  "pyright==1.1.352",
   "pytest==8.1.0",
   "pytest-cov==4.1.0",
   "pytest-xdist==3.5.0",
@@ -37,7 +37,7 @@ dev = [
 rye = { dev-dependencies = [
   "cruft==2.15.0",
   "lumberman>=0.45.0",
-  "pyright==1.1.351",
+  "pyright==1.1.352",
   "pytest==8.1.0",
   "pytest-cov==4.1.0",
   "pytest-xdist==3.5.0",
