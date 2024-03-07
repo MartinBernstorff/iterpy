@@ -2,6 +2,127 @@
 
 
 
+## v1.7.0 (2024-03-07)
+
+### Chore
+
+* chore: delete CODE_OF_CONDUCT.md ([`edbc286`](https://github.com/MartinBernstorff/iterpy/commit/edbc2861ea4431191222ea1191db69d0ffb0c5bd))
+
+* chore: delete .cruft.json and CONTRIBUTING.md ([`97f17ea`](https://github.com/MartinBernstorff/iterpy/commit/97f17eafcd0bc169242445d50216b750e59d360b))
+
+### Feature
+
+* feat: implement __bool__ (#127) ([`e6e2f81`](https://github.com/MartinBernstorff/iterpy/commit/e6e2f81499cff57a65eeeacfb00a90d5c2ab8ded))
+
+* feat: implement __bool__ ([`1eea0ad`](https://github.com/MartinBernstorff/iterpy/commit/1eea0ad5848021de0e693141a05fe5dab6e6432a))
+
+### Unknown
+
+* Update LICENSE ([`43ecda0`](https://github.com/MartinBernstorff/iterpy/commit/43ecda0ec640ae5900b7a7f7c6072b8143cc51f7))
+
+* deps:(deps-dev): bump pyright from 1.1.351 to 1.1.352 (#133) ([`e7dd0eb`](https://github.com/MartinBernstorff/iterpy/commit/e7dd0eba81ccb9fb9880e0dbb240551f22153e4e))
+
+* deps:(deps-dev): bump pyright from 1.1.351 to 1.1.352
+
+Bumps [pyright](https://github.com/RobertCraigie/pyright-python) from 1.1.351 to 1.1.352.
+- [Release notes](https://github.com/RobertCraigie/pyright-python/releases)
+- [Commits](https://github.com/RobertCraigie/pyright-python/compare/v1.1.351...v1.1.352)
+
+---
+updated-dependencies:
+- dependency-name: pyright
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`e0ebe0d`](https://github.com/MartinBernstorff/iterpy/commit/e0ebe0d045b5a8c99dd0589f882b98d405e32d96))
+
+* deps:(deps-dev): bump pytest from 8.0.2 to 8.1.0 (#135) ([`ca63565`](https://github.com/MartinBernstorff/iterpy/commit/ca6356509ffbde4cebfbc663b40411894b42867f))
+
+* deps:(deps-dev): bump ruff from 0.2.2 to 0.3.0 (#134) ([`c5b5c30`](https://github.com/MartinBernstorff/iterpy/commit/c5b5c3032499123b36f3eb2a0624087ab27a5f99))
+
+* deps:(deps-dev): bump pytest from 8.0.2 to 8.1.0
+
+Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.0.2 to 8.1.0.
+- [Release notes](https://github.com/pytest-dev/pytest/releases)
+- [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
+- [Commits](https://github.com/pytest-dev/pytest/compare/8.0.2...8.1.0)
+
+---
+updated-dependencies:
+- dependency-name: pytest
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`87a2686`](https://github.com/MartinBernstorff/iterpy/commit/87a26861cb0c87457eb1497af0fa664fe208d7a6))
+
+* deps:(deps-dev): bump ruff from 0.2.2 to 0.3.0
+
+Bumps [ruff](https://github.com/astral-sh/ruff) from 0.2.2 to 0.3.0.
+- [Release notes](https://github.com/astral-sh/ruff/releases)
+- [Changelog](https://github.com/astral-sh/ruff/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/astral-sh/ruff/compare/v0.2.2...v0.3.0)
+
+---
+updated-dependencies:
+- dependency-name: ruff
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`63e63b7`](https://github.com/MartinBernstorff/iterpy/commit/63e63b7b0291ab98d031c1f9afbf20744f755643))
+
+* deps:(deps-dev): bump pytest from 8.0.1 to 8.0.2 (#130) ([`88d8df1`](https://github.com/MartinBernstorff/iterpy/commit/88d8df1707b38a7194e22e3d9130d5b4b9574ad9))
+
+* deps:(deps-dev): bump pytest from 8.0.1 to 8.0.2
+
+Bumps [pytest](https://github.com/pytest-dev/pytest) from 8.0.1 to 8.0.2.
+- [Release notes](https://github.com/pytest-dev/pytest/releases)
+- [Changelog](https://github.com/pytest-dev/pytest/blob/main/CHANGELOG.rst)
+- [Commits](https://github.com/pytest-dev/pytest/compare/8.0.1...8.0.2)
+
+---
+updated-dependencies:
+- dependency-name: pytest
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`fc590e0`](https://github.com/MartinBernstorff/iterpy/commit/fc590e0db3373c3ceec9e3c9098593aca5ae4dd7))
+
+* deps:(deps-dev): bump pyright from 1.1.350 to 1.1.351 (#129) ([`dfdfbaa`](https://github.com/MartinBernstorff/iterpy/commit/dfdfbaae5a30143818674f8512ffc413e655926b))
+
+* deps:(deps-dev): bump pyright from 1.1.350 to 1.1.351
+
+Bumps [pyright](https://github.com/RobertCraigie/pyright-python) from 1.1.350 to 1.1.351.
+- [Release notes](https://github.com/RobertCraigie/pyright-python/releases)
+- [Commits](https://github.com/RobertCraigie/pyright-python/compare/v1.1.350...v1.1.351)
+
+---
+updated-dependencies:
+- dependency-name: pyright
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`1da7251`](https://github.com/MartinBernstorff/iterpy/commit/1da7251029e498e50fa951e2f2ec5fe91fe2d5cb))
+
+* dev: update copier (#128) ([`35106cd`](https://github.com/MartinBernstorff/iterpy/commit/35106cd493b1da61ecc83a5a734b4bfcaea9f199))
+
+* dev: update copier ([`785894d`](https://github.com/MartinBernstorff/iterpy/commit/785894d90da68341fb03ea5a348f4131de315ef8))
+
+* Delete .cookiecutter.json ([`7f1da16`](https://github.com/MartinBernstorff/iterpy/commit/7f1da160cb0ffc2323d3a72879c30950f6344cab))
+
+* Update README.md ([`1b6a213`](https://github.com/MartinBernstorff/iterpy/commit/1b6a2130299b670b08548a2a7971d9d82330f027))
+
+* Update README.md ([`47e7944`](https://github.com/MartinBernstorff/iterpy/commit/47e7944a5c5e2bde9ad8b31160311ffee067817e))
+
+* dev: migrate to copier (#126) ([`d5e5e68`](https://github.com/MartinBernstorff/iterpy/commit/d5e5e6868cf10b38ada739adff78afc7ecda5205))
+
+* update 9 files and delete 5 files ([`b08d6f5`](https://github.com/MartinBernstorff/iterpy/commit/b08d6f544f118de4b26826d29bb7ae371ee97653))
+
+
 ## v1.6.0 (2024-02-19)
 
 ### Build
