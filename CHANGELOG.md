@@ -2,6 +2,17 @@
 
 
 
+## v1.8.0 (2024-03-07)
+
+### Feature
+
+* feat(#61): add lazy, consumable evaluation as default (#136) ([`3705be3`](https://github.com/MartinBernstorff/iterpy/commit/3705be300a765309a539819512981c0fce857b15))
+
+* feat(#61): add lazy and consumable subtype
+
+Fixes #61 ([`c363773`](https://github.com/MartinBernstorff/iterpy/commit/c363773400e1a9cdf8f1917203a4bae2bb1c217e))
+
+
 ## v1.7.0 (2024-03-07)
 
 ### Chore
