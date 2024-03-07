@@ -3,10 +3,12 @@ from __future__ import annotations
 import copy
 import multiprocessing
 from collections import defaultdict
-from collections.abc import Callable, Iterable, Iterator, Sequence
 from functools import reduce
 from itertools import islice
-from typing import Generic, TypeVar
+from typing import TYPE_CHECKING, Any, Generator, Generic, TypeVar
+
+if TYPE_CHECKING:
+    from collections.abc import Callable, Iterable, Iterator
 
 T = TypeVar("T")
 S = TypeVar("S")
@@ -97,16 +99,22 @@ class Iter(Generic[T]):
         return Iter(tuples)
 
     def flatten(self) -> Iter[T]:
-        values: list[T] = []
-        for i in self._iterator:
-            if isinstance(i, Sequence) and not isinstance(i, str):
-                values.extend(i)  # type: ignore
-            elif isinstance(i, Iter):
-                values.extend(i.to_list())  # type: ignore
-            else:
-                values.append(i)
+        depth = 1
 
-        return Iter(values)
+        def walk(node: Any, level: int) -> Generator[T, None, None]:
+            if (level > depth) or isinstance(node, str):
+                yield node  # type: ignore
+                return
+            try:
+                tree = iter(node)
+            except TypeError:
+                yield node
+                return
+            else:
+                for child in tree:
+                    yield from walk(child, level + 1)
+
+        return Iter(walk(self, level=0))  # type: ignore
 
     def take(self, n: int = 1) -> Iter[T]:
         return Iter(islice(self._iter, n))
@@ -141,7 +149,7 @@ class Iter(Generic[T]):
                 return value
         return None
 
-    def copy(self) -> Iter[T]:
+    def clone(self) -> Iter[T]:
         return copy.deepcopy(self)
 
     def zip(self, other: Iter[S]) -> Iter[tuple[T, S]]:
