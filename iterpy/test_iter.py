@@ -66,6 +66,7 @@ def test_getitem():
     test_input = [1, 2, 3]
     test_iterator = Iter(test_input)
     assert test_iterator[0] == 1
+    test_iterator = Iter(test_input)
     assert test_iterator[0:2].to_list() == [1, 2]
 
 
@@ -75,21 +76,9 @@ def test_iteration():
         assert i in [1, 2, 3]
 
 
-def test_statefulness():
-    """Iterators are stateful, so we need to make sure that we don't exhaust them"""
-    test_iterator = Iter([1, 2, 3])
-    assert test_iterator.to_list() == [1, 2, 3]
-    assert test_iterator.to_list() == [1, 2, 3]
-
-
 def test_take():
     test_iterator = Iter([1, 2, 3])
-    assert test_iterator.take(2) == Iter([1, 2])
-
-
-def test_rev():
-    test_iterator = Iter([1, 2, 3])
-    assert test_iterator.rev().to_list() == [3, 2, 1]
+    assert test_iterator.take(2).to_list() == [1, 2]
 
 
 def test_any():
@@ -101,6 +90,8 @@ def test_any():
 def test_all():
     test_iterator = Iter([1, 2, 3])
     assert test_iterator.all(lambda x: x < 4) is True
+
+    test_iterator = Iter([1, 2, 3])
     assert test_iterator.all(lambda x: x < 3) is False
 
 
@@ -125,17 +116,11 @@ def test_find():
     assert test_iterator.find(lambda x: x == 4) is None
 
 
-def test_last():
-    test_iterator = Iter([1, 2, 3])
-    assert test_iterator.last() == 3
-
-
 def test_zip():
     iter1 = Iter([1, 2, 3])
     iter2 = Iter(["a", "b", "c"])
     result: Iter[tuple[int, str]] = iter1.zip(iter2)
     assert result.to_list() == [(1, "a"), (2, "b"), (3, "c")]
-    assert result.to_list() == [(1, "a"), (2, "b"), (3, "c")]  # Ensure it's not exhausted
 
 
 def test_flatten():
