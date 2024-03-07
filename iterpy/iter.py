@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import copy
 import multiprocessing
 from collections import defaultdict
 from collections.abc import Callable, Iterable, Iterator, Sequence
@@ -13,31 +14,26 @@ S = TypeVar("S")
 
 class Iter(Generic[T]):
     def __init__(self, iterable: Iterable[T]) -> None:
-        self._nonconsumable_iterable: list[T] = list(iterable)
+        self._iter = iter(iterable)
         self._current_index: int = 0
 
     @property
     def _iterator(self) -> Iterator[T]:
-        return iter(self._nonconsumable_iterable)
+        return iter(self._iter)
 
     def __bool__(self) -> bool:
-        return bool(self._nonconsumable_iterable)
+        return bool(self._iter)
 
     def __iter__(self) -> Iter[T]:
         return self
 
     def __next__(self) -> T:
-        try:
-            item = self._nonconsumable_iterable[self._current_index]
-        except IndexError:
-            raise StopIteration  # noqa: B904
-        self._current_index += 1
-        return item
+        return next(self._iter)
 
     def __getitem__(self, index: int | slice) -> T | Iter[T]:
         if isinstance(index, int) and index >= 0:
             try:
-                return list(self._iterator)[index]
+                return next(islice(self._iter, index, index + 1))
             except StopIteration:
                 raise IndexError("Index out of range") from None
         elif isinstance(index, slice):
@@ -46,12 +42,12 @@ class Iter(Generic[T]):
             raise KeyError(f"Key must be non-negative integer or slice, not {index}")
 
     def __repr__(self) -> str:
-        return f"Iter{self._nonconsumable_iterable}"
+        return f"Iter{self._iter}"
 
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, Iter):
             return False
-        return self._nonconsumable_iterable == other._nonconsumable_iterable  # type: ignore
+        return self._iter == other._iter  # type: ignore
 
     ### Reductions
     def reduce(self, func: Callable[[T, T], T]) -> T:
@@ -62,7 +58,7 @@ class Iter(Generic[T]):
 
     ### Output
     def to_list(self) -> list[T]:
-        return self._nonconsumable_iterable
+        return list(self._iter)
 
     def to_tuple(self) -> tuple[T, ...]:
         return tuple(self._iterator)  # pragma: no cover
@@ -113,10 +109,7 @@ class Iter(Generic[T]):
         return Iter(values)
 
     def take(self, n: int = 1) -> Iter[T]:
-        return Iter(self._nonconsumable_iterable[0:n])
-
-    def rev(self) -> Iter[T]:
-        return Iter(reversed(self._nonconsumable_iterable))
+        return Iter(islice(self._iter, n))
 
     def any(self, func: Callable[[T], bool]) -> bool:
         return any(func(i) for i in self._iterator)
@@ -148,8 +141,8 @@ class Iter(Generic[T]):
                 return value
         return None
 
-    def last(self) -> T:
-        return self._nonconsumable_iterable[-1]
+    def copy(self) -> Iter[T]:
+        return copy.deepcopy(self)
 
     def zip(self, other: Iter[S]) -> Iter[tuple[T, S]]:
         return Iter(zip(self, other))
