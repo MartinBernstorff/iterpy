@@ -2,6 +2,17 @@
 
 
 
+## v1.8.1 (2024-03-07)
+
+### Fix
+
+* fix(#137): implement lazy flattening (#138) ([`3023cf0`](https://github.com/MartinBernstorff/iterpy/commit/3023cf02e19d9e2eecb8f106f10802227a802b60))
+
+* fix(#137): implement lazy flattening
+
+Fixes #137 ([`7c5674e`](https://github.com/MartinBernstorff/iterpy/commit/7c5674e121226f83005d9c03fe79aa02a8dc9c3b))
+
+
 ## v1.8.0 (2024-03-07)
 
 ### Feature
