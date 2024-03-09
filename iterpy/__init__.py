@@ -1,2 +1,4 @@
-from .iter import Iter  # type: ignore
-from .arr import Arr  # type: ignore
+from iterpy.iter import Iter  # type: ignore
+from iterpy.arr import Arr  # type: ignore
+
+__all__ = ["Iter", "Arr"]

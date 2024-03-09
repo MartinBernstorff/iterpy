@@ -10,6 +10,8 @@ from typing import TYPE_CHECKING, Any, Generator, Generic, Sequence, TypeVar, ov
 if TYPE_CHECKING:
     from collections.abc import Callable, Iterable, Iterator
 
+    from iterpy.arr import Arr
+
 T = TypeVar("T")
 S = TypeVar("S")
 
@@ -70,11 +72,13 @@ class Iter(Generic[T]):
     def to_tuple(self) -> tuple[T, ...]:
         return tuple(self._iterator)  # pragma: no cover
 
-    def to_consumable(self) -> Iterator[T]:
-        return iter(self._iterator)  # pragma: no cover
-
     def to_set(self) -> set[T]:
         return set(self._iterator)  # pragma: no cover
+
+    def collect(self) -> Arr[T]:
+        from iterpy.arr import Arr
+
+        return Arr(self._iterator)
 
     ### Transformations
     def map(  # Ignore that it's shadowing a python built-in

@@ -1,14 +1,12 @@
 from __future__ import annotations
 
-import copy
-import multiprocessing
-from collections import defaultdict
-from functools import reduce
 from itertools import islice
-from typing import TYPE_CHECKING, Any, Generator, Generic, Sequence, TypeVar, overload
+from typing import TYPE_CHECKING, Generic, Sequence, TypeVar, overload
 
 if TYPE_CHECKING:
     from collections.abc import Callable, Iterable, Iterator
+
+    from iterpy.iter import Iter
 
 T = TypeVar("T")
 S = TypeVar("S")
@@ -24,7 +22,7 @@ class Arr(Generic[T]):
         return iter(self._iter)
 
     def __bool__(self) -> bool:
-        return bool(self._iter)
+        return self.lazy().__bool__()
 
     def __iter__(self) -> Arr[T]:
         return self
@@ -63,86 +61,68 @@ class Arr(Generic[T]):
 
     ### Reductions
     def reduce(self, func: Callable[[T, T], T]) -> T:
-        return reduce(func, self._iterator)
+        return self.lazy().reduce(func)
 
     def count(self) -> int:
-        return sum(1 for _ in self._iterator)
+        return self.lazy().count()
 
     ### Output
     def to_list(self) -> list[T]:
-        return list(self._iter)
+        return self.lazy().to_list()
 
     def to_tuple(self) -> tuple[T, ...]:
-        return tuple(self._iterator)  # pragma: no cover
-
-    def to_consumable(self) -> Iterator[T]:
-        return iter(self._iterator)  # pragma: no cover
+        return self.lazy().to_tuple()
 
     def to_set(self) -> set[T]:
-        return set(self._iterator)  # pragma: no cover
+        return self.lazy().to_set()
+
+    def lazy(self) -> Iter[T]:
+        from iterpy.iter import Iter
+
+        return Iter(self._iterator)
 
     ### Transformations
     def map(  # Ignore that it's shadowing a python built-in
         self, func: Callable[[T], S]
     ) -> Arr[S]:
-        return Arr(map(func, self._iterator))
+        return self.lazy().map(func).collect()
 
     def pmap(self, func: Callable[[T], S]) -> Arr[S]:
         """Parallel map using multiprocessing.Pool
 
         Not that lambdas are not supported by multiprocessing.Pool.map.
         """
-        with multiprocessing.Pool() as pool:
-            return Arr(pool.map(func, self._iterator))
+        return self.lazy().pmap(func).collect()
 
     def filter(self, func: Callable[[T], bool]) -> Arr[T]:
-        return Arr(filter(func, self._iterator))  # type: ignore
+        return self.lazy().filter(func).collect()
 
     def groupby(self, func: Callable[[T], str]) -> Arr[tuple[str, list[T]]]:
-        groups_with_values: defaultdict[str, list[T]] = defaultdict(list)
-
-        for value in self._iterator:
-            value_key = func(value)
-            groups_with_values[value_key].append(value)
-
-        tuples = list(groups_with_values.items())
-        return Arr(tuples)
+        return self.lazy().groupby(func).collect()
 
     def take(self, n: int = 1) -> Arr[T]:
-        return Arr(islice(self._iter, n))
+        return self.lazy().take(n).collect()
 
     def any(self, func: Callable[[T], bool]) -> bool:
-        return any(func(i) for i in self._iterator)
+        return self.lazy().any(func)
 
     def all(self, func: Callable[[T], bool]) -> bool:
-        return all(func(i) for i in self._iterator)
+        return self.lazy().all(func)
 
     def unique(self) -> Arr[T]:
-        return Arr(set(self._iterator))
+        return self.lazy().unique().collect()
 
     def unique_by(self, func: Callable[[T], S]) -> Arr[T]:
-        seen: set[S] = set()
-        values: list[T] = []
-
-        for value in self._iterator:
-            key = func(value)
-            if key not in seen:
-                seen.add(key)
-                values.append(value)
-
-        return Arr(values)
+        return self.lazy().unique_by(func).collect()
 
     def enumerate(self) -> Arr[tuple[int, T]]:
-        return Arr(enumerate(self._iterator))
+        return self.lazy().enumerate().collect()
 
     def find(self, func: Callable[[T], bool]) -> T | None:
-        for value in self._iterator:
-            if func(value):
-                return value
-        return None
+        return self.lazy().find(func)
 
     def clone(self) -> Arr[T]:
-        return copy.deepcopy(self)
+        return self.lazy().clone().collect()
 
     def zip(self, other: Arr[S]) -> Arr[tuple[T, S]]:
         return Arr(zip(self, other))
@@ -210,20 +190,5 @@ class Arr(Generic[T]):
     @overload
     def flatten(self: Arr[S]) -> Arr[S]: ...
 
-    def flatten(self) -> Arr[T]:  # type: ignore -
-        depth = 1
-
-        def walk(node: Any, level: int) -> Generator[T, None, None]:
-            if (level > depth) or isinstance(node, str):
-                yield node  # type: ignore
-                return
-            try:
-                tree = iter(node)
-            except TypeError:
-                yield node
-                return
-            else:
-                for child in tree:
-                    yield from walk(child, level + 1)
-
-        return Arr(walk(self, level=0))  # type: ignore
+    def flatten(self) -> Arr[T]:  # type: ignore
+        return self.lazy().flatten().collect()
