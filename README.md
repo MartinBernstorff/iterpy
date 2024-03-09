@@ -52,6 +52,25 @@ result = (Iter([1, 2])
 assert result == [4]
 ```
 
+### Lazy vs eager evaluation
+Inspired by Polars, iterpy supports eager evaluation for easier debugging using `Arr`, and lazy evaluation for better performance using `Iter`. To access eager evaluation:
+
+```python
+from iterpy import Arr
+
+result = Arr([1, 2, 3]).map(lambda x: x * 2).to_list()
+assert result == [2, 4, 6]
+```
+
+To access lazy evaluation, just rename `Arr` to `Iter`:
+
+```python
+from iterpy import Iter
+
+result = Iter([1, 2, 3]).map(lambda x: x * 2).to_list()
+assert result == [2, 4, 6]
+```
+
 ## Prior art
 iterpy stands on the shoulders of Scala, Rust etc. 
 
