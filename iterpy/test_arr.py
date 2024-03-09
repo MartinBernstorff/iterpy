@@ -138,6 +138,18 @@ def test_flatten():
     assert result.to_list() == [1, 2, 3, 4]
 
 
+def test_comphrehension():
+    test_iterator = Arr([1, 2, 3])
+    result = [i for i in test_iterator if i % 2 == 0]
+    assert result == [2]
+
+
+def test_looping():
+    test_iterator = Arr([1, 2, 3])
+    for i in test_iterator:
+        assert i in [1, 2, 3]
+
+
 @pytest.mark.benchmark()
 def test_benchmark_large_flattening():
     test_input = Arr(range(100_000)).map(lambda x: Arr([x]))
