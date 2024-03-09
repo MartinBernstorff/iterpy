@@ -5,7 +5,7 @@ import multiprocessing
 from collections import defaultdict
 from functools import reduce
 from itertools import islice
-from typing import TYPE_CHECKING, Any, Generator, Generic, TypeVar
+from typing import TYPE_CHECKING, Any, Generator, Generic, Sequence, TypeVar, overload
 
 if TYPE_CHECKING:
     from collections.abc import Callable, Iterable, Iterator
@@ -31,6 +31,11 @@ class Iter(Generic[T]):
 
     def __next__(self) -> T:
         return next(self._iter)
+
+    @overload
+    def __getitem__(self, index: int) -> T: ...
+    @overload
+    def __getitem__(self, index: slice) -> Iter[T]: ...
 
     def __getitem__(self, index: int | slice) -> T | Iter[T]:
         if isinstance(index, int) and index >= 0:
@@ -98,24 +103,6 @@ class Iter(Generic[T]):
         tuples = list(groups_with_values.items())
         return Iter(tuples)
 
-    def flatten(self) -> Iter[T]:
-        depth = 1
-
-        def walk(node: Any, level: int) -> Generator[T, None, None]:
-            if (level > depth) or isinstance(node, str):
-                yield node  # type: ignore
-                return
-            try:
-                tree = iter(node)
-            except TypeError:
-                yield node
-                return
-            else:
-                for child in tree:
-                    yield from walk(child, level + 1)
-
-        return Iter(walk(self, level=0))  # type: ignore
-
     def take(self, n: int = 1) -> Iter[T]:
         return Iter(islice(self._iter, n))
 
@@ -154,3 +141,84 @@ class Iter(Generic[T]):
 
     def zip(self, other: Iter[S]) -> Iter[tuple[T, S]]:
         return Iter(zip(self, other))
+
+    ############################################################
+    # Auto-generated overloads for flatten                     #
+    # Code for generating the following is in _generate_pyi.py #
+    ############################################################
+    # Overloads are technically incompatible, because they use generic S instead of T. However, this is required for the flattening logic to work.
+
+    @overload
+    def flatten(self: Iter[Iterable[S]]) -> Iter[S]: ...
+    @overload
+    def flatten(self: Iter[Iterable[S] | S]) -> Iter[S]: ...
+
+    # Iterator[S]   # noqa: ERA001
+    @overload
+    def flatten(self: Iter[Iterator[S]]) -> Iter[S]: ...
+    @overload
+    def flatten(self: Iter[Iterator[S] | S]) -> Iter[S]: ...
+
+    # tuple[S, ...]   # noqa: ERA001
+    @overload
+    def flatten(self: Iter[tuple[S, ...]]) -> Iter[S]: ...
+    @overload
+    def flatten(self: Iter[tuple[S, ...] | S]) -> Iter[S]: ...
+
+    # Sequence[S]   # noqa: ERA001
+    @overload
+    def flatten(self: Iter[Sequence[S]]) -> Iter[S]: ...
+    @overload
+    def flatten(self: Iter[Sequence[S] | S]) -> Iter[S]: ...
+
+    # list[S]   # noqa: ERA001
+    @overload
+    def flatten(self: Iter[list[S]]) -> Iter[S]: ...
+    @overload
+    def flatten(self: Iter[list[S] | S]) -> Iter[S]: ...
+
+    # set[S]   # noqa: ERA001
+    @overload
+    def flatten(self: Iter[set[S]]) -> Iter[S]: ...
+    @overload
+    def flatten(self: Iter[set[S] | S]) -> Iter[S]: ...
+
+    # frozenset[S]   # noqa: ERA001
+    @overload
+    def flatten(self: Iter[frozenset[S]]) -> Iter[S]: ...
+    @overload
+    def flatten(self: Iter[frozenset[S] | S]) -> Iter[S]: ...
+
+    # Iter[S]   # noqa: ERA001
+    @overload
+    def flatten(self: Iter[Iter[S]]) -> Iter[S]: ...
+    @overload
+    def flatten(self: Iter[Iter[S] | S]) -> Iter[S]: ...
+
+    # str
+    @overload
+    def flatten(self: Iter[str]) -> Iter[str]: ...
+    @overload
+    def flatten(self: Iter[str | S]) -> Iter[S]: ...
+
+    # Generic
+    @overload
+    def flatten(self: Iter[S]) -> Iter[S]: ...
+
+    def flatten(self) -> Iter[T]:  # type: ignore -
+        depth = 1
+
+        def walk(node: Any, level: int) -> Generator[T, None, None]:
+            if (level > depth) or isinstance(node, str):
+                yield node  # type: ignore
+                return
+            try:
+                tree = iter(node)
+            except TypeError:
+                yield node
+                return
+            else:
+                for child in tree:
+                    yield from walk(child, level + 1)
+
+        return Iter(walk(self, level=0))  # type: ignore
