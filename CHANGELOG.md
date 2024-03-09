@@ -2,6 +2,29 @@
 
 
 
+## v1.9.0 (2024-03-09)
+
+### Feature
+
+* feat(#139): eager iterators (#142)
+
+Fixes #139 ([`baea246`](https://github.com/MartinBernstorff/iterpy/commit/baea2467ef105860ed49707a75e15097238d0fc8))
+
+* feat(#139): eager iterators
+
+Fixes #139 ([`5b863ba`](https://github.com/MartinBernstorff/iterpy/commit/5b863ba448b48e903e6d56d819c37a4465c12b1e))
+
+* feat(#139): eager iterators
+
+Fixes #139 ([`eeddb34`](https://github.com/MartinBernstorff/iterpy/commit/eeddb3481c884805a8b5f1522a339a992e9f7680))
+
+### Unknown
+
+* dev: migrate typing info to inline (#140) ([`4865d37`](https://github.com/MartinBernstorff/iterpy/commit/4865d3755a7790d736b8a3b9ceb0bfa18c9e2cf7))
+
+* dev: migrate typing info to inline ([`f6a2d80`](https://github.com/MartinBernstorff/iterpy/commit/f6a2d80f4547237261638d88f6ca57e1d49824cc))
+
+
 ## v1.8.1 (2024-03-07)
 
 ### Fix
