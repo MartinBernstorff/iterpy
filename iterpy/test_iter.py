@@ -157,7 +157,8 @@ class TestFlattenTypes:
 
     def test_flatten_iterator(self):
         test_input: Sequence[Sequence[int]] = [[1, 2], [3, 4]]
-        result: Iter[int] = Iter(test_input).flatten()
+        iterator = Iter(test_input)
+        result: Iter[int] = iterator.flatten()
         assert result.to_list() == [1, 2, 3, 4]
 
     def test_flatten_iter_iter(self):
