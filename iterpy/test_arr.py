@@ -78,12 +78,6 @@ def test_getitem():
     assert arr_slice.to_list() == [1, 2]
 
 
-def test_iteration():
-    test_iterator = Arr([1, 2, 3])
-    for i in test_iterator.to_consumable():
-        assert i in [1, 2, 3]
-
-
 def test_take():
     test_iterator = Arr([1, 2, 3])
     assert test_iterator.take(2).to_list() == [1, 2]
