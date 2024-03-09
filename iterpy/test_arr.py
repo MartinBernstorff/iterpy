@@ -10,6 +10,13 @@ if TYPE_CHECKING:
     from collections.abc import Sequence
 
 
+def test_inexhaustable():
+    test_input = [1, 2, 3]
+    test_iterator = Arr(test_input)
+    assert test_iterator.to_list() == test_input
+    assert test_iterator.to_list() == test_input
+
+
 def test_chaining():
     iterator = Arr([1, 2])
     result: list[int] = iterator.filter(lambda x: x % 2 == 0).map(lambda x: x * 2).to_list()

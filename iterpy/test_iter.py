@@ -16,6 +16,13 @@ def test_chaining():
     assert result == [4]
 
 
+def test_exhaustable():
+    test_input = [1, 2, 3]
+    test_iterator = Iter(test_input)
+    assert test_iterator.to_list() == test_input
+    assert test_iterator.to_list() == []
+
+
 def test_map():
     iterator = Iter([1, 2])
     result: list[int] = iterator.map(lambda x: x * 2).to_list()
