@@ -10,7 +10,7 @@
 
 
 <!-- start short-description -->
-Python has implemented `map`, `filter` etc. as functions, rather than methods on a sequence. This makes the result harder to read and iterators less used than they could be. iterpy exists to change that. 
+Python has implemented `map`, `filter` etc. as functions, rather than methods on a sequence. Since it does not contain a pipe operator, this makes the result harder to read. iterpy exists to change that. 
 
 You get this 🔥:
 
