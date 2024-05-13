@@ -14,6 +14,7 @@ S = TypeVar("S")
 
 class Arr(Generic[T]):
     def __init__(self, iterable: Iterable[T]) -> None:
+        """Arr is an eager version of Iter."""
         self._iter = list(iterable)
         self._current_index: int = 0
 
@@ -36,9 +37,12 @@ class Arr(Generic[T]):
         return item
 
     @overload
-    def __getitem__(self, index: int) -> T: ...
+    def __getitem__(self, index: int) -> T:
+        ...
+
     @overload
-    def __getitem__(self, index: slice) -> Arr[T]: ...
+    def __getitem__(self, index: slice) -> Arr[T]:
+        ...
 
     def __getitem__(self, index: int | slice) -> T | Arr[T]:
         if isinstance(index, int) and index >= 0:
@@ -134,61 +138,89 @@ class Arr(Generic[T]):
     # Overloads are technically incompatible, because they use generic S instead of T. However, this is required for the flattening logic to work.
 
     @overload
-    def flatten(self: Arr[Iterable[S]]) -> Arr[S]: ...
-    @overload
-    def flatten(self: Arr[Iterable[S] | S]) -> Arr[S]: ...
+    def flatten(self: Arr[Iterable[S]]) -> Arr[S]:
+        ...
 
-    # Iterator[S]   # noqa: ERA001
     @overload
-    def flatten(self: Arr[Iterator[S]]) -> Arr[S]: ...
-    @overload
-    def flatten(self: Arr[Iterator[S] | S]) -> Arr[S]: ...
+    def flatten(self: Arr[Iterable[S] | S]) -> Arr[S]:
+        ...
 
-    # tuple[S, ...]   # noqa: ERA001
+    # Iterator[S]
     @overload
-    def flatten(self: Arr[tuple[S, ...]]) -> Arr[S]: ...
-    @overload
-    def flatten(self: Arr[tuple[S, ...] | S]) -> Arr[S]: ...
+    def flatten(self: Arr[Iterator[S]]) -> Arr[S]:
+        ...
 
-    # Sequence[S]   # noqa: ERA001
     @overload
-    def flatten(self: Arr[Sequence[S]]) -> Arr[S]: ...
-    @overload
-    def flatten(self: Arr[Sequence[S] | S]) -> Arr[S]: ...
+    def flatten(self: Arr[Iterator[S] | S]) -> Arr[S]:
+        ...
 
-    # list[S]   # noqa: ERA001
+    # tuple[S, ...]
     @overload
-    def flatten(self: Arr[list[S]]) -> Arr[S]: ...
-    @overload
-    def flatten(self: Arr[list[S] | S]) -> Arr[S]: ...
+    def flatten(self: Arr[tuple[S, ...]]) -> Arr[S]:
+        ...
 
-    # set[S]   # noqa: ERA001
     @overload
-    def flatten(self: Arr[set[S]]) -> Arr[S]: ...
-    @overload
-    def flatten(self: Arr[set[S] | S]) -> Arr[S]: ...
+    def flatten(self: Arr[tuple[S, ...] | S]) -> Arr[S]:
+        ...
 
-    # frozenset[S]   # noqa: ERA001
+    # Sequence[S]
     @overload
-    def flatten(self: Arr[frozenset[S]]) -> Arr[S]: ...
-    @overload
-    def flatten(self: Arr[frozenset[S] | S]) -> Arr[S]: ...
+    def flatten(self: Arr[Sequence[S]]) -> Arr[S]:
+        ...
 
-    # Arr[S]   # noqa: ERA001
     @overload
-    def flatten(self: Arr[Arr[S]]) -> Arr[S]: ...
+    def flatten(self: Arr[Sequence[S] | S]) -> Arr[S]:
+        ...
+
+    # list[S]
     @overload
-    def flatten(self: Arr[Arr[S] | S]) -> Arr[S]: ...
+    def flatten(self: Arr[list[S]]) -> Arr[S]:
+        ...
+
+    @overload
+    def flatten(self: Arr[list[S] | S]) -> Arr[S]:
+        ...
+
+    # set[S]
+    @overload
+    def flatten(self: Arr[set[S]]) -> Arr[S]:
+        ...
+
+    @overload
+    def flatten(self: Arr[set[S] | S]) -> Arr[S]:
+        ...
+
+    # frozenset[S]
+    @overload
+    def flatten(self: Arr[frozenset[S]]) -> Arr[S]:
+        ...
+
+    @overload
+    def flatten(self: Arr[frozenset[S] | S]) -> Arr[S]:
+        ...
+
+    # Arr[S]
+    @overload
+    def flatten(self: Arr[Arr[S]]) -> Arr[S]:
+        ...
+
+    @overload
+    def flatten(self: Arr[Arr[S] | S]) -> Arr[S]:
+        ...
 
     # str
     @overload
-    def flatten(self: Arr[str]) -> Arr[str]: ...
+    def flatten(self: Arr[str]) -> Arr[str]:
+        ...
+
     @overload
-    def flatten(self: Arr[str | S]) -> Arr[S]: ...
+    def flatten(self: Arr[str | S]) -> Arr[S]:
+        ...
 
     # Generic
     @overload
-    def flatten(self: Arr[S]) -> Arr[S]: ...
+    def flatten(self: Arr[S]) -> Arr[S]:
+        ...
 
     def flatten(self) -> Arr[T]:  # type: ignore
         return self.lazy().flatten().collect()
