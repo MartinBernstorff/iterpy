@@ -8,9 +8,6 @@ install:
 dev:
 	uv sync --all-extras
 
-quicksync:
-	uv sync --no-lock
-
 test:
 	@uv run pytest --cov=$(SRC_PATH) $(SRC_PATH) --cov-report xml:.coverage.xml --cov-report lcov:.coverage.lcov
 
