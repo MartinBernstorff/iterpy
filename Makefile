@@ -3,31 +3,34 @@ MAKEFLAGS = --no-print-directory
 
 # Dependency management
 install:
-	rye sync
+	uv sync
+
+dev:
+	uv sync --all-extras
 
 quicksync:
-	rye sync --no-lock
+	uv sync --no-lock
 
 test:
-	@rye run pytest --cov=$(SRC_PATH) $(SRC_PATH) --cov-report xml:.coverage.xml --cov-report lcov:.coverage.lcov
+	@uv run pytest --cov=$(SRC_PATH) $(SRC_PATH) --cov-report xml:.coverage.xml --cov-report lcov:.coverage.lcov
 
 test-with-coverage: 
 	@echo "––– Testing –––"
 	@make test
-	@rye run diff-cover .coverage.xml
+	@uv run diff-cover .coverage.xml
 	@echo "✅✅✅ Tests passed ✅✅✅"
 
 lint: ## Format code
 	@echo "––– Linting –––"
-	@rye run ruff format .
-	@rye run ruff . --fix --unsafe-fixes \
+	@uv run ruff format .
+	@uv run ruff . --fix --unsafe-fixes \
 		--extend-select F401 \
 		--extend-select F841
 	@echo "✅✅✅ Lint ✅✅✅"
 
 types: ## Type-check code
 	@echo "––– Type-checking –––"
-	@rye run pyright .
+	@uv run pyright .
 	@echo "✅✅✅ Types ✅✅✅"
 
 validate_ci: ## Run all checks
@@ -44,4 +47,4 @@ docker_ci: ## Run all checks in docker
 	@docker run iterpy make validate_ci
 
 pr: ## Submit a PR
-	@rye run lm sync --squash --automerge
+	@uv run lm sync --squash --automerge
