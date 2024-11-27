@@ -40,7 +40,7 @@ result = filter(is_even, map(multiply_by_2, [1,2,3]))
 ## Install
 
 ```bash
-pip install iterpy
+uv add iterpy
 ```
 
 ## Usage
@@ -90,7 +90,7 @@ Other Python projects have had similar ideas:
 
 ### Setup
 
-1. We use [`rye`](https://rye.astral.sh/) for environment management. Once it is installed, set up your virtual environment using `rye sync`.
+1. We use [`uv`](https://docs.astral.sh/uv/) for environment management. Once it is installed, setup the dev environment using `make dev`.
 
 Or, use the devcontainer.
 
