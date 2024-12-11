@@ -2,13 +2,32 @@
 
 
 
+## v1.10.0 (2024-12-11)
+
+### Chore
+
+* chore: move to uv (#208) ([`3052556`](https://github.com/MartinBernstorff/iterpy/commit/305255646e8b8d24f608998aa69514a11a15a68b))
+
+* chore: delete dependabot.yml ([`0b60b52`](https://github.com/MartinBernstorff/iterpy/commit/0b60b52dc7a452bfa78ba20e1a971edd85b8cba8))
+
+### Feature
+
+* feat: make arr a subclass of list (#209) ([`05b4a70`](https://github.com/MartinBernstorff/iterpy/commit/05b4a7079237d97cd47e00375b3829f264f81670))
+
+
 ## v1.9.1 (2024-11-27)
+
+### Build
+
+* build: update Dockerfile and Makefile ([`7e9d332`](https://github.com/MartinBernstorff/iterpy/commit/7e9d332f8a667c743b8d354d4f1528d5a2af0e0c))
 
 ### Chore
 
 * chore: remove placeholder file ([`c19a07d`](https://github.com/MartinBernstorff/iterpy/commit/c19a07dbb7e1761ec8badb6ec001d88c1c11578a))
 
 ### Documentation
+
+* docs: update README.md ([`d01cb86`](https://github.com/MartinBernstorff/iterpy/commit/d01cb86acc20a5db074b7be390adaa67e4a8d0b3))
 
 * docs: update readme ([`c3c614a`](https://github.com/MartinBernstorff/iterpy/commit/c3c614a363612800e7af8f09e8418b85444e4dae))
 
@@ -31,6 +50,10 @@ Fixes #146 ([`17d637d`](https://github.com/MartinBernstorff/iterpy/commit/17d637
 Fixes #146 ([`fcffbff`](https://github.com/MartinBernstorff/iterpy/commit/fcffbffb84dc01b97af85e05b912e8f1f0123891))
 
 ### Unknown
+
+* update Makefile, test_arr.py and test_iter.py ([`163c6d4`](https://github.com/MartinBernstorff/iterpy/commit/163c6d4e87d97ec93fc18a77f5cb893b27255612))
+
+* Initial commit ([`1543909`](https://github.com/MartinBernstorff/iterpy/commit/15439098e8e9c98a4443e2f38b62197ed857b098))
 
 * deps:(deps): bump pyright from 1.1.362 to 1.1.363 (#175) ([`4296b87`](https://github.com/MartinBernstorff/iterpy/commit/4296b87f6c3352728d800afaa615aca9a6c9418b))
 
