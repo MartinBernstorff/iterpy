@@ -2,6 +2,23 @@
 
 
 
+## v1.11.0 (2024-12-11)
+
+### Feature
+
+* feat: make arr a subclass of list (#211)
+
+BREAKING: Renames `.count()` to `.len()` to avoid conflicts with Python `list` while maintaining backwards compatability. ([`5e1cffd`](https://github.com/MartinBernstorff/iterpy/commit/5e1cffd7f59c1865524129f1b53b5c585109926d))
+
+### Unknown
+
+* Revert &#34;feat: make arr a subclass of list&#34; (#210) ([`9b143f5`](https://github.com/MartinBernstorff/iterpy/commit/9b143f542e8648450f98ad3d778d25e9ef893f15))
+
+* Revert &#34;feat: make arr a subclass of list (#209)&#34;
+
+This reverts commit 05b4a7079237d97cd47e00375b3829f264f81670. ([`a335413`](https://github.com/MartinBernstorff/iterpy/commit/a33541325846e12f0c9e5bdeb92c92d98cdbc940))
+
+
 ## v1.10.0 (2024-12-11)
 
 ### Chore
