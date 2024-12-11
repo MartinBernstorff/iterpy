@@ -53,18 +53,8 @@ def test_reduce():
 
 def test_count():
     iterator = Arr([1, 2])
-    result: int = iterator.len()
+    result: int = iterator.count()
     assert result == 2
-
-
-def func(listicle: list[str]) -> list[str]:
-    return listicle
-
-
-def test_mul():
-    iterator = Arr(["val"])
-    result: list[str] = func(iterator)
-    assert result[0] == "val"
 
 
 def test_grouped_filter():
@@ -199,7 +189,7 @@ class TestFlattenTypes:
 
     def test_flatten_includes_primitives(self):
         test_input: list[str | list[int] | None] = ["first", [2], None]
-        result: Arr[int | str | None] = Arr(test_input).flatten()  # type: ignore # TODO: Would love to see a fix for this
+        result: Arr[int | str | None] = Arr(test_input).flatten() # type: ignore # TODO: Would love to see a fix for this
         assert result.to_list() == ["first", 2, None]
 
     def test_flatten_removes_empty_iterators(self):

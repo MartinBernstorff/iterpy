@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from itertools import islice
-from typing import TYPE_CHECKING, Generic, Sequence, SupportsIndex, TypeVar, overload
+from typing import TYPE_CHECKING, Generic, Sequence, TypeVar, overload
 
 if TYPE_CHECKING:
     from collections.abc import Callable, Iterable, Iterator
@@ -12,7 +12,7 @@ T = TypeVar("T")
 S = TypeVar("S")
 
 
-class Arr(Generic[T], list[T]):
+class Arr(Generic[T]):
     def __init__(self, iterable: Iterable[T]) -> None:
         self._iter = list(iterable)
         self._current_index: int = 0
@@ -36,11 +36,11 @@ class Arr(Generic[T], list[T]):
         return item
 
     @overload
-    def __getitem__(self, index: SupportsIndex) -> T: ...
+    def __getitem__(self, index: int) -> T: ...
     @overload
     def __getitem__(self, index: slice) -> Arr[T]: ...
 
-    def __getitem__(self, index: SupportsIndex | slice) -> T | Arr[T]:
+    def __getitem__(self, index: int | slice) -> T | Arr[T]:
         if isinstance(index, int) and index >= 0:
             try:
                 return next(islice(self._iter, index, index + 1))
@@ -63,8 +63,8 @@ class Arr(Generic[T], list[T]):
     def reduce(self, func: Callable[[T, T], T]) -> T:
         return self.lazy().reduce(func)
 
-    def len(self) -> int:
-        return self.lazy().len()
+    def count(self) -> int:
+        return self.lazy().count()
 
     ### Output
     def to_list(self) -> list[T]:
@@ -138,43 +138,43 @@ class Arr(Generic[T], list[T]):
     @overload
     def flatten(self: Arr[Iterable[S] | S]) -> Arr[S]: ...
 
-    # Iterator[S]
+    # Iterator[S]   # noqa: ERA001
     @overload
     def flatten(self: Arr[Iterator[S]]) -> Arr[S]: ...
     @overload
     def flatten(self: Arr[Iterator[S] | S]) -> Arr[S]: ...
 
-    # tuple[S, ...]
+    # tuple[S, ...]   # noqa: ERA001
     @overload
     def flatten(self: Arr[tuple[S, ...]]) -> Arr[S]: ...
     @overload
     def flatten(self: Arr[tuple[S, ...] | S]) -> Arr[S]: ...
 
-    # Sequence[S]
+    # Sequence[S]   # noqa: ERA001
     @overload
     def flatten(self: Arr[Sequence[S]]) -> Arr[S]: ...
     @overload
     def flatten(self: Arr[Sequence[S] | S]) -> Arr[S]: ...
 
-    # list[S]
+    # list[S]   # noqa: ERA001
     @overload
     def flatten(self: Arr[list[S]]) -> Arr[S]: ...
     @overload
     def flatten(self: Arr[list[S] | S]) -> Arr[S]: ...
 
-    # set[S]
+    # set[S]   # noqa: ERA001
     @overload
     def flatten(self: Arr[set[S]]) -> Arr[S]: ...
     @overload
     def flatten(self: Arr[set[S] | S]) -> Arr[S]: ...
 
-    # frozenset[S]
+    # frozenset[S]   # noqa: ERA001
     @overload
     def flatten(self: Arr[frozenset[S]]) -> Arr[S]: ...
     @overload
     def flatten(self: Arr[frozenset[S] | S]) -> Arr[S]: ...
 
-    # Arr[S]
+    # Arr[S]   # noqa: ERA001
     @overload
     def flatten(self: Arr[Arr[S]]) -> Arr[S]: ...
     @overload

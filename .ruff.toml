@@ -11,6 +11,7 @@ select = [
     "COM",
     "D417",
     "E",
+    "ERA",
     "F",
     "I",
     "ICN",
