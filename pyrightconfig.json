@@ -1,8 +1,12 @@
 {
     "exclude": [
-        ".*venv*"
+        "**/node_modules",
+        "**/__pycache__",
+        "**/.*",
+        "build"
     ],
-    "pythonPlatform": "Darwin",
-    "reportMissingTypeStubs": false,
-    "typeCheckingMode": "strict"
+    "typeCheckingMode": "off",
+    "strict": [
+        "**/*.py"
+    ]
 }
