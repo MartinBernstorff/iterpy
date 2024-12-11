@@ -62,7 +62,7 @@ class Iter(Generic[T]):
     def reduce(self, func: Callable[[T, T], T]) -> T:
         return reduce(func, self._iterator)
 
-    def len(self) -> int:
+    def count(self) -> int:
         return sum(1 for _ in self._iterator)
 
     ### Output
@@ -157,43 +157,43 @@ class Iter(Generic[T]):
     @overload
     def flatten(self: Iter[Iterable[S] | S]) -> Iter[S]: ...
 
-    # Iterator[S]
+    # Iterator[S]   # noqa: ERA001
     @overload
     def flatten(self: Iter[Iterator[S]]) -> Iter[S]: ...
     @overload
     def flatten(self: Iter[Iterator[S] | S]) -> Iter[S]: ...
 
-    # tuple[S, ...]
+    # tuple[S, ...]   # noqa: ERA001
     @overload
     def flatten(self: Iter[tuple[S, ...]]) -> Iter[S]: ...
     @overload
     def flatten(self: Iter[tuple[S, ...] | S]) -> Iter[S]: ...
 
-    # Sequence[S]
+    # Sequence[S]   # noqa: ERA001
     @overload
     def flatten(self: Iter[Sequence[S]]) -> Iter[S]: ...
     @overload
     def flatten(self: Iter[Sequence[S] | S]) -> Iter[S]: ...
 
-    # list[S]
+    # list[S]   # noqa: ERA001
     @overload
     def flatten(self: Iter[list[S]]) -> Iter[S]: ...
     @overload
     def flatten(self: Iter[list[S] | S]) -> Iter[S]: ...
 
-    # set[S]
+    # set[S]   # noqa: ERA001
     @overload
     def flatten(self: Iter[set[S]]) -> Iter[S]: ...
     @overload
     def flatten(self: Iter[set[S] | S]) -> Iter[S]: ...
 
-    # frozenset[S]
+    # frozenset[S]   # noqa: ERA001
     @overload
     def flatten(self: Iter[frozenset[S]]) -> Iter[S]: ...
     @overload
     def flatten(self: Iter[frozenset[S] | S]) -> Iter[S]: ...
 
-    # Iter[S]
+    # Iter[S]   # noqa: ERA001
     @overload
     def flatten(self: Iter[Iter[S]]) -> Iter[S]: ...
     @overload

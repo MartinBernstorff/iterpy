@@ -53,7 +53,7 @@ def test_reduce():
 
 def test_count():
     iterator = Iter([1, 2])
-    result: int = iterator.len()
+    result: int = iterator.count()
     assert result == 2
 
 
@@ -188,7 +188,7 @@ class TestFlattenTypes:
 
     def test_flatten_includes_primitives(self):
         test_input: list[str | list[int] | None] = ["first", [2], None]
-        result: Iter[int | str | None] = Iter(test_input).flatten()  # type: ignore # TODO: Would love to see a fix for this
+        result: Iter[int | str | None] = Iter(test_input).flatten() # type: ignore # TODO: Would love to see a fix for this
         assert result.to_list() == ["first", 2, None]
 
     def test_flatten_removes_empty_iterators(self):
