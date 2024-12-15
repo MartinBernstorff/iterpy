@@ -57,13 +57,13 @@ def test_count():
     assert result == 2
 
 
-def func(listicle: list[str]) -> list[str]:
+def func(listicle: Sequence[str]) -> Sequence[str]:
     return listicle
 
 
 def test_mul():
     iterator = Arr(["val"])
-    result: list[str] = func(iterator)
+    result: Sequence[str] = func(iterator)
     assert result[0] == "val"
 
 
