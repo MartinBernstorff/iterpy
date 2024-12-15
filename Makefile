@@ -9,13 +9,7 @@ dev:
 	uv sync --all-extras
 
 test:
-	@uv run pytest --cov=$(SRC_PATH) $(SRC_PATH) --cov-report xml:.coverage.xml --cov-report lcov:.coverage.lcov
-
-test-with-coverage: 
-	@echo "––– Testing –––"
-	@make test
-	@uv run diff-cover .coverage.xml
-	@echo "✅✅✅ Tests passed ✅✅✅"
+	@uv run pytest
 
 lint: ## Format code
 	@echo "––– Linting –––"
@@ -34,7 +28,6 @@ validate_ci: ## Run all checks
 	@echo "––– Running all checks –––"
 	@make lint
 	@make types
-	## CI doesn't support local coverage report, so skipping full test
 	@make test
 
 docker_ci: ## Run all checks in docker
