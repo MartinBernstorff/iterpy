@@ -2,6 +2,27 @@
 
 
 
+## v1.11.1 (2024-12-15)
+
+### Build
+
+* build: update Makefile ([`c240a88`](https://github.com/MartinBernstorff/iterpy/commit/c240a889de3ba5d8ccc009e1051ae602df071ea8))
+
+* build(deps): update arr.py, pyproject.toml and uv.lock ([`c844e66`](https://github.com/MartinBernstorff/iterpy/commit/c844e667f3ca22f39868015f4f2d65333152a499))
+
+### Fix
+
+* fix: Arr is immutable, use sequence, not list (#212) ([`6895330`](https://github.com/MartinBernstorff/iterpy/commit/6895330eb0a524ee00ae5bd37fff50e91d384d23))
+
+### Unknown
+
+* update .gitignore, arr.py and test_arr.py ([`959821a`](https://github.com/MartinBernstorff/iterpy/commit/959821ae1ebd05668d58d1948d359964c25926c7))
+
+* Initial commit ([`96deab9`](https://github.com/MartinBernstorff/iterpy/commit/96deab9dbd0b4080fc69c6ae3805b95f36485699))
+
+* Update README.md ([`f06a276`](https://github.com/MartinBernstorff/iterpy/commit/f06a276139fd06cdc26377bfd127cf178a0492b4))
+
+
 ## v1.11.0 (2024-12-11)
 
 ### Feature
