@@ -12,7 +12,7 @@ T = TypeVar("T")
 S = TypeVar("S")
 
 
-class Arr(Generic[T], list[T]):
+class Arr(Generic[T], Sequence[T]):
     def __init__(self, iterable: Iterable[T]) -> None:
         self._iter = list(iterable)
         self._current_index: int = 0
@@ -20,6 +20,9 @@ class Arr(Generic[T], list[T]):
     @property
     def _iterator(self) -> Iterator[T]:
         return iter(self._iter)
+
+    def __len__(self) -> int:
+        return len(self._iter)
 
     def __bool__(self) -> bool:
         return self.lazy().__bool__()
@@ -66,7 +69,7 @@ class Arr(Generic[T], list[T]):
     def len(self) -> int:
         return self.lazy().len()
 
-    ### Output
+    ### Collectors
     def to_list(self) -> list[T]:
         return self.lazy().to_list()
 
