@@ -21,6 +21,9 @@ class Arr(Generic[T], Sequence[T]):
     def _iterator(self) -> Iterator[T]:
         return iter(self._iter)
 
+    def __len__(self) -> int:
+        return len(self._iter)
+
     def __bool__(self) -> bool:
         return self.lazy().__bool__()
 
