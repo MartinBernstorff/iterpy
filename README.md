@@ -44,6 +44,16 @@ uv add iterpy
 ```
 
 ## Usage
+```python
+from iterpy import Arr
+
+result = (Arr([1, 2])
+            .filter(lambda x: x % 2 == 0)
+            .map(lambda x: x * 2)
+)
+assert result == [4]
+```
+
 
 ```python
 from iterpy import Iter
