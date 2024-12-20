@@ -67,7 +67,7 @@ result = Arr([1, 2, 3]).map(lambda x: x * 2).to_list()
 assert result == [2, 4, 6]
 ```
 
-`Arr` acts like a Python `list`, so you can pass it around anywhere flexibly!
+`Arr` acts like a Python `list`, so it has a super simple API you can [easily use anywhere](https://grugbrain.dev/#grug-on-apis).
 
 To access lazy evaluation, just rename `Arr` to `Iter`:
 
