@@ -2,6 +2,19 @@
 
 
 
+## v1.12.0 (2025-02-07)
+
+### Feature
+
+* feat: `.chain(other)` (#213) ([`42f08ca`](https://github.com/MartinBernstorff/iterpy/commit/42f08cac1b3cc20bb5d88efb33cf3d0c22952d90))
+
+### Unknown
+
+* Update README.md ([`5c7fbd2`](https://github.com/MartinBernstorff/iterpy/commit/5c7fbd290a7839af278d541e5ac3558dfedde5f2))
+
+* Update README.md ([`b9e1eee`](https://github.com/MartinBernstorff/iterpy/commit/b9e1eee018488ef9b2f4255726152f14a565d96f))
+
+
 ## v1.11.1 (2024-12-15)
 
 ### Build
