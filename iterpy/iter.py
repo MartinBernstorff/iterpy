@@ -146,6 +146,9 @@ class Iter(Generic[T]):
     def zip(self, other: Iter[S]) -> Iter[tuple[T, S]]:
         return Iter(zip(self, other))
 
+    def chain(self, other: Iter[T]) -> Iter[T]:
+        return Iter((*self, *other))
+
     ############################################################
     # Auto-generated overloads for flatten                     #
     # Code for generating the following is in _generate_pyi.py #

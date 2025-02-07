@@ -153,6 +153,12 @@ def test_looping():
     for i in test_iterator:
         assert i in [1, 2, 3]
 
+def test_chain():
+    iterator = Arr([1, 2])
+    iterator2 = Arr([3, 4])
+    result: list[int] = iterator.chain(iterator2).to_list()
+    assert result == [1, 2, 3, 4]
+
 
 @pytest.mark.benchmark()
 def test_benchmark_large_flattening():

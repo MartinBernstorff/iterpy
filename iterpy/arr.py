@@ -130,6 +130,9 @@ class Arr(Generic[T], Sequence[T]):
     def zip(self, other: Arr[S]) -> Arr[tuple[T, S]]:
         return Arr(zip(self, other))
 
+    def chain(self, other: Arr[T]) -> Arr[T]:
+        return self.lazy().chain(other).collect()
+
     ############################################################
     # Auto-generated overloads for flatten                     #
     # Code for generating the following is in _generate_pyi.py #
