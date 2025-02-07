@@ -142,6 +142,7 @@ def test_looping():
     for i in test_iterator:
         assert i in [1, 2, 3]
 
+
 def test_chain():
     iterator = Iter([1, 2])
     iterator2 = Iter([3, 4])
