@@ -3,10 +3,10 @@ from __future__ import annotations
 from itertools import islice
 from typing import TYPE_CHECKING, Generic, Sequence, SupportsIndex, TypeVar, overload
 
-from iterpy.iter import Iter
-
 if TYPE_CHECKING:
     from collections.abc import Callable, Iterable, Iterator
+
+    from iterpy.iter import Iter
 
 
 T = TypeVar("T")
@@ -132,7 +132,7 @@ class Arr(Generic[T], Sequence[T]):
         return Arr(zip(self, other))
 
     def chain(self, other: Arr[T]) -> Arr[T]:
-        return self.lazy().chain(Iter(other)).collect()
+        return self.lazy().chain(other.lazy()).collect()
 
     ############################################################
     # Auto-generated overloads for flatten                     #
