@@ -1,5 +1,9 @@
 version = 1
 requires-python = ">=3.9"
+resolution-markers = [
+    "python_full_version >= '3.12'",
+    "python_full_version < '3.12'",
+]
 
 [[package]]
 name = "arrow"
@@ -202,7 +206,7 @@ name = "click"
 version = "8.1.7"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "colorama", marker = "platform_system == 'Windows'" },
+    { name = "colorama", marker = "sys_platform == 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz", hash = "sha256:ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de", size = 336121 }
 wheels = [
@@ -339,10 +343,10 @@ wheels = [
 
 [[package]]
 name = "iterpy"
-version = "1.11.0"
+version = "1.11.1"
 source = { editable = "." }
 
-[package.dependency-groups]
+[package.dev-dependencies]
 dev = [
     { name = "cruft" },
     { name = "lumberman" },
@@ -356,7 +360,7 @@ dev = [
 
 [package.metadata]
 
-[package.metadata.dependency-groups]
+[package.metadata.requires-dev]
 dev = [
     { name = "cruft", specifier = "==2.15.0" },
     { name = "lumberman" },
