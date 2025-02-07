@@ -8,6 +8,7 @@ if TYPE_CHECKING:
 
     from iterpy.iter import Iter
 
+
 T = TypeVar("T")
 S = TypeVar("S")
 
@@ -129,6 +130,9 @@ class Arr(Generic[T], Sequence[T]):
 
     def zip(self, other: Arr[S]) -> Arr[tuple[T, S]]:
         return Arr(zip(self, other))
+
+    def chain(self, other: Arr[T]) -> Arr[T]:
+        return self.lazy().chain(other.lazy()).collect()
 
     ############################################################
     # Auto-generated overloads for flatten                     #
