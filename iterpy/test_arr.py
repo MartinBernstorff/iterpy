@@ -161,6 +161,15 @@ def test_chain():
     assert result == [1, 2, 3, 4]
 
 
+def test_empty_is_falsy():
+    test_iterator = Arr([])  # type: ignore
+    assert not test_iterator
+
+    test_iterator = Arr([1])
+    assert test_iterator
+    assert bool(test_iterator) is True
+
+
 @pytest.mark.benchmark()
 def test_benchmark_large_flattening():
     test_input = Arr(range(100_000)).map(lambda x: Arr([x]))
