@@ -128,13 +128,6 @@ def test_find():
     assert test_iterator.find(lambda x: x == 4) is None
 
 
-def test_zip():
-    iter1 = Arr([1, 2, 3])
-    iter2 = Arr(["a", "b", "c"])
-    result: Arr[tuple[int, str]] = iter1.zip(iter2)
-    assert result.to_list() == [(1, "a"), (2, "b"), (3, "c")]
-
-
 def test_flatten():
     test_input: list[list[int]] = [[1, 2], [3, 4]]
     iterator = Arr(test_input)

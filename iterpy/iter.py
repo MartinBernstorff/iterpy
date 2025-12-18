@@ -143,9 +143,6 @@ class Iter(Generic[T]):
     def clone(self) -> Iter[T]:
         return copy.deepcopy(self)
 
-    def zip(self, other: Iter[S]) -> Iter[tuple[T, S]]:
-        return Iter(zip(self, other))
-
     def chain(self, other: Iter[T]) -> Iter[T]:
         return Iter((*self, *other))
 
@@ -155,22 +152,23 @@ class Iter(Generic[T]):
     ############################################################
     # Overloads are technically incompatible, because they use generic S instead of T. However, this is required for the flattening logic to work.
 
+    # Iter[S]
     @overload
-    def flatten(self: Iter[Iterable[S]]) -> Iter[S]: ...
+    def flatten(self: Iter[Iter[S]]) -> Iter[S]: ...
     @overload
-    def flatten(self: Iter[Iterable[S] | S]) -> Iter[S]: ...
-
-    # Iterator[S]
-    @overload
-    def flatten(self: Iter[Iterator[S]]) -> Iter[S]: ...
-    @overload
-    def flatten(self: Iter[Iterator[S] | S]) -> Iter[S]: ...
+    def flatten(self: Iter[Iter[S] | S]) -> Iter[S]: ...
 
     # tuple[S, ...]
     @overload
     def flatten(self: Iter[tuple[S, ...]]) -> Iter[S]: ...
     @overload
     def flatten(self: Iter[tuple[S, ...] | S]) -> Iter[S]: ...
+
+    # tuple[S, S]
+    @overload
+    def flatten(self: Iter[tuple[S, S]]) -> Iter[S]: ...
+    @overload
+    def flatten(self: Iter[tuple[S, S] | S]) -> Iter[S]: ...
 
     # Sequence[S]
     @overload
@@ -208,11 +206,7 @@ class Iter(Generic[T]):
     @overload
     def flatten(self: Iter[str | S]) -> Iter[S]: ...
 
-    # Generic
-    @overload
-    def flatten(self: Iter[S]) -> Iter[S]: ...
-
-    def flatten(self) -> Iter[T]:  # type: ignore -
+    def flatten(self) -> Iter[T]:
         depth = 1
 
         def walk(node: Any, level: int) -> Generator[T, None, None]:

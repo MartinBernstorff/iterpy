@@ -128,9 +128,6 @@ class Arr(Generic[T], Sequence[T]):
     def clone(self) -> Arr[T]:
         return self.lazy().clone().collect()
 
-    def zip(self, other: Arr[S]) -> Arr[tuple[T, S]]:
-        return Arr(zip(self, other))
-
     def chain(self, other: Arr[T]) -> Arr[T]:
         return self.lazy().chain(other.lazy()).collect()
 
@@ -140,22 +137,23 @@ class Arr(Generic[T], Sequence[T]):
     ############################################################
     # Overloads are technically incompatible, because they use generic S instead of T. However, this is required for the flattening logic to work.
 
+    # Arr[S]
     @overload
-    def flatten(self: Arr[Iterable[S]]) -> Arr[S]: ...
+    def flatten(self: Arr[Arr[S]]) -> Arr[S]: ...
     @overload
-    def flatten(self: Arr[Iterable[S] | S]) -> Arr[S]: ...
-
-    # Iterator[S]
-    @overload
-    def flatten(self: Arr[Iterator[S]]) -> Arr[S]: ...
-    @overload
-    def flatten(self: Arr[Iterator[S] | S]) -> Arr[S]: ...
+    def flatten(self: Arr[Arr[S] | S]) -> Arr[S]: ...
 
     # tuple[S, ...]
     @overload
     def flatten(self: Arr[tuple[S, ...]]) -> Arr[S]: ...
     @overload
     def flatten(self: Arr[tuple[S, ...] | S]) -> Arr[S]: ...
+
+    # tuple[S, S]
+    @overload
+    def flatten(self: Arr[tuple[S, S]]) -> Arr[S]: ...
+    @overload
+    def flatten(self: Arr[tuple[S, S] | S]) -> Arr[S]: ...
 
     # Sequence[S]
     @overload
