@@ -29,6 +29,8 @@ dev = [
   "pytest-sugar==1.0.0",
   "pytest-codspeed",
   "ruff==0.4.4",
+  "ty>=0.0.3",
+  "mypy>=1.19.1",
 ]
 
 [project.urls]

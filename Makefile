@@ -21,6 +21,7 @@ lint: ## Format code
 
 types: ## Type-check code
 	@echo "––– Type-checking –––"
+	@uv run ty check .
 	@uv run pyright .
 	@echo "✅✅✅ Types ✅✅✅"
 

@@ -151,9 +151,9 @@ class Arr(Generic[T], Sequence[T]):
 
     # tuple[S, S]
     @overload
-    def flatten(self: Arr[tuple[S, S]]) -> Arr[S]: ...
+    def flatten(self: Arr[tuple[S, S]]) -> Arr[S]: ...  # pyright: ignore[reportOverlappingOverload]
     @overload
-    def flatten(self: Arr[tuple[S, S] | S]) -> Arr[S]: ...
+    def flatten(self: Arr[tuple[S, S] | S]) -> Arr[S]: ...  # pyright: ignore[reportOverlappingOverload]
 
     # Sequence[S]
     @overload
@@ -181,9 +181,9 @@ class Arr(Generic[T], Sequence[T]):
 
     # Arr[S]
     @overload
-    def flatten(self: Arr[Arr[S]]) -> Arr[S]: ...
+    def flatten(self: Arr[Arr[S]]) -> Arr[S]: ...  # pyright: ignore[reportOverlappingOverload]
     @overload
-    def flatten(self: Arr[Arr[S] | S]) -> Arr[S]: ...
+    def flatten(self: Arr[Arr[S] | S]) -> Arr[S]: ...  # pyright: ignore[reportOverlappingOverload]
 
     # str
     @overload
@@ -195,5 +195,6 @@ class Arr(Generic[T], Sequence[T]):
     @overload
     def flatten(self: Arr[S]) -> Arr[S]: ...
 
-    def flatten(self) -> Arr[T]:  # type: ignore
-        return self.lazy().flatten().collect()
+    def flatten(self) -> Arr[T]:  # pyright: ignore[reportInconsistentOverload]
+        lazy = self.lazy()
+        return lazy.flatten().collect()  # pyright: ignore[reportAttributeAccessIssue, reportUnknownVariableType, reportUnknownMemberType] # ty:ignore[no-matching-overload]
