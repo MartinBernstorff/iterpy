@@ -15,5 +15,3 @@ jobs:
       - name: Build CI container
         run: |
           make docker_ci
-
-      # XXX: Add ty here
