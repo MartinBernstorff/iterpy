@@ -105,7 +105,7 @@ class Iter(Generic[T]):
             groups_with_values[value_key].append(value)
 
         tuples = list(groups_with_values.items())
-        return Iter(tuples)
+        return Iter(tuples)  # ty:ignore[invalid-argument-type]
 
     def take(self, n: int = 1) -> Iter[T]:
         return Iter(islice(self._iter, n))
@@ -132,7 +132,7 @@ class Iter(Generic[T]):
         return Iter(values)
 
     def enumerate(self) -> Iter[tuple[int, T]]:
-        return Iter(enumerate(self._iterator))
+        return Iter(enumerate(self._iterator))  # ty:ignore[invalid-return-type]
 
     def find(self, func: Callable[[T], bool]) -> T | None:
         for value in self._iterator:
@@ -143,9 +143,6 @@ class Iter(Generic[T]):
     def clone(self) -> Iter[T]:
         return copy.deepcopy(self)
 
-    def zip(self, other: Iter[S]) -> Iter[tuple[T, S]]:
-        return Iter(zip(self, other))
-
     def chain(self, other: Iter[T]) -> Iter[T]:
         return Iter((*self, *other))
 
@@ -155,22 +152,23 @@ class Iter(Generic[T]):
     ############################################################
     # Overloads are technically incompatible, because they use generic S instead of T. However, this is required for the flattening logic to work.
 
+    # Iter[S]
     @overload
-    def flatten(self: Iter[Iterable[S]]) -> Iter[S]: ...
+    def flatten(self: Iter[Iter[S]]) -> Iter[S]: ...
     @overload
-    def flatten(self: Iter[Iterable[S] | S]) -> Iter[S]: ...
-
-    # Iterator[S]
-    @overload
-    def flatten(self: Iter[Iterator[S]]) -> Iter[S]: ...
-    @overload
-    def flatten(self: Iter[Iterator[S] | S]) -> Iter[S]: ...
+    def flatten(self: Iter[Iter[S] | S]) -> Iter[S]: ...
 
     # tuple[S, ...]
     @overload
     def flatten(self: Iter[tuple[S, ...]]) -> Iter[S]: ...
     @overload
     def flatten(self: Iter[tuple[S, ...] | S]) -> Iter[S]: ...
+
+    # tuple[S, S]
+    @overload
+    def flatten(self: Iter[tuple[S, S]]) -> Iter[S]: ...  # pyright: ignore[reportOverlappingOverload]
+    @overload
+    def flatten(self: Iter[tuple[S, S] | S]) -> Iter[S]: ...  # pyright: ignore[reportOverlappingOverload]
 
     # Sequence[S]
     @overload
@@ -198,9 +196,9 @@ class Iter(Generic[T]):
 
     # Iter[S]
     @overload
-    def flatten(self: Iter[Iter[S]]) -> Iter[S]: ...
+    def flatten(self: Iter[Iter[S]]) -> Iter[S]: ...  # pyright: ignore[reportOverlappingOverload]
     @overload
-    def flatten(self: Iter[Iter[S] | S]) -> Iter[S]: ...
+    def flatten(self: Iter[Iter[S] | S]) -> Iter[S]: ...  # pyright: ignore[reportOverlappingOverload]
 
     # str
     @overload
@@ -208,11 +206,7 @@ class Iter(Generic[T]):
     @overload
     def flatten(self: Iter[str | S]) -> Iter[S]: ...
 
-    # Generic
-    @overload
-    def flatten(self: Iter[S]) -> Iter[S]: ...
-
-    def flatten(self) -> Iter[T]:  # type: ignore -
+    def flatten(self) -> Iter[T]:  # pyright: ignore[reportInconsistentOverload]
         depth = 1
 
         def walk(node: Any, level: int) -> Generator[T, None, None]:

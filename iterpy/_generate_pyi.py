@@ -23,8 +23,9 @@ if __name__ == "__main__":
 
     combined_interface = f"    # Code for generating the following is in {Path(__file__).name}"
     for mark in [
-        TypeMarker("iterpyator[S]"),
+        TypeMarker("Iter[S]"),
         TypeMarker("tuple[S, ...]"),
+        TypeMarker("tuple[S, S]"),
         TypeMarker("Sequence[S]"),
         TypeMarker("list[S]"),
         TypeMarker("set[S]"),

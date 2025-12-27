@@ -119,7 +119,8 @@ Or, use the devcontainer.
 ### Conventions
 
 - Make it work: Concise syntax borrowed from Scala, Rust etc.
-- Make it right: Fully typed, no exceptions
+- Make it right: Fully typed in the public interface
+  - For pyright and ty
 - Make it fast:
   - Concurrency through `.pmap`
   - (Future): Caching

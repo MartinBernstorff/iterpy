@@ -14,13 +14,14 @@ test:
 lint: ## Format code
 	@echo "––– Linting –––"
 	@uv run ruff format .
-	@uv run ruff . --fix --unsafe-fixes \
+	@uv run ruff check . --fix --unsafe-fixes \
 		--extend-select F401 \
 		--extend-select F841
 	@echo "✅✅✅ Lint ✅✅✅"
 
 types: ## Type-check code
 	@echo "––– Type-checking –––"
+	@uv run ty check .
 	@uv run pyright .
 	@echo "✅✅✅ Types ✅✅✅"
 
