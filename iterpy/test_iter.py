@@ -150,6 +150,14 @@ def test_chain():
     assert result == [1, 2, 3, 4]
 
 
+def test_chains_generators(capsys: pytest.CaptureFixture[str]):
+    test_iterator = Iter([1, 2, 3]).map(lambda x: (print(x), x)[1]).map(lambda x: (print(x), x)[1])
+    assert test_iterator.to_list() == [1, 2, 3]
+
+    captured = capsys.readouterr()
+    assert captured.out == "\n".join("112233") + "\n"
+
+
 @pytest.mark.benchmark()
 def test_benchmark_large_flattening():
     test_input = Iter(range(100_000)).map(lambda x: Iter([x]))
