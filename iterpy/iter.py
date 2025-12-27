@@ -132,7 +132,7 @@ class Iter(Generic[T]):
         return Iter(values)
 
     def enumerate(self) -> Iter[tuple[int, T]]:
-        return Iter(enumerate(self._iterator))  # ty:ignore[invalid-argument-type]
+        return Iter(enumerate(self._iterator))  # ty:ignore[invalid-return-type]
 
     def find(self, func: Callable[[T], bool]) -> T | None:
         for value in self._iterator:
