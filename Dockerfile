@@ -8,5 +8,6 @@ RUN curl https://mise.run | sh
 ENV PATH="/root/.local/bin:${PATH}"
 
 COPY . /app
+RUN mise trust
 RUN mise install
 RUN mise validate
