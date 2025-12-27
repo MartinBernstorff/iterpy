@@ -1,0 +1,17 @@
+[tasks.install]
+run = "uv sync --all-extras"
+
+[tasks.test]
+run = "uv run pytest"
+
+[tasks.format]
+run = "uv run ruff format ."
+
+[tasks.autofix]
+run = "uv run ruff check . --fix --unsafe-fixes --extend-select F401 --extend-select F841"
+
+[tasks.types]
+run = "uv run pyright ."
+
+[tasks.validate]
+depends = ["types", "test", "autofix", "format"]
