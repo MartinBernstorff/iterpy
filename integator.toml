@@ -7,5 +7,5 @@ trunk = "main"
 
 [[integator.commands]]
 name = "Test"
-cmd = "make docker_ci"
+cmd = "mise validate"
 max_staleness_seconds = 1
