@@ -14,7 +14,7 @@ test:
 lint: ## Format code
 	@echo "––– Linting –––"
 	@uv run ruff format .
-	@uv run ruff . --fix --unsafe-fixes \
+	@uv run ruff check . --fix --unsafe-fixes \
 		--extend-select F401 \
 		--extend-select F841
 	@echo "✅✅✅ Lint ✅✅✅"
