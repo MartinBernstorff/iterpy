@@ -10,14 +10,17 @@ run = "uv run ruff format ."
 [tasks.autofix]
 run = "uv run ruff check . --fix --unsafe-fixes --extend-select F401 --extend-select F841"
 
-[tasks.ty]
+[tasks.types_ty]
 run = "uv run ty check ."
 
-[tasks.pyright]
+[tasks.types_pyright]
 run = "uv run pyright ."
 
+[tasks.types_pyrefly]
+run = "uv run pyrefly check ."
+
 [tasks.types]
-depends = ["ty", "pyright"]
+depends = ["types_*"]
 
 [tasks.validate]
 depends = ["types", "test", "autofix", "format"]

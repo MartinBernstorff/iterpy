@@ -31,6 +31,7 @@ dev = [
   "ruff==0.4.4",
   "ty>=0.0.3",
   "mypy>=1.19.1",
+  "pyrefly>=0.47.0",
 ]
 
 [project.urls]

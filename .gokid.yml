@@ -1,0 +1,12 @@
+automerge: true
+branchprefix: ""
+branchsuffix: ""
+draft: true
+forcemerge: false
+mergestrategy: squash
+postmergecommand: ""
+premergecommand: ""
+preyolocommand: ""
+synctrunkonmerge: false
+trunk: main
+yolo: false

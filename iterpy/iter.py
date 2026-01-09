@@ -105,7 +105,7 @@ class Iter(Generic[T]):
             groups_with_values[value_key].append(value)
 
         tuples = list(groups_with_values.items())
-        return Iter(tuples)  # ty:ignore[invalid-argument-type]
+        return Iter(tuples)  # type: ignore
 
     def take(self, n: int = 1) -> Iter[T]:
         return Iter(islice(self._iter, n))
@@ -132,7 +132,7 @@ class Iter(Generic[T]):
         return Iter(values)
 
     def enumerate(self) -> Iter[tuple[int, T]]:
-        return Iter(enumerate(self._iterator))  # ty:ignore[invalid-return-type]
+        return Iter(enumerate(self._iterator))  # type: ignore
 
     def find(self, func: Callable[[T], bool]) -> T | None:
         for value in self._iterator:
