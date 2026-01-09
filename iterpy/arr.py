@@ -197,4 +197,4 @@ class Arr(Generic[T], Sequence[T]):
 
     def flatten(self) -> Arr[T]:  # pyright: ignore[reportInconsistentOverload]
         lazy = self.lazy()
-        return lazy.flatten().collect()  # pyright: ignore[reportAttributeAccessIssue, reportUnknownVariableType, reportUnknownMemberType] # ty:ignore[no-matching-overload]
+        return lazy.flatten().collect()  # pyright: ignore[reportAttributeAccessIssue, reportUnknownVariableType, reportUnknownMemberType] # type: ignore
