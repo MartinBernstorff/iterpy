@@ -98,7 +98,7 @@ class Arr(Generic[T], Sequence[T]):
         """
         return self.lazy().pmap(func).collect()
 
-    def filter(self, func: Callable[[T], bool]) -> Arr[T]:
+    def filter(self, func: Callable[[T], object]) -> Arr[T]:
         return self.lazy().filter(func).collect()
 
     def groupby(self, func: Callable[[T], str]) -> Arr[tuple[str, list[T]]]:

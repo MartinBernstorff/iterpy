@@ -45,6 +45,26 @@ def test_filter():
     assert result == [2]
 
 
+class Truthy:
+    def __init__(self, value: bool) -> None:
+        self._value = value
+
+    def __bool__(self) -> bool:
+        return self._value
+
+
+def test_filter_with_custom_bool_predicate():
+    iterator = Arr([1, 2])
+    result: list[int] = iterator.filter(lambda x: Truthy(x % 2 == 0)).to_list()
+    assert result == [2]
+
+
+def test_filter_with_len_based_truthiness_predicate():
+    iterator = Arr([1, 2])
+    result: list[int] = iterator.filter(lambda x: [x] if x % 2 == 0 else []).to_list()
+    assert result == [2]
+
+
 def test_reduce():
     iterator = Arr([1, 2])
     result: int = iterator.reduce(lambda x, y: x + y)

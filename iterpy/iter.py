@@ -94,8 +94,8 @@ class Iter(Generic[T]):
         with multiprocessing.Pool() as pool:
             return Iter(pool.map(func, self._iterator))
 
-    def filter(self, func: Callable[[T], bool]) -> Iter[T]:
-        return Iter(filter(func, self._iterator))  # type: ignore
+    def filter(self, func: Callable[[T], object]) -> Iter[T]:
+        return Iter(filter(func, self._iterator))
 
     def groupby(self, func: Callable[[T], str]) -> Iter[tuple[str, list[T]]]:
         groups_with_values: defaultdict[str, list[T]] = defaultdict(list)
