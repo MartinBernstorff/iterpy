@@ -13,22 +13,25 @@ jobs:
     runs-on: ubuntu-latest
     concurrency: release
     permissions:
-      id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing using PyPI 
+      contents: write
+      id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing using PyPI
       # A guide on how to set it up is available here: https://blog.pypi.org/posts/2023-04-20-introducing-trusted-publishers/
       # You can add a new publisher here: https://pypi.org/manage/account/publishing/
 
     if: ${{ github.ref == 'refs/heads/main' && github.event.workflow_run.conclusion == 'success'}}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
-          fetch-depth: 0
-          token: ${{ secrets.PAT }}
+          fetch-depth: 0  # setuptools_scm and semantic-release both need full tag history
 
       - name: Python Semantic Release
         id: release
         uses: python-semantic-release/python-semantic-release@v10.5.3
         with:
-          github_token: ${{ secrets.PAT }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Committing would write to protected main, which GITHUB_TOKEN cannot do.
+          commit: false
+          changelog: false
 
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
