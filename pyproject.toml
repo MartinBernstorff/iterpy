@@ -49,9 +49,11 @@ include-package-data = true
 [tool.setuptools.package-data]
 "*" = ["py.typed", "*.pyi"]
 
+# Load-bearing despite being empty: it is what makes project.dynamic = ["version"] resolve.
 [tool.setuptools_scm]
 
 [tool.semantic_release]
 branch = "main"
-# PSR builds before it tags, so setuptools_scm would derive a dev version; pin it to the release instead.
-build_command = "python -m pip install build && SETUPTOOLS_SCM_PRETEND_VERSION_FOR_ITERPY=$NEW_VERSION python -m build"
+# PSR builds before it tags, so setuptools_scm would derive a dev version; pin it to the release
+# instead, and refuse to publish if the artifact still came out at some other version.
+build_command = "python -m pip install build && SETUPTOOLS_SCM_PRETEND_VERSION_FOR_ITERPY=$NEW_VERSION python -m build && test -f dist/iterpy-$NEW_VERSION-py3-none-any.whl"
