@@ -450,7 +450,6 @@ wheels = [
 
 [[package]]
 name = "iterpy"
-version = "1.13.0"
 source = { editable = "." }
 
 [package.dev-dependencies]
